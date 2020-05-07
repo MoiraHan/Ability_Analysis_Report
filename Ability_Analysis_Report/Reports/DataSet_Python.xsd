@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_Python" targetNamespace="http://tempuri.org/DataSet_Python.xsd" xmlns:mstns="http://tempuri.org/DataSet_Python.xsd" xmlns="http://tempuri.org/DataSet_Python.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_Python" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Python" msprop:Generator_UserDSName="DataSet_Python">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ExamineeEvaluationItemStatus" msprop:Generator_TableClassName="ExamineeEvaluationItemStatusDataTable" msprop:Generator_TableVarName="tableExamineeEvaluationItemStatus" msprop:Generator_TablePropName="ExamineeEvaluationItemStatus" msprop:Generator_RowDeletingName="ExamineeEvaluationItemStatusRowDeleting" msprop:Generator_RowChangingName="ExamineeEvaluationItemStatusRowChanging" msprop:Generator_RowEvHandlerName="ExamineeEvaluationItemStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="ExamineeEvaluationItemStatusRowDeleted" msprop:Generator_UserTableName="ExamineeEvaluationItemStatus" msprop:Generator_RowChangedName="ExamineeEvaluationItemStatusRowChanged" msprop:Generator_RowEvArgName="ExamineeEvaluationItemStatusRowChangeEvent" msprop:Generator_RowClassName="ExamineeEvaluationItemStatusRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ItemCode" msprop:Generator_ColumnVarNameInTable="columnItemCode" msprop:Generator_ColumnPropNameInRow="ItemCode" msprop:Generator_ColumnPropNameInTable="ItemCodeColumn" msprop:Generator_UserColumnName="ItemCode" type="xs:string" minOccurs="0" />
+              <xs:element name="ItemDisplay" msprop:Generator_ColumnVarNameInTable="columnItemDisplay" msprop:Generator_ColumnPropNameInRow="ItemDisplay" msprop:Generator_ColumnPropNameInTable="ItemDisplayColumn" msprop:Generator_UserColumnName="ItemDisplay" type="xs:string" minOccurs="0" />
+              <xs:element name="CorrectQuestionCount" msprop:Generator_ColumnVarNameInTable="columnCorrectQuestionCount" msprop:Generator_ColumnPropNameInRow="CorrectQuestionCount" msprop:Generator_ColumnPropNameInTable="CorrectQuestionCountColumn" msprop:Generator_UserColumnName="CorrectQuestionCount" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalQuestionCount" msprop:Generator_ColumnVarNameInTable="columnTotalQuestionCount" msprop:Generator_ColumnPropNameInRow="TotalQuestionCount" msprop:Generator_ColumnPropNameInTable="TotalQuestionCountColumn" msprop:Generator_UserColumnName="TotalQuestionCount" type="xs:string" minOccurs="0" />
+              <xs:element name="CorrentPercentage" msprop:Generator_ColumnVarNameInTable="columnCorrentPercentage" msprop:Generator_ColumnPropNameInRow="CorrentPercentage" msprop:Generator_ColumnPropNameInTable="CorrentPercentageColumn" msprop:Generator_UserColumnName="CorrentPercentage" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ExamineeAnswerStatus" msprop:Generator_TableClassName="ExamineeAnswerStatusDataTable" msprop:Generator_TableVarName="tableExamineeAnswerStatus" msprop:Generator_TablePropName="ExamineeAnswerStatus" msprop:Generator_RowDeletingName="ExamineeAnswerStatusRowDeleting" msprop:Generator_RowChangingName="ExamineeAnswerStatusRowChanging" msprop:Generator_RowEvHandlerName="ExamineeAnswerStatusRowChangeEventHandler" msprop:Generator_RowDeletedName="ExamineeAnswerStatusRowDeleted" msprop:Generator_UserTableName="ExamineeAnswerStatus" msprop:Generator_RowChangedName="ExamineeAnswerStatusRowChanged" msprop:Generator_RowEvArgName="ExamineeAnswerStatusRowChangeEvent" msprop:Generator_RowClassName="ExamineeAnswerStatusRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="QuestionNum" msprop:Generator_ColumnVarNameInTable="columnQuestionNum" msprop:Generator_ColumnPropNameInRow="QuestionNum" msprop:Generator_ColumnPropNameInTable="QuestionNumColumn" msprop:Generator_UserColumnName="QuestionNum" type="xs:string" minOccurs="0" />
+              <xs:element name="StandardAnswer" msprop:Generator_ColumnVarNameInTable="columnStandardAnswer" msprop:Generator_ColumnPropNameInRow="StandardAnswer" msprop:Generator_ColumnPropNameInTable="StandardAnswerColumn" msprop:Generator_UserColumnName="StandardAnswer" type="xs:string" minOccurs="0" />
+              <xs:element name="ExamineeAnswer" msprop:Generator_ColumnVarNameInTable="columnExamineeAnswer" msprop:Generator_ColumnPropNameInRow="ExamineeAnswer" msprop:Generator_ColumnPropNameInTable="ExamineeAnswerColumn" msprop:Generator_UserColumnName="ExamineeAnswer" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EvaluationItemComment" msprop:Generator_TableClassName="EvaluationItemCommentDataTable" msprop:Generator_TableVarName="tableEvaluationItemComment" msprop:Generator_TablePropName="EvaluationItemComment" msprop:Generator_RowDeletingName="EvaluationItemCommentRowDeleting" msprop:Generator_RowChangingName="EvaluationItemCommentRowChanging" msprop:Generator_RowEvHandlerName="EvaluationItemCommentRowChangeEventHandler" msprop:Generator_RowDeletedName="EvaluationItemCommentRowDeleted" msprop:Generator_UserTableName="EvaluationItemComment" msprop:Generator_RowChangedName="EvaluationItemCommentRowChanged" msprop:Generator_RowEvArgName="EvaluationItemCommentRowChangeEvent" msprop:Generator_RowClassName="EvaluationItemCommentRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SeqNo" msprop:Generator_ColumnVarNameInTable="columnSeqNo" msprop:Generator_ColumnPropNameInRow="SeqNo" msprop:Generator_ColumnPropNameInTable="SeqNoColumn" msprop:Generator_UserColumnName="SeqNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Display" msprop:Generator_ColumnVarNameInTable="columnDisplay" msprop:Generator_ColumnPropNameInRow="Display" msprop:Generator_ColumnPropNameInTable="DisplayColumn" msprop:Generator_UserColumnName="Display" type="xs:string" minOccurs="0" />
+              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
