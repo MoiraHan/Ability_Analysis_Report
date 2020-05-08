@@ -30,6 +30,8 @@ namespace Ability_Analysis_Report.Reports {
         
         private EvaluationItemCommentDataTable tableEvaluationItemComment;
         
+        private CoverScoreInfoDataTable tableCoverScoreInfo;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -66,6 +68,9 @@ namespace Ability_Analysis_Report.Reports {
                 }
                 if ((ds.Tables["EvaluationItemComment"] != null)) {
                     base.Tables.Add(new EvaluationItemCommentDataTable(ds.Tables["EvaluationItemComment"]));
+                }
+                if ((ds.Tables["CoverScoreInfo"] != null)) {
+                    base.Tables.Add(new CoverScoreInfoDataTable(ds.Tables["CoverScoreInfo"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -112,6 +117,16 @@ namespace Ability_Analysis_Report.Reports {
         public EvaluationItemCommentDataTable EvaluationItemComment {
             get {
                 return this.tableEvaluationItemComment;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CoverScoreInfoDataTable CoverScoreInfo {
+            get {
+                return this.tableCoverScoreInfo;
             }
         }
         
@@ -191,6 +206,9 @@ namespace Ability_Analysis_Report.Reports {
                 if ((ds.Tables["EvaluationItemComment"] != null)) {
                     base.Tables.Add(new EvaluationItemCommentDataTable(ds.Tables["EvaluationItemComment"]));
                 }
+                if ((ds.Tables["CoverScoreInfo"] != null)) {
+                    base.Tables.Add(new CoverScoreInfoDataTable(ds.Tables["CoverScoreInfo"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -242,6 +260,12 @@ namespace Ability_Analysis_Report.Reports {
                     this.tableEvaluationItemComment.InitVars();
                 }
             }
+            this.tableCoverScoreInfo = ((CoverScoreInfoDataTable)(base.Tables["CoverScoreInfo"]));
+            if ((initTable == true)) {
+                if ((this.tableCoverScoreInfo != null)) {
+                    this.tableCoverScoreInfo.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -258,6 +282,8 @@ namespace Ability_Analysis_Report.Reports {
             base.Tables.Add(this.tableExamineeAnswerStatus);
             this.tableEvaluationItemComment = new EvaluationItemCommentDataTable();
             base.Tables.Add(this.tableEvaluationItemComment);
+            this.tableCoverScoreInfo = new CoverScoreInfoDataTable();
+            base.Tables.Add(this.tableCoverScoreInfo);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -275,6 +301,12 @@ namespace Ability_Analysis_Report.Reports {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeEvaluationItemComment() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeCoverScoreInfo() {
             return false;
         }
         
@@ -342,6 +374,9 @@ namespace Ability_Analysis_Report.Reports {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void EvaluationItemCommentRowChangeEventHandler(object sender, EvaluationItemCommentRowChangeEvent e);
         
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void CoverScoreInfoRowChangeEventHandler(object sender, CoverScoreInfoRowChangeEvent e);
+        
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
@@ -357,7 +392,7 @@ namespace Ability_Analysis_Report.Reports {
             
             private global::System.Data.DataColumn columnTotalQuestionCount;
             
-            private global::System.Data.DataColumn columnCorrentPercentage;
+            private global::System.Data.DataColumn columnCorrectPercentage;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -426,9 +461,9 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CorrentPercentageColumn {
+            public global::System.Data.DataColumn CorrectPercentageColumn {
                 get {
-                    return this.columnCorrentPercentage;
+                    return this.columnCorrectPercentage;
                 }
             }
             
@@ -469,14 +504,14 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExamineeEvaluationItemStatusRow AddExamineeEvaluationItemStatusRow(string ItemCode, string ItemDisplay, string CorrectQuestionCount, string TotalQuestionCount, string CorrentPercentage) {
+            public ExamineeEvaluationItemStatusRow AddExamineeEvaluationItemStatusRow(string ItemCode, string ItemDisplay, string CorrectQuestionCount, string TotalQuestionCount, string CorrectPercentage) {
                 ExamineeEvaluationItemStatusRow rowExamineeEvaluationItemStatusRow = ((ExamineeEvaluationItemStatusRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ItemCode,
                         ItemDisplay,
                         CorrectQuestionCount,
                         TotalQuestionCount,
-                        CorrentPercentage};
+                        CorrectPercentage};
                 rowExamineeEvaluationItemStatusRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowExamineeEvaluationItemStatusRow);
                 return rowExamineeEvaluationItemStatusRow;
@@ -503,7 +538,7 @@ namespace Ability_Analysis_Report.Reports {
                 this.columnItemDisplay = base.Columns["ItemDisplay"];
                 this.columnCorrectQuestionCount = base.Columns["CorrectQuestionCount"];
                 this.columnTotalQuestionCount = base.Columns["TotalQuestionCount"];
-                this.columnCorrentPercentage = base.Columns["CorrentPercentage"];
+                this.columnCorrectPercentage = base.Columns["CorrectPercentage"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -517,8 +552,8 @@ namespace Ability_Analysis_Report.Reports {
                 base.Columns.Add(this.columnCorrectQuestionCount);
                 this.columnTotalQuestionCount = new global::System.Data.DataColumn("TotalQuestionCount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalQuestionCount);
-                this.columnCorrentPercentage = new global::System.Data.DataColumn("CorrentPercentage", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCorrentPercentage);
+                this.columnCorrectPercentage = new global::System.Data.DataColumn("CorrectPercentage", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCorrectPercentage);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1196,6 +1231,323 @@ namespace Ability_Analysis_Report.Reports {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CoverScoreInfoDataTable : global::System.Data.TypedTableBase<CoverScoreInfoRow> {
+            
+            private global::System.Data.DataColumn columnTotalQuestionCount;
+            
+            private global::System.Data.DataColumn columnCorrectQuestionCount;
+            
+            private global::System.Data.DataColumn columnWrongQuestionCount;
+            
+            private global::System.Data.DataColumn columnCorrectPercentage;
+            
+            private global::System.Data.DataColumn columnScore;
+            
+            private global::System.Data.DataColumn columnExamResult;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CoverScoreInfoDataTable() {
+                this.TableName = "CoverScoreInfo";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal CoverScoreInfoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected CoverScoreInfoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TotalQuestionCountColumn {
+                get {
+                    return this.columnTotalQuestionCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CorrectQuestionCountColumn {
+                get {
+                    return this.columnCorrectQuestionCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WrongQuestionCountColumn {
+                get {
+                    return this.columnWrongQuestionCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CorrectPercentageColumn {
+                get {
+                    return this.columnCorrectPercentage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ScoreColumn {
+                get {
+                    return this.columnScore;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ExamResultColumn {
+                get {
+                    return this.columnExamResult;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CoverScoreInfoRow this[int index] {
+                get {
+                    return ((CoverScoreInfoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CoverScoreInfoRowChangeEventHandler CoverScoreInfoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CoverScoreInfoRowChangeEventHandler CoverScoreInfoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CoverScoreInfoRowChangeEventHandler CoverScoreInfoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CoverScoreInfoRowChangeEventHandler CoverScoreInfoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddCoverScoreInfoRow(CoverScoreInfoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CoverScoreInfoRow AddCoverScoreInfoRow(string TotalQuestionCount, string CorrectQuestionCount, string WrongQuestionCount, string CorrectPercentage, string Score, string ExamResult) {
+                CoverScoreInfoRow rowCoverScoreInfoRow = ((CoverScoreInfoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        TotalQuestionCount,
+                        CorrectQuestionCount,
+                        WrongQuestionCount,
+                        CorrectPercentage,
+                        Score,
+                        ExamResult};
+                rowCoverScoreInfoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCoverScoreInfoRow);
+                return rowCoverScoreInfoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CoverScoreInfoDataTable cln = ((CoverScoreInfoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CoverScoreInfoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnTotalQuestionCount = base.Columns["TotalQuestionCount"];
+                this.columnCorrectQuestionCount = base.Columns["CorrectQuestionCount"];
+                this.columnWrongQuestionCount = base.Columns["WrongQuestionCount"];
+                this.columnCorrectPercentage = base.Columns["CorrectPercentage"];
+                this.columnScore = base.Columns["Score"];
+                this.columnExamResult = base.Columns["ExamResult"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnTotalQuestionCount = new global::System.Data.DataColumn("TotalQuestionCount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalQuestionCount);
+                this.columnCorrectQuestionCount = new global::System.Data.DataColumn("CorrectQuestionCount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCorrectQuestionCount);
+                this.columnWrongQuestionCount = new global::System.Data.DataColumn("WrongQuestionCount", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWrongQuestionCount);
+                this.columnCorrectPercentage = new global::System.Data.DataColumn("CorrectPercentage", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCorrectPercentage);
+                this.columnScore = new global::System.Data.DataColumn("Score", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnScore);
+                this.columnExamResult = new global::System.Data.DataColumn("ExamResult", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExamResult);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CoverScoreInfoRow NewCoverScoreInfoRow() {
+                return ((CoverScoreInfoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CoverScoreInfoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CoverScoreInfoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CoverScoreInfoRowChanged != null)) {
+                    this.CoverScoreInfoRowChanged(this, new CoverScoreInfoRowChangeEvent(((CoverScoreInfoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CoverScoreInfoRowChanging != null)) {
+                    this.CoverScoreInfoRowChanging(this, new CoverScoreInfoRowChangeEvent(((CoverScoreInfoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CoverScoreInfoRowDeleted != null)) {
+                    this.CoverScoreInfoRowDeleted(this, new CoverScoreInfoRowChangeEvent(((CoverScoreInfoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CoverScoreInfoRowDeleting != null)) {
+                    this.CoverScoreInfoRowDeleting(this, new CoverScoreInfoRowChangeEvent(((CoverScoreInfoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveCoverScoreInfoRow(CoverScoreInfoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet_Python ds = new DataSet_Python();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CoverScoreInfoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class ExamineeEvaluationItemStatusRow : global::System.Data.DataRow {
@@ -1275,17 +1627,17 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CorrentPercentage {
+            public string CorrectPercentage {
                 get {
                     try {
-                        return ((string)(this[this.tableExamineeEvaluationItemStatus.CorrentPercentageColumn]));
+                        return ((string)(this[this.tableExamineeEvaluationItemStatus.CorrectPercentageColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'ExamineeEvaluationItemStatus\' 中資料行 \'CorrentPercentage\' 的值是 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("資料表 \'ExamineeEvaluationItemStatus\' 中資料行 \'CorrectPercentage\' 的值是 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableExamineeEvaluationItemStatus.CorrentPercentageColumn] = value;
+                    this[this.tableExamineeEvaluationItemStatus.CorrectPercentageColumn] = value;
                 }
             }
             
@@ -1339,14 +1691,14 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCorrentPercentageNull() {
-                return this.IsNull(this.tableExamineeEvaluationItemStatus.CorrentPercentageColumn);
+            public bool IsCorrectPercentageNull() {
+                return this.IsNull(this.tableExamineeEvaluationItemStatus.CorrectPercentageColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCorrentPercentageNull() {
-                this[this.tableExamineeEvaluationItemStatus.CorrentPercentageColumn] = global::System.Convert.DBNull;
+            public void SetCorrectPercentageNull() {
+                this[this.tableExamineeEvaluationItemStatus.CorrectPercentageColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1549,6 +1901,189 @@ namespace Ability_Analysis_Report.Reports {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CoverScoreInfoRow : global::System.Data.DataRow {
+            
+            private CoverScoreInfoDataTable tableCoverScoreInfo;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal CoverScoreInfoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCoverScoreInfo = ((CoverScoreInfoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TotalQuestionCount {
+                get {
+                    try {
+                        return ((string)(this[this.tableCoverScoreInfo.TotalQuestionCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'CoverScoreInfo\' 中資料行 \'TotalQuestionCount\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableCoverScoreInfo.TotalQuestionCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CorrectQuestionCount {
+                get {
+                    try {
+                        return ((string)(this[this.tableCoverScoreInfo.CorrectQuestionCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'CoverScoreInfo\' 中資料行 \'CorrectQuestionCount\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableCoverScoreInfo.CorrectQuestionCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string WrongQuestionCount {
+                get {
+                    try {
+                        return ((string)(this[this.tableCoverScoreInfo.WrongQuestionCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'CoverScoreInfo\' 中資料行 \'WrongQuestionCount\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableCoverScoreInfo.WrongQuestionCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CorrectPercentage {
+                get {
+                    try {
+                        return ((string)(this[this.tableCoverScoreInfo.CorrectPercentageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'CoverScoreInfo\' 中資料行 \'CorrectPercentage\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableCoverScoreInfo.CorrectPercentageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Score {
+                get {
+                    try {
+                        return ((string)(this[this.tableCoverScoreInfo.ScoreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'CoverScoreInfo\' 中資料行 \'Score\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableCoverScoreInfo.ScoreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ExamResult {
+                get {
+                    try {
+                        return ((string)(this[this.tableCoverScoreInfo.ExamResultColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("資料表 \'CoverScoreInfo\' 中資料行 \'ExamResult\' 的值是 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableCoverScoreInfo.ExamResultColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTotalQuestionCountNull() {
+                return this.IsNull(this.tableCoverScoreInfo.TotalQuestionCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTotalQuestionCountNull() {
+                this[this.tableCoverScoreInfo.TotalQuestionCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCorrectQuestionCountNull() {
+                return this.IsNull(this.tableCoverScoreInfo.CorrectQuestionCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCorrectQuestionCountNull() {
+                this[this.tableCoverScoreInfo.CorrectQuestionCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWrongQuestionCountNull() {
+                return this.IsNull(this.tableCoverScoreInfo.WrongQuestionCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWrongQuestionCountNull() {
+                this[this.tableCoverScoreInfo.WrongQuestionCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCorrectPercentageNull() {
+                return this.IsNull(this.tableCoverScoreInfo.CorrectPercentageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCorrectPercentageNull() {
+                this[this.tableCoverScoreInfo.CorrectPercentageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsScoreNull() {
+                return this.IsNull(this.tableCoverScoreInfo.ScoreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetScoreNull() {
+                this[this.tableCoverScoreInfo.ScoreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsExamResultNull() {
+                return this.IsNull(this.tableCoverScoreInfo.ExamResultColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetExamResultNull() {
+                this[this.tableCoverScoreInfo.ExamResultColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1636,6 +2171,40 @@ namespace Ability_Analysis_Report.Reports {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public EvaluationItemCommentRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class CoverScoreInfoRowChangeEvent : global::System.EventArgs {
+            
+            private CoverScoreInfoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CoverScoreInfoRowChangeEvent(CoverScoreInfoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CoverScoreInfoRow Row {
                 get {
                     return this.eventRow;
                 }

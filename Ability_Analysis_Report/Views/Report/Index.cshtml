@@ -14,13 +14,14 @@
         </div>
         <div class="col-lg-12">
             <h4>This is Reportviewer to image</h4>
-            @foreach (var image in Model)
-            {
-                <div class="col-lg-12 text-center">
-                    <img src="@image" style="width: 100%;" />
-                </div>
-            }
         </div>
+        @foreach (var image in Model)
+        {
+            <div class="col-lg-12 text-center">
+                <img src="@image" style="width: 100%;" />
+            </div>
+        }
     </div>
+
 </body>
 

@@ -76,22 +76,78 @@ namespace Ability_Analysis_Report.Controllers
             reportViewer.ProcessingMode = ProcessingMode.Local;
             reportViewer.LocalReport.ReportPath = $"{Request.MapPath(Request.ApplicationPath)}Reports\\Report_Python.rdlc";
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_ExamineeEvaluationItemStatus", GetExamineeEvaluationItemStatuss()));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_EvaluationItemComment", GetEvaluationItemComment()));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_CoverScoreInfo", GetCoverScoreInfo()));
+
+            // 如果想調整答題狀況的表格請特別注意，目前做法
+            // 第 1 個資料集只給 1~17 題答案
+            // 第 2 個資料集給 18~34 題答案
+            // 第 3 個資料集給 35~50 題答案
+            // 寬度變動會影響結果！！！
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_ExamineeAnswerStatus_1_17", GetExamineeAnswerStatuses().Take(17)));
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_ExamineeAnswerStatus_18_34", GetExamineeAnswerStatuses().Skip(17).Take(17)));
             reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_ExamineeAnswerStatus_35_50", GetExamineeAnswerStatuses().Skip(34).Take(16)));
-            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_EvaluationItemComment", GetEvaluationItemComment()));
 
-            
+
             ReportParameterCollection parameters = new ReportParameterCollection();
 
             // 允許外部圖片
             reportViewer.LocalReport.EnableExternalImages = true;
-            //加入圖片參數
+            // 加入圖片參數
             // 用路徑給，RDLC 那邊配置的運算式 => ="file:\\\" + Parameters!importImage.Value
-            parameters.Add(new ReportParameter("ImageRadar", HostingEnvironment.MapPath("~\\RadarImages\\testChartJs_Radar2.jpg")));
+            parameters.Add(new ReportParameter("ImageRadar", HostingEnvironment.MapPath("~\\RadarImages\\test.jpg")));
+            // 報告中個人資訊參數
+            parameters.Add(new ReportParameter("ExamDate", DateTime.Now.ToString("yyyy/MM/dd")));
+            parameters.Add(new ReportParameter("ExamineeName", "韓羽伶"));
+            parameters.Add(new ReportParameter("ExamineeSchool", "明新科大"));
+            parameters.Add(new ReportParameter("ExamineeID", "A123456789"));
             reportViewer.LocalReport.SetParameters(parameters);
 
             return reportViewer;
+        }
+
+        public IEnumerable<ViewData_CoverScoreInfo> GetCoverScoreInfo()
+        {
+            var result = new List<ViewData_CoverScoreInfo>();
+
+            var allItem = GetEvaluationItems();
+            var examinessAnswers = GetExamineeAnswers();
+            var basic_EvaluationQuestions = GetEvaluationQuestions();
+
+            
+            foreach (var item in allItem)
+            {
+                var temp = new ViewData_CoverScoreInfo();
+
+                var totalQuestionCount = basic_EvaluationQuestions.Count();
+                temp.TotalQuestionCount = totalQuestionCount;
+                // 找出同 Code 的題目
+                var sameCodeQuestions = basic_EvaluationQuestions.Where(x => x.ItemCode == item.Code);
+                // 找出 User 答對的題目數量    
+                var correctQuestionCount = sameCodeQuestions.Where(x =>
+                {
+                    var question = examinessAnswers.FirstOrDefault(exam => exam.QuestionNum == x.QuestionNum);
+                    if (question == null)
+                        return false;
+
+                    if (question.Answer != x.StandardAnswer)
+                        return false;
+
+                    return true;
+
+                })
+                .Count();
+                temp.CorrectQuestionCount = correctQuestionCount;
+                temp.WrongQuestionCount = totalQuestionCount - correctQuestionCount;
+                temp.CorrectPercentage = ((double)correctQuestionCount / sameCodeQuestions.Count()) * 100;
+                var score = (100 / totalQuestionCount) * correctQuestionCount;
+                temp.Score = score;
+                temp.ExamResult = score > 60 ? "合格" : "不合格";
+
+                result.Add(temp);
+            }
+
+            return result;
         }
 
         public IEnumerable<ViewData_EvaluationItemComment> GetEvaluationItemComment()
@@ -125,11 +181,11 @@ namespace Ability_Analysis_Report.Controllers
         /// <summary> 評定項目 </summary>        
         public IEnumerable<ViewData_ExamineeEvaluationItemStatus> GetExamineeEvaluationItemStatuss()
         {
+            var result = new List<ViewData_ExamineeEvaluationItemStatus>();
+
             var allItem = GetEvaluationItems();
             var examinessAnswers = GetExamineeAnswers();
             var basic_EvaluationQuestions = GetEvaluationQuestions();
-
-            var result = new List<ViewData_ExamineeEvaluationItemStatus>();
 
             foreach (var item in allItem)
             {
@@ -204,7 +260,7 @@ namespace Ability_Analysis_Report.Controllers
         {
             var result = new List<Basic_EvaluationQuestion>();
 
-            var answerArray = new List<string>() { "A", "B", "C", "D", "*" };
+            var answerArray = new List<string>() { "A", "B", "C", "D", "-" };
             var random = new Random(Guid.NewGuid().GetHashCode());
 
             // AA 10 題，剩下 8 題
@@ -301,7 +357,7 @@ namespace Ability_Analysis_Report.Controllers
         {
             var result = new List<Data_ExamineeAnswer>();
 
-            var answerArray = new List<string>() { "A", "B", "C", "D", "*" };
+            var answerArray = new List<string>() { "A", "B", "C", "D", "-" };
             var random = new Random(new Guid().GetHashCode());
 
             // AA 10 題，剩下 8 題
@@ -392,6 +448,22 @@ namespace Ability_Analysis_Report.Controllers
             #endregion
 
             return result;
+
+        }
+
+        public class ViewData_CoverScoreInfo
+        {
+            public int TotalQuestionCount { get; set; }
+
+            public int CorrectQuestionCount { get; set; }
+
+            public int WrongQuestionCount { get; set; }
+
+            public double CorrectPercentage { get; set; }
+
+            public double Score { get; set; }
+
+            public string ExamResult { get; set; }
 
         }
 
