@@ -144,6 +144,10 @@
     <Content Include="Content\Site.css" />
     <Content Include="RadarImages\test.jpg" />
     <Content Include="RadarImages\testChartJs_Radar2.jpg" />
+    <Content Include="Reports\Images\arrow.PNG" />
+    <Content Include="Reports\Images\core_value.jpg" />
+    <Content Include="Reports\Images\introduction.jpg" />
+    <Content Include="Reports\Images\taiwan.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Reports\DataSet_Python.xsc">
