@@ -392,8 +392,6 @@ namespace Ability_Analysis_Report.Reports {
             
             private global::System.Data.DataColumn columnTotalQuestionCount;
             
-            private global::System.Data.DataColumn columnCorrectPercentage;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ExamineeEvaluationItemStatusDataTable() {
@@ -461,14 +459,6 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CorrectPercentageColumn {
-                get {
-                    return this.columnCorrectPercentage;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -504,14 +494,13 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ExamineeEvaluationItemStatusRow AddExamineeEvaluationItemStatusRow(string ItemCode, string ItemDisplay, string CorrectQuestionCount, string TotalQuestionCount, string CorrectPercentage) {
+            public ExamineeEvaluationItemStatusRow AddExamineeEvaluationItemStatusRow(string ItemCode, string ItemDisplay, string CorrectQuestionCount, string TotalQuestionCount) {
                 ExamineeEvaluationItemStatusRow rowExamineeEvaluationItemStatusRow = ((ExamineeEvaluationItemStatusRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ItemCode,
                         ItemDisplay,
                         CorrectQuestionCount,
-                        TotalQuestionCount,
-                        CorrectPercentage};
+                        TotalQuestionCount};
                 rowExamineeEvaluationItemStatusRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowExamineeEvaluationItemStatusRow);
                 return rowExamineeEvaluationItemStatusRow;
@@ -538,7 +527,6 @@ namespace Ability_Analysis_Report.Reports {
                 this.columnItemDisplay = base.Columns["ItemDisplay"];
                 this.columnCorrectQuestionCount = base.Columns["CorrectQuestionCount"];
                 this.columnTotalQuestionCount = base.Columns["TotalQuestionCount"];
-                this.columnCorrectPercentage = base.Columns["CorrectPercentage"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -552,8 +540,6 @@ namespace Ability_Analysis_Report.Reports {
                 base.Columns.Add(this.columnCorrectQuestionCount);
                 this.columnTotalQuestionCount = new global::System.Data.DataColumn("TotalQuestionCount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalQuestionCount);
-                this.columnCorrectPercentage = new global::System.Data.DataColumn("CorrectPercentage", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCorrectPercentage);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1243,8 +1229,6 @@ namespace Ability_Analysis_Report.Reports {
             
             private global::System.Data.DataColumn columnWrongQuestionCount;
             
-            private global::System.Data.DataColumn columnCorrectPercentage;
-            
             private global::System.Data.DataColumn columnScore;
             
             private global::System.Data.DataColumn columnExamResult;
@@ -1308,14 +1292,6 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CorrectPercentageColumn {
-                get {
-                    return this.columnCorrectPercentage;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn ScoreColumn {
                 get {
                     return this.columnScore;
@@ -1367,13 +1343,12 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CoverScoreInfoRow AddCoverScoreInfoRow(string TotalQuestionCount, string CorrectQuestionCount, string WrongQuestionCount, string CorrectPercentage, string Score, string ExamResult) {
+            public CoverScoreInfoRow AddCoverScoreInfoRow(string TotalQuestionCount, string CorrectQuestionCount, string WrongQuestionCount, string Score, string ExamResult) {
                 CoverScoreInfoRow rowCoverScoreInfoRow = ((CoverScoreInfoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TotalQuestionCount,
                         CorrectQuestionCount,
                         WrongQuestionCount,
-                        CorrectPercentage,
                         Score,
                         ExamResult};
                 rowCoverScoreInfoRow.ItemArray = columnValuesArray;
@@ -1401,7 +1376,6 @@ namespace Ability_Analysis_Report.Reports {
                 this.columnTotalQuestionCount = base.Columns["TotalQuestionCount"];
                 this.columnCorrectQuestionCount = base.Columns["CorrectQuestionCount"];
                 this.columnWrongQuestionCount = base.Columns["WrongQuestionCount"];
-                this.columnCorrectPercentage = base.Columns["CorrectPercentage"];
                 this.columnScore = base.Columns["Score"];
                 this.columnExamResult = base.Columns["ExamResult"];
             }
@@ -1415,8 +1389,6 @@ namespace Ability_Analysis_Report.Reports {
                 base.Columns.Add(this.columnCorrectQuestionCount);
                 this.columnWrongQuestionCount = new global::System.Data.DataColumn("WrongQuestionCount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWrongQuestionCount);
-                this.columnCorrectPercentage = new global::System.Data.DataColumn("CorrectPercentage", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCorrectPercentage);
                 this.columnScore = new global::System.Data.DataColumn("Score", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnScore);
                 this.columnExamResult = new global::System.Data.DataColumn("ExamResult", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1627,22 +1599,6 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CorrectPercentage {
-                get {
-                    try {
-                        return ((string)(this[this.tableExamineeEvaluationItemStatus.CorrectPercentageColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'ExamineeEvaluationItemStatus\' 中資料行 \'CorrectPercentage\' 的值是 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableExamineeEvaluationItemStatus.CorrectPercentageColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsItemCodeNull() {
                 return this.IsNull(this.tableExamineeEvaluationItemStatus.ItemCodeColumn);
             }
@@ -1687,18 +1643,6 @@ namespace Ability_Analysis_Report.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTotalQuestionCountNull() {
                 this[this.tableExamineeEvaluationItemStatus.TotalQuestionCountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCorrectPercentageNull() {
-                return this.IsNull(this.tableExamineeEvaluationItemStatus.CorrectPercentageColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCorrectPercentageNull() {
-                this[this.tableExamineeEvaluationItemStatus.CorrectPercentageColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1964,22 +1908,6 @@ namespace Ability_Analysis_Report.Reports {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string CorrectPercentage {
-                get {
-                    try {
-                        return ((string)(this[this.tableCoverScoreInfo.CorrectPercentageColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("資料表 \'CoverScoreInfo\' 中資料行 \'CorrectPercentage\' 的值是 DBNull。", e);
-                    }
-                }
-                set {
-                    this[this.tableCoverScoreInfo.CorrectPercentageColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Score {
                 get {
                     try {
@@ -2044,18 +1972,6 @@ namespace Ability_Analysis_Report.Reports {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetWrongQuestionCountNull() {
                 this[this.tableCoverScoreInfo.WrongQuestionCountColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCorrectPercentageNull() {
-                return this.IsNull(this.tableCoverScoreInfo.CorrectPercentageColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCorrectPercentageNull() {
-                this[this.tableCoverScoreInfo.CorrectPercentageColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

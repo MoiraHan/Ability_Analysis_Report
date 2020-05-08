@@ -33,10 +33,6 @@
           <DataField>TotalQuestionCount</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CorrectPercentage">
-          <DataField>CorrectPercentage</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet_Python</rd:DataSetName>
@@ -175,10 +171,6 @@
         </Field>
         <Field Name="WrongQuestionCount">
           <DataField>WrongQuestionCount</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CorrectPercentage">
-          <DataField>CorrectPercentage</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Score">
@@ -611,7 +603,7 @@
                                         <Paragraph>
                                           <TextRuns>
                                             <TextRun>
-                                              <Value>=Format(Fields!CorrectPercentage.Value, "0\%")</Value>
+                                              <Value>=Format(Fields!CorrectQuestionCount.Value / Fields!TotalQuestionCount.Value * 100,"0.#\%")</Value>
                                               <Style>
                                                 <FontFamily>微軟正黑體</FontFamily>
                                               </Style>
@@ -1881,7 +1873,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>各能力面相表現</Value>
+                            <Value>各能力面向表現</Value>
                             <Style>
                               <FontFamily>微軟正黑體</FontFamily>
                               <FontSize>13pt</FontSize>
@@ -3121,7 +3113,7 @@
                                 <Paragraph>
                                   <TextRuns>
                                     <TextRun>
-                                      <Value>=Format(Fields!CorrectPercentage.Value, "0\%")</Value>
+                                      <Value>=Format(Fields!CorrectQuestionCount.Value / Fields!TotalQuestionCount.Value * 100,"0.#\%")</Value>
                                       <Style>
                                         <FontFamily>微軟正黑體</FontFamily>
                                       </Style>

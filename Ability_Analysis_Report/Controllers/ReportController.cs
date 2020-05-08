@@ -20,6 +20,7 @@ namespace Ability_Analysis_Report.Controllers
         public ActionResult Index()
         {
             var reportViewer = GetReport();
+
             //呼叫 ReportViewer.LoadReport 的 Render function，將資料轉成想要轉換的格式，並產生成Byte資料
             //轉成 Image ，格式為 image/Tif ( tif 是多張圖，瀏覽器不支援直接預覽，所以會變成下載 )
             byte[] tBytes = reportViewer.LocalReport.Render("Image");
@@ -106,6 +107,7 @@ namespace Ability_Analysis_Report.Controllers
             return reportViewer;
         }
 
+        /// <summary> 封面分數資料 ( 資料集只能接受清單型態，所以雖然只有一筆還是回傳清單型態 ) </summary> 
         public IEnumerable<ViewData_CoverScoreInfo> GetCoverScoreInfo()
         {
             var result = new List<ViewData_CoverScoreInfo>();
@@ -114,42 +116,39 @@ namespace Ability_Analysis_Report.Controllers
             var examinessAnswers = GetExamineeAnswers();
             var basic_EvaluationQuestions = GetEvaluationQuestions();
 
-            
-            foreach (var item in allItem)
+
+            var temp = new ViewData_CoverScoreInfo();
+            var totalQuestionCount = basic_EvaluationQuestions.Count();
+            temp.TotalQuestionCount = totalQuestionCount;
+
+            // 找出 User 答對的題目數量    
+            var correctQuestionCount = basic_EvaluationQuestions.Where(x =>
             {
-                var temp = new ViewData_CoverScoreInfo();
+                var question = examinessAnswers.FirstOrDefault(exam => exam.QuestionNum == x.QuestionNum);
+                if (question == null)
+                    return false;
 
-                var totalQuestionCount = basic_EvaluationQuestions.Count();
-                temp.TotalQuestionCount = totalQuestionCount;
-                // 找出同 Code 的題目
-                var sameCodeQuestions = basic_EvaluationQuestions.Where(x => x.ItemCode == item.Code);
-                // 找出 User 答對的題目數量    
-                var correctQuestionCount = sameCodeQuestions.Where(x =>
-                {
-                    var question = examinessAnswers.FirstOrDefault(exam => exam.QuestionNum == x.QuestionNum);
-                    if (question == null)
-                        return false;
+                if (question.Answer != x.StandardAnswer)
+                    return false;
 
-                    if (question.Answer != x.StandardAnswer)
-                        return false;
+                return true;
 
-                    return true;
+            })
+            .Count();
 
-                })
-                .Count();
-                temp.CorrectQuestionCount = correctQuestionCount;
-                temp.WrongQuestionCount = totalQuestionCount - correctQuestionCount;
-                temp.CorrectPercentage = ((double)correctQuestionCount / sameCodeQuestions.Count()) * 100;
-                var score = (100 / totalQuestionCount) * correctQuestionCount;
-                temp.Score = score;
-                temp.ExamResult = score > 60 ? "合格" : "不合格";
+            temp.CorrectQuestionCount = correctQuestionCount;
+            temp.WrongQuestionCount = totalQuestionCount - correctQuestionCount;
+            var score = (100 / totalQuestionCount) * correctQuestionCount;
+            temp.Score = score;
+            temp.ExamResult = score > 70 ? "合格" : "不合格";
 
-                result.Add(temp);
-            }
+            result.Add(temp);
+
 
             return result;
         }
 
+        /// <summary> 各能力面向表現 </summary> 
         public IEnumerable<ViewData_EvaluationItemComment> GetEvaluationItemComment()
         {
             var allItem = GetEvaluationItems().ToList();
@@ -157,9 +156,9 @@ namespace Ability_Analysis_Report.Controllers
             var result = new List<ViewData_EvaluationItemComment>();
 
             var commentArray = new List<string>() {
-            "表現卓越，顯示您已具備該向度的堅強實力。",
-            "表現不錯，有挑戰高分的實力。",
-            "表現太差，回去多練練。"
+                "表現卓越，顯示您已具備該向度的堅強實力。",
+                "表現不錯，有挑戰高分的實力。",
+                "表現太差，回去多練練。"
             };
 
             var random = new Random(Guid.NewGuid().GetHashCode());
@@ -171,7 +170,7 @@ namespace Ability_Analysis_Report.Controllers
                 {
                     SeqNo = i,
                     Display = item.Display,
-                    Comment = commentArray[random.Next(0, 2)],
+                    Comment = commentArray[random.Next(0, 3)],
                 });
             }
 
@@ -210,10 +209,8 @@ namespace Ability_Analysis_Report.Controllers
                 })
                 .Count();
 
-                double correntPercentage = ((double)correctQuestionCount / sameCodeQuestions.Count()) * 100;
                 temp.CorrectQuestionCount = correctQuestionCount;
                 temp.TotalQuestionCount = sameCodeQuestions.Count();
-                temp.CorrentPercentage = correntPercentage;
 
                 result.Add(temp);
             }
@@ -243,6 +240,7 @@ namespace Ability_Analysis_Report.Controllers
             return result;
         }
 
+        /// <summary> 取得所有能力項目 </summary> 
         public IEnumerable<Basic_EvaluationItem> GetEvaluationItems()
         {
             return new List<Basic_EvaluationItem>()
@@ -256,11 +254,12 @@ namespace Ability_Analysis_Report.Controllers
             };
         }
 
+        /// <summary> 取得所有題目 </summary> 
         public IEnumerable<Basic_EvaluationQuestion> GetEvaluationQuestions()
         {
             var result = new List<Basic_EvaluationQuestion>();
 
-            var answerArray = new List<string>() { "A", "B", "C", "D", "-" };
+            var answerArray = new List<string>() { "A", "B", "C", "D" };
             var random = new Random(Guid.NewGuid().GetHashCode());
 
             // AA 10 題，剩下 8 題
@@ -353,11 +352,12 @@ namespace Ability_Analysis_Report.Controllers
             return result;
         }
 
+        /// <summary> 取得考生答案 </summary> 
         public IEnumerable<Data_ExamineeAnswer> GetExamineeAnswers()
         {
             var result = new List<Data_ExamineeAnswer>();
 
-            var answerArray = new List<string>() { "A", "B", "C", "D", "-" };
+            var answerArray = new List<string>() { "A", "B", "C", "D", "*" };
             var random = new Random(new Guid().GetHashCode());
 
             // AA 10 題，剩下 8 題
@@ -369,7 +369,7 @@ namespace Ability_Analysis_Report.Controllers
                 result.Add(new Data_ExamineeAnswer()
                 {
                     QuestionNum = i,
-                    Answer = answerArray[random.Next(0, 4)],
+                    Answer = answerArray[random.Next(0, 5)],
                     PersonalID = "A123456789"
                 });
 
@@ -383,7 +383,7 @@ namespace Ability_Analysis_Report.Controllers
                 result.Add(new Data_ExamineeAnswer()
                 {
                     QuestionNum = i,
-                    Answer = answerArray[random.Next(0, 4)],
+                    Answer = answerArray[random.Next(0, 5)],
                     PersonalID = "A123456789"
                 });
 
@@ -397,7 +397,7 @@ namespace Ability_Analysis_Report.Controllers
                 result.Add(new Data_ExamineeAnswer()
                 {
                     QuestionNum = i,
-                    Answer = answerArray[random.Next(0, 4)],
+                    Answer = answerArray[random.Next(0, 5)],
                     PersonalID = "A123456789"
                 });
 
@@ -411,7 +411,7 @@ namespace Ability_Analysis_Report.Controllers
                 result.Add(new Data_ExamineeAnswer()
                 {
                     QuestionNum = i,
-                    Answer = answerArray[random.Next(0, 4)],
+                    Answer = answerArray[random.Next(0, 5)],
                     PersonalID = "A123456789"
                 });
 
@@ -425,7 +425,7 @@ namespace Ability_Analysis_Report.Controllers
                 result.Add(new Data_ExamineeAnswer()
                 {
                     QuestionNum = i,
-                    Answer = answerArray[random.Next(0, 4)],
+                    Answer = answerArray[random.Next(0, 5)],
                     PersonalID = "A123456789"
                 });
 
@@ -439,7 +439,7 @@ namespace Ability_Analysis_Report.Controllers
                 result.Add(new Data_ExamineeAnswer()
                 {
                     QuestionNum = i,
-                    Answer = answerArray[random.Next(0, 4)],
+                    Answer = answerArray[random.Next(0, 5)],
                     PersonalID = "A123456789"
                 });
 
@@ -458,8 +458,6 @@ namespace Ability_Analysis_Report.Controllers
             public int CorrectQuestionCount { get; set; }
 
             public int WrongQuestionCount { get; set; }
-
-            public double CorrectPercentage { get; set; }
 
             public double Score { get; set; }
 
@@ -480,7 +478,6 @@ namespace Ability_Analysis_Report.Controllers
             public string ItemDisplay { get; set; }
             public int CorrectQuestionCount { get; set; }
             public int TotalQuestionCount { get; set; }
-            public double CorrentPercentage { get; set; }
         }
 
         public class ViewData_ExamineeAnswerStatus
