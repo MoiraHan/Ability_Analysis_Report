@@ -19,6 +19,21 @@ namespace Ability_Analysis_Report.Controllers
         // GET: Report
         public ActionResult Index()
         {
+            return View();
+        }
+
+        public ActionResult ReportVer2_RDLC()
+        {
+            return View();
+        }
+
+        public ActionResult ReportVer2_HTML()
+        {
+            return View();
+        }
+
+        public ActionResult ReportVer1_RDLC()
+        {
             var reportViewer = GetReport();
 
             //呼叫 ReportViewer.LoadReport 的 Render function，將資料轉成想要轉換的格式，並產生成Byte資料
@@ -60,7 +75,7 @@ namespace Ability_Analysis_Report.Controllers
 
             return View(result);
         }
-
+        
         public FileResult ReportToPDF()
         {
             var reportViewer = GetReport();

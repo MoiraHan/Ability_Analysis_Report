@@ -1,0 +1,51 @@
+﻿
+/* 讓整塊測驗人資訊部分垂直置中 */
+#cover_ExamInfoArea {
+    padding-top: 60px;
+}
+
+.divExamInfo_DataArea_Bottom {
+    margin-top: 20px;
+}
+
+#cover_ExamInfo_Calendar_Icon {
+    padding-left: 20px;
+}
+
+#cover_ExamInfo_User_Icon {
+    padding-left: 18px;
+}
+
+/* 讓測驗人資訊文字垂直置中 */
+.divExamInfo_Data {
+    padding-top: 4px;
+}
+
+#spanExamInfo_Date {
+    font-size: 18px;
+}
+
+
+@media (max-width: 767px) {
+    .divExamInfo_DataArea_Top {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .divExamInfo_DataArea_Top {
+ 
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .divExamInfo_DataArea_Top {
+      
+    }
+}
+
+@media (min-width: 1200px) {
+    .divExamInfo_DataArea_Top {
+       
+    }
+}

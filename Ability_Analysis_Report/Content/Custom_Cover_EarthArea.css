@@ -1,0 +1,53 @@
+﻿#earthImageArea {
+    height: 200px;
+}
+
+#earthImage {
+    position: absolute;
+    z-index: 100;
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    #earthBackLine_blackLine {
+        width: 730px;
+        position: absolute;
+        z-index: 10;
+        bottom: 20px;
+        right: 120px;
+    }
+
+    #earthBackLine_grayLine {
+        width: 730px;
+        position: absolute;
+        z-index: 10;
+        bottom: 8px;
+        right: 90px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #earthBackLine_blackLine {
+        width: 900px;
+        position: absolute;
+        z-index: 10;
+        bottom: 20px;
+        right: 140px;
+    }
+
+    #earthBackLine_grayLine {
+        width: 900px;
+        position: absolute;
+        z-index: 10;
+        bottom: 8px;
+        right: 110px;
+    }
+
+}

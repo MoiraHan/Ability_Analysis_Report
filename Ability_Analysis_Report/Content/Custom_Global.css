@@ -1,0 +1,11 @@
+﻿hr.blackLine {
+    border: 2px solid black;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+hr.grayLine {
+    border: 2px solid gray;
+    border-radius: 5px;
+    z-index: 10;
+}

@@ -1,0 +1,103 @@
+﻿/* class 為 form-control 的 input，不限制 max-width */
+input.form-control {
+    max-width: none;
+    width: 100%;
+}
+
+/* class 為 form-control 的 input，不限制 max-width */
+select.form-control {
+    max-width: none;
+    width: 100%;
+}
+
+/* 提供 input group 的 label 顏色 */
+.input-group-addon.info {
+    color: rgb(255, 255, 255);
+    background-color: rgb(90, 191, 221);
+    border-color: rgb(90, 191, 221);
+}
+
+/* 將 div 且 class 為 input-group 的設定對下的間距 */
+div.input-group {
+    margin-bottom: 10px;
+}
+
+/* table 的 標題一律不准換行、並將底色顏色設為粉紅色、字體設為白色 */
+th {
+    white-space: nowrap;
+    color: rgb(255, 255, 255);
+    background-color: rgb(249, 159, 159);
+}
+
+/* 
+    滑鼠移到 table 上的 tr，調整 td 樣式
+    :hover Selects links on mouse over
+    CSS 選擇器是 CSS 規則的一部分。它能讓你選定要調整哪個（或哪些）元素的樣式
+*/
+table tr:hover td {
+    background-color: rgb(209, 233, 255);
+    /*cursor: pointer;*/
+}
+
+/* 包含 container 和 moira-search 兩個 class 的 div */
+div.container.moira-search {
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* 包含 container 和 moira-functionbar 兩個 class 的 div */
+div.container.moira-functionbar {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+/* readonly 的 input 樣式 */
+input:read-only {
+    cursor: default;
+    background-color: #ccc;
+}
+
+/* Extra small devices (phones, less than 768px ) */
+/* Small devices (tablets, 768px and up) */
+/* Medium devices (desktops, 992px and up) */
+/* Large devices (large desktops, 1200px and up) */
+@media (max-width: 768px) {
+    /* table 超過螢幕畫面會有 scroll bar */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    /* table 超過螢幕畫面會有 scroll bar */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: 992px) {
+   
+}
+
+@media (min-width: 1200px) {
+  
+}
+
+@media print {
+    body {
+        padding-top: 0px !important;
+    }
+
+    @page {
+        margin: 6.5mm;
+    }
+}

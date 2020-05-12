@@ -1,27 +1,11 @@
-﻿@model  IEnumerable<string>
-
+﻿
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-
-<body>
-    <div class="container">
-        <div class="col-lg-12">
-            <a href="@Url.Action("ReportToPDF")">Download To PDF</a>
-        </div>
-        <div class="col-lg-12">
-            <h4>This is Reportviewer to image</h4>
-        </div>
-        @foreach (var image in Model)
-        {
-            <div class="col-lg-12 text-center">
-                <img src="@image" style="width: 100%;" />
-            </div>
-        }
-    </div>
-
-</body>
-
+    <ul>
+        <li>@Html.ActionLink("ReportVer1_RDLC", "ReportVer1_RDLC")</li>
+        <li>@Html.ActionLink("ReportVer2_HTML", "ReportVer2_HTML")</li>
+        <li>@Html.ActionLink("ReportVer2_RDLC", "ReportVer2_RDLC")</li>
+    </ul>
