@@ -16,36 +16,54 @@
     padding-left: 18px;
 }
 
+.sm-Offset{
+    padding-left:30px;
+}
+
 /* 讓測驗人資訊文字垂直置中 */
 .divExamInfo_Data {
     padding-top: 4px;
+    white-space: nowrap;
 }
 
 #spanExamInfo_Date {
     font-size: 18px;
 }
 
+.notShowMoblie {
+    display: block;
+}
 
-@media (max-width: 767px) {
+.notShowPC {
+    display: none;
+}
+
+@media (max-width: 660px) {
+    .notShowPC {
+        display: block;
+    }
+
+    .notShowMoblie {
+        display: none;
+    }
+
     .divExamInfo_DataArea_Top {
         margin-top: 20px;
     }
 }
 
+@media (max-width: 767px) {
+
+}
+
 @media (min-width: 768px) and (max-width: 992px) {
-    .divExamInfo_DataArea_Top {
- 
-    }
+
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
-    .divExamInfo_DataArea_Top {
-      
-    }
+
 }
 
 @media (min-width: 1200px) {
-    .divExamInfo_DataArea_Top {
-       
-    }
+
 }

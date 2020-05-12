@@ -1,5 +1,9 @@
 ﻿#earthImageArea {
-    height: 200px;
+    height: 250px;
+}
+#earthImage {
+    height: 250px;
+    width: 250px;
 }
 
 #earthImage {
@@ -8,28 +12,75 @@
 }
 
 @media (max-width: 767px) {
+    #earthBackLine_blackLine {
+        /* 通過 vh/vw 我們可以獲得當前的視窗 高/寬度  */
+        /* 使用 calc 可以計算，需要注意的是，運算符前後都需要保留一個空格 */
+        /* calc() 函數支持"+", "-", "*", "/" 運算 */
+        /* 參考 https://blog.csdn.net/qq_32063079/article/details/89766442 */
+        width: calc(100vw - 60%);
+        position: absolute;
+        z-index: 10;
+        bottom: 28px;
+        right: -22px;
+    }
+    #earthBackLine_grayLine {
+        width: calc(100vw - 60%);
+        position: absolute;
+        z-index: 10;
+        bottom: 18px;
+        right: -54px;
+    }
 
+    #earthImageArea {
+        height: 200px;
+    }
+    #earthImage {
+        height: 200px;
+        width: 200px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
+    #earthBackLine_blackLine {
+        width: 600px;
+        position: absolute;
+        z-index: 10;
+        bottom: 28px;
+        right: 18px;
+    }
 
+    #earthBackLine_grayLine {
+        width: 600px;
+        position: absolute;
+        z-index: 10;
+        bottom: 18px;
+        right: -14px;
+    }
+
+    #earthImageArea {
+        height: 220px;
+    }
+    #earthImage {
+        height: 220px;
+        width: 220px;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
     #earthBackLine_blackLine {
-        width: 730px;
+        width: 770px;
         position: absolute;
         z-index: 10;
-        bottom: 20px;
-        right: 120px;
+        bottom: 70px;
+        right: 46px;
     }
 
     #earthBackLine_grayLine {
-        width: 730px;
+        width: 770px;
         position: absolute;
         z-index: 10;
-        bottom: 8px;
-        right: 90px;
+        bottom: 58px;
+        right: 14px;
     }
 }
 
@@ -38,16 +89,15 @@
         width: 900px;
         position: absolute;
         z-index: 10;
-        bottom: 20px;
-        right: 140px;
+        bottom: 70px;
+        right: 102px;
     }
 
     #earthBackLine_grayLine {
         width: 900px;
         position: absolute;
         z-index: 10;
-        bottom: 8px;
-        right: 110px;
+        bottom: 58px;
+        right: 46px;
     }
-
 }
