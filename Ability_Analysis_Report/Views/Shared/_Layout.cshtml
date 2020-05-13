@@ -13,29 +13,35 @@
     @RenderSection("scripts", required: false)
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("應用程式名稱", "Index", "Report", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("首頁", "Index", "Report")</li>
-                </ul>
+    <div id="main_wrapper">
+        <div id="main_header">
+            <div class="navbar navbar-inverse navbar-fixed-top customHeaderBg">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("應用程式名稱", "Index", "Report", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("首頁", "Index", "Report")</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
-        </footer>
+        <div id="main_content">
+            <div class="container body-content">
+                @RenderBody()
+            </div>         
+            <footer id="main_footer" class="customFooterBg text-center">
+                <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 應用程式</p>
+                <a href="https://www.freepik.com/free-photos-vectors/banner">Banner vector created by Harryarts - www.freepik.com</a>
+            </footer>
+        </div>
     </div>
 </body>
 </html>

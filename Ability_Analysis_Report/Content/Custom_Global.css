@@ -1,4 +1,60 @@
-﻿hr.blackLine {
+﻿.navbar {
+    border: 0px !important;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+.navbar-brand:hover {
+    color: black !important;
+}
+
+.navbar-nav > li > a{
+    color: white !important;
+}
+
+.navbar-nav > li > a:hover {
+    color: black !important;
+}
+
+html, body {
+    font-family: Microsoft JhengHei !important;
+    /* 設定body高度為100% 拉到視窗可視的大小 */
+    height: 100%;
+}
+
+#main_wrapper {
+    /* 設定高度最小為100%, 如果內容區塊很多, 可以長大 */
+    min-height: 100%;
+    /* 位置設為relative, 作為footer區塊位置的參考 */
+    position: relative;
+}
+
+#main_header {
+    /* 設定header的高度 */
+    height: 5px;
+    box-sizing: border-box; 
+}
+
+#main_content {
+    /* 留出header及footer區塊的空間 */
+    padding-top: 5px;
+    padding-bottom: 10rem;
+}
+
+#main_footer {
+    /* 設定footer的高度 */
+    padding-bottom: 1rem !important;
+    padding-top: 1rem !important;
+    box-sizing: border-box;
+    /* 設定footer絕對位置在底部 */
+    position: absolute;
+    bottom: 0;
+    /* 展開footer寬度 */
+    width: 100%;
+}
+
+hr.blackLine {
     border: 2px solid black;
     border-radius: 5px;
     z-index: 10;
@@ -10,11 +66,37 @@ hr.grayLine {
     z-index: 10;
 }
 
+.customHeaderBg {
+    background-image: url(/Images/header.png) !important;
+    background-size: 100% 100% !important;
+    padding: 5px;/*加高 Header 底圖高度 ( main_content、main_header 也要配合調整 )*/
+}
 
+.customFooterBg {
+    background-image: url(/Images/footer.png) !important;
+    background-size: 100% 100% !important;
+}
 
-@media print{
-    .divExamInfo_DataArea_Top {
-        margin-top: 0px !important;
+@media print {
+    @page {
+        margin: 0;
+    }
+
+    body {    
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;        
+    }
+
+    footer{
+        display:none;
+    }
+
+    #printHeader_cover, #printFooter_cover {
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    #printHeader_coverArea, #printFooter_coverArea {
+        display: block !important;
     }
 
     .notShowMoblie {
@@ -23,5 +105,33 @@ hr.grayLine {
 
     .notShowPC {
         display: none !important;
+    }
+
+    #printFooter_coverArea {
+        margin-top: 72px;
+    }
+
+    #btnPrint{
+        display:none;
+    }
+
+    #coverTableArea {
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
+
+    .divExamInfo_DataArea_Top {
+        margin-top: 0px !important;
+    }
+
+    #coverTable > thead > tr > th {
+        /* 如果只有設 background-color，瀏覽器列印設置必須打勾「背景圖形」才會顯示顏色 */
+        background-color: #30d6f1d6 !important;
+        /* 加上 -webkit-print-color-adjust: exact 後，應用此規則的元素的背景色和圖像始終​​會被打印，而用戶的打印設置將被覆蓋。 */
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    #coverIntroductionArea {
+        padding-left: 0px !important;
     }
 }

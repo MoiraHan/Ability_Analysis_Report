@@ -17,22 +17,23 @@
         /* 使用 calc 可以計算，需要注意的是，運算符前後都需要保留一個空格 */
         /* calc() 函數支持"+", "-", "*", "/" 運算 */
         /* 參考 https://blog.csdn.net/qq_32063079/article/details/89766442 */
-        width: calc(100vw - 60%);
+        width: calc(100vw - 70%);
         position: absolute;
         z-index: 10;
         bottom: 28px;
-        right: -22px;
+        right: 18px;
     }
     #earthBackLine_grayLine {
-        width: calc(100vw - 60%);
+        width: calc(100vw - 70%);
         position: absolute;
         z-index: 10;
         bottom: 18px;
-        right: -54px;
+        right: -7px;
     }
 
     #earthImageArea {
-        height: 200px;
+        height: 210px;
+        width: 200px;
     }
     #earthImage {
         height: 200px;
