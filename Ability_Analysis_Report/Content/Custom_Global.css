@@ -17,6 +17,13 @@
     color: black !important;
 }
 
+table {
+    /* table 超過螢幕畫面會有 scroll bar */
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
 html, body {
     font-family: Microsoft JhengHei !important;
     /* 設定body高度為100% 拉到視窗可視的大小 */
@@ -54,6 +61,14 @@ html, body {
     width: 100%;
 }
 
+.notShowMoblie {
+    display: block;
+}
+
+.notShowPC {
+    display: none;
+}
+
 hr.blackLine {
     border: 2px solid black;
     border-radius: 5px;
@@ -77,9 +92,27 @@ hr.grayLine {
     background-size: 100% 100% !important;
 }
 
+#printHeaderArea {
+    display: none;
+    padding-left: 100px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+#printHeader {
+    height: 100px;
+    width: 100%;
+    background-image: url(/Images/header.png) !important;
+    background-size: 100% 100% !important;
+}
+
 @media print {
     @page {
+        size: A4;
         margin: 0;
+    }
+    .notPrint {
+        display: none !important;
     }
 
     body {    
@@ -87,17 +120,17 @@ hr.grayLine {
         padding-bottom: 0px !important;        
     }
 
-    footer{
-        display:none;
-    }
-
-    #printHeader_cover, #printFooter_cover {
+    #printHeader, #printFooter_cover {
         -webkit-print-color-adjust: exact !important;
     }
 
-    #printHeader_coverArea, #printFooter_coverArea {
+    #printHeaderArea, #printFooter_coverArea {
         display: block !important;
     }
+
+    #printFooter_coverArea {
+        margin-top: 72px;
+    }   
 
     .notShowMoblie {
         display: block !important;
@@ -107,31 +140,74 @@ hr.grayLine {
         display: none !important;
     }
 
-    #printFooter_coverArea {
-        margin-top: 72px;
-    }
-
-    #btnPrint{
-        display:none;
-    }
-
-    #coverTableArea {
-        padding-left: 50px !important;
-        padding-right: 50px !important;
-    }
-
     .divExamInfo_DataArea_Top {
         margin-top: 0px !important;
     }
 
-    #coverTable > thead > tr > th {
+    #coverTableArea_PC {
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
+
+    #coverTable_PC > thead > tr > th {
         /* 如果只有設 background-color，瀏覽器列印設置必須打勾「背景圖形」才會顯示顏色 */
         background-color: #30d6f1d6 !important;
         /* 加上 -webkit-print-color-adjust: exact 後，應用此規則的元素的背景色和圖像始終​​會被打印，而用戶的打印設置將被覆蓋。 */
         -webkit-print-color-adjust: exact !important;
     }
 
-    #coverIntroductionArea {
-        padding-left: 0px !important;
+    .page1Table > thead > tr > th {
+        /* 如果只有設 background-color，瀏覽器列印設置必須打勾「背景圖形」才會顯示顏色 */
+        background-color: #30d6f1d6 !important;
+        /* 加上 -webkit-print-color-adjust: exact 後，應用此規則的元素的背景色和圖像始終​​會被打印，而用戶的打印設置將被覆蓋。 */
+        -webkit-print-color-adjust: exact !important;
     }
+
+    #page1TableArea_PC {
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
+ 
+    .page1Table > thead > tr > th {
+        padding: 8px !important;
+    
+    }
+
+    .page1Table > tbody > tr > td {
+        padding: 8px !important;    
+    }
+
+    .printPaddingleft50 {
+        padding-left: 50px !important;
+    }
+}
+
+@media (max-width: 660px) {
+    .notShowPC {
+        display: block;
+    }
+
+    .notShowMoblie {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    #printHeaderArea {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    #printHeaderArea {
+        padding-left: 20px;
+        padding-right: 20px;
+    }  
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+}
+
+@media (min-width: 1200px) {
 }

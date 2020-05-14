@@ -1,30 +1,7 @@
-﻿
-.notShowMoblie {
-    display: block;
-}
-
-.notShowPC {
-    display: none;
-}
-
-#printHeader_coverArea {
+﻿#printFooter_coverArea {
     display: none;
     padding-left: 100px;
     padding-right: 20px;
-    margin-bottom: 20px;
-}
-
-#printFooter_coverArea {
-    display:none;
-    padding-left: 100px;
-    padding-right: 20px;
-}
-
-#printHeader_cover {
-    height: 100px;
-    width: 100%;
-    background-image: url(/Images/header.png) !important;
-    background-size: 100% 100% !important;
 }
 
 #printFooter_cover {
@@ -32,6 +9,15 @@
     width: 100%;
     background-image: url(/Images/footer.png) !important;
     background-size: 100% 100% !important;
+}
+
+.reportTitle {
+    font-size: 43px; 
+}
+
+.reportSecondTitle {
+    font-size: 25px;
+    padding-left: 11px;
 }
 
 /* 讓整塊測驗人資訊部分垂直置中 */
@@ -51,31 +37,18 @@
     padding-left: 18px;
 }
 
-/* 讓測驗人資訊文字垂直置中 */
-.divExamInfo_Data {
+.examInfo_Data {
     padding-top: 4px;
     white-space: nowrap;
-}
-
-#spanExamInfo_Date {
     font-size: 18px;
 }
 
-#coverTableArea {
-    padding-left: 30px;
-    padding-right: 50px;
-}
-
-#coverTable {
+#coverTable_PC {
     font-size: 18px;
     width: 100%;
-    /* table 超過螢幕畫面會有 scroll bar */
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
 }
 
-    #coverTable > thead > tr > th {
+    #coverTable_PC > thead > tr > th {
         padding: 18px;
         text-align: center;
         border-bottom: 3px solid black;
@@ -83,7 +56,7 @@
         white-space: nowrap;
     }
 
-    #coverTable > tbody > tr > td {
+    #coverTable_PC > tbody > tr > td {
         padding: 18px;
         text-align: center;
         border-bottom: 3px solid black;
@@ -97,12 +70,11 @@
     padding-right: 20px;
 }
 
-#coverTable_Mobile {
+#coverTable_PC_Mobile {
     font-size: 18px;
-    width: 100%;
 }
 
-    #coverTable_Mobile > thead > tr > th {
+    #coverTable_PC_Mobile > thead > tr > th {
         padding: 18px;
         text-align: center;
         border-left: 3px solid black;
@@ -111,7 +83,7 @@
         white-space: nowrap;
     }
 
-    #coverTable_Mobile > thead > tr > td {
+    #coverTable_PC_Mobile > thead > tr > td {
         padding: 18px;
         text-align: center;
         border-right: 3px solid black;
@@ -120,52 +92,69 @@
 
 #coverIntroductionArea {
     margin-top: 60px;
-    padding-left: 80px;
+    padding-left: 70px;
 }
 
 @media (max-width: 660px) {
-    .notShowPC {
-        display: block;
-    }
-
-    .notShowMoblie {
-        display: none;
-    }
-
     .divExamInfo_DataArea_Top {
         margin-top: 20px;
     }
 }
 
 @media (max-width: 767px) {
-    #printHeader_coverArea, #printFooter_coverArea {
+    #printFooter_coverArea {
         padding-left: 0px;
-        padding-right: 0px;
-    }
-
-    #coverTableArea {
-        padding-left: 5px;
         padding-right: 0px;
     }
 
     #coverIntroductionArea {
         padding-left: 0px;
     }
+
+    .reportTitle {
+        font-size: 27px;
+    }
+
+    .reportSecondTitle {
+        font-size: 15px;
+        padding-left: 10px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-    #printHeader_coverArea, #printFooter_coverArea {
+    #printFooter_coverArea {
         padding-left: 20px;
         padding-right: 20px;
     }
 
     #coverIntroductionArea {
-        padding-left: 0px;
+        padding-left: 40px;
+    }
+
+    .reportTitle {
+        font-size: 27px;
+    }
+
+    .reportSecondTitle {
+        font-size: 15px;
+        padding-left: 10px;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
+    .reportTitle {
+        font-size: 36px;
+    }
+
+    .reportSecondTitle {
+        font-size: 20px;
+        padding-left: 3px;
+    }
 }
 
 @media (min-width: 1200px) {
+    .examInfo_Data {
+        font-size: 22px;
+        padding-top:2px;
+    }
 }

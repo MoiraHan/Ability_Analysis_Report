@@ -1,62 +1,66 @@
-﻿
+﻿@model IEnumerable<Ability_Analysis_Report.Controllers.ReportController.ViewData_ExamineeAnswerStatus>
 @{
     ViewBag.Title = "ReportVer2_HTML";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<head>
-    @section styles{
-        <link href="~/Content/Custom_Global.css" rel="stylesheet" />
-        <link href="~/Content/Custom_Cover.css" rel="stylesheet" />
-        <link href="~/Content/Custom_Cover_EarthArea.css" rel="stylesheet" />
-    }
-    @section scripts{
-        <script src="~/MoiraTool/Plugins/Font_awesome_5.13.0/all.min.js"></script>
-        <script src="~/MoiraTool/Plugins/PrintArea/jquery.PrintArea.js"></script>
-    }
-</head>
+    <head>
+        @section styles{
+            <link href="~/MoiraTool/Plugins/Datatables/Styles/dataTables.bootstrap.min.css" rel="stylesheet" />
+            <link href="~/Content/Custom_Global.css" rel="stylesheet" />
+            <link href="~/Content/Custom_Cover.css" rel="stylesheet" />
+            <link href="~/Content/Custom_Cover_EarthArea.css" rel="stylesheet" />
+            <link href="~/Content/Custom_Page1.css" rel="stylesheet" />
+        }
+        @section scripts{
+            <script src="~/MoiraTool/Plugins/Font_awesome_5.13.0/all.min.js"></script>
+            <script src="~/MoiraTool/Plugins/PrintArea/jquery.PrintArea.js"></script>
+            <script src="~/MoiraTool/Plugins/Datatables/Scripts/jquery.dataTables.min.js"></script>
+            <script src="~/MoiraTool/Plugins/Datatables/UseDatatables.js"></script>
+        }
+    </head>
 
 <br />
 @*<h2>ReportVer2_HTML</h2>*@
 
-<button class="btn btn-info" id="btnPrint" onclick="PrintArea()" @*style="display:none;"*@>Print Area</button>
+<button class="btn btn-info notPrint" onclick="PrintArea()" @*style="display:none;"*@>Print Area</button>
 <body>
     <div id="print">
-        <!-- PC -->
-        <div id="coverA4" class="A4 notShowMoblie">
-            <div class="container" style="width:100%">
+
+        <div id="cover">
+            <!-- PC Cover Start -->
+            <div class="container notShowMoblie" style="width:100%">
 
                 <div class="row">
-                    <div class="col-lg-12" id="printHeader_coverArea">
-                        <div id="printHeader_cover">
+                    <div class="col-lg-12" id="printHeaderArea">
+                        <div id="printHeader">
 
                         </div>
                     </div>
                 </div>
-
                 <div class="row text-center">
-                    <span style="font-size:30px">TQC 資訊科技素養能力測驗 ( Python ) 分析報告</span>
-                </div>
-                <div class="row text-center">
-                    <span style="font-size:20px">Analysis Report of Infomation Technology Literacy</span>
+                    <span class="reportTitle">T Q C  資 訊 科 技 素 養 能 力 測 驗  (  P y t h o n  )  分 析 報 告</span>
                 </div>
                 <div class="row">
-                    <div class="col-xs-8 col-sm-7 col-md-7 col-lg-7 col-md-offset-1 col-lg-offset-1" id="cover_ExamInfoArea">
+                    <span class="reportSecondTitle printPaddingleft50">Analysis Report of Infomation Technology Literacy</span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8 col-sm-7 col-md-7 col-lg-7 " id="cover_ExamInfoArea">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                                 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3" id="cover_ExamInfo_Calendar_Icon">
                                     <i class="fas fa-calendar-check fa-2x"></i>
                                 </div>
-                                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9 divExamInfo_Data">
-                                    <span id="spanExamInfo_Date">2020/05/08</span>
+                                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9">
+                                    <span class="examInfo_Data">2020/05/08</span>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 divExamInfo_DataArea_Top">
                                 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3" id="cover_ExamInfo_User_Icon">
                                     <i class="fas fa-user fa-2x"></i>
                                 </div>
-                                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9 divExamInfo_Data">
-                                    <span id="spanExamInfo_Date">韓羽伶</span>
+                                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9">
+                                    <span class="examInfo_Data">韓羽伶</span>
                                 </div>
                             </div>
                         </div>
@@ -65,16 +69,16 @@
                                 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
                                     <i class="fas fa-school fa-2x"></i>
                                 </div>
-                                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9 divExamInfo_Data">
-                                    <span id="spanExamInfo_Date">德明財經大學</span>
+                                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9">
+                                    <span class="examInfo_Data">德明財經大學</span>
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 divExamInfo_DataArea_Bottom">
                                 <div class="col-xs-4 col-sm-4 col-md-3 col-lg-3">
                                     <i class="fas fa-id-card fa-2x"></i>
                                 </div>
-                                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9 divExamInfo_Data">
-                                    <span id="spanExamInfo_Date">A123456789</span>
+                                <div class="col-xs-8 col-sm-8 col-md-9 col-lg-9">
+                                    <span class="examInfo_Data">A123456789</span>
                                 </div>
                             </div>
                         </div>
@@ -89,8 +93,8 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-offset-1 col-lg-offset-1" id="coverTableArea">
-                        <table id="coverTable">
+                    <div class="" id="coverTableArea_PC">
+                        <table id="coverTable_PC">
                             <thead>
                                 <tr>
                                     <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
@@ -120,16 +124,16 @@
                 </div>
 
                 <div class="row text-left">
-                    <div id="coverIntroductionArea">
-                        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
-                            <span style="font-size:30px;padding-left:35px">簡介</span>
+                    <div id="coverIntroductionArea" class="printPaddingleft50">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <span style="font-size:30px">簡介</span>
                         </div>
                         <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                            <p style="font-size:20px;padding-left:100px">
+                            <p style="font-size:20px;padding-left:50px">
                                 108課綱中，科技領域是一個跨學科知識的整合性學科。其中，資訊科技主要以「運算思維」為主軸・並以電腦科學的原理與應用、資訊系統設計與寶作、資訊科技與社會為主要內涵。培養學生邏輯思考，設計思考以及理解與思辯科技議題的能力，建立資訊社會中公民應有的態度與責任。
                             </p>
                             <br />
-                            <p style="font-size:20px;padding-left:100px">
+                            <p style="font-size:20px;padding-left:50px">
                                 財團法人電腦技能基金會規劃了TQC資訊科技素養能力測驗，測驗內容經由產官學研之專家由淺入深的編排，以知識體系為導向·分為六大類:「資料結構與演算法」、「程式設計」、「系統平台」、「資料表示、處理及分析」、「資訊科技應用」、「資訊科技與社會人類」·經由循序漸進的學習·瞭解資訊科技的基礎知識。
                             </p>
                         </div>
@@ -144,130 +148,332 @@
                     </div>
                 </div>
             </div>
+
+            <!-- PC Cover End -->
+            <!-- Moblie Cover Start -->
+            <div class="container notShowPC" style="width:100%">
+                <div class="row text-center">
+                    <span style="font-size:30px">TQC 資訊科技素養能力測驗 ( Python ) 分析報告</span>
+                </div>
+
+                <div class="row text-center">
+                    <span style="font-size:20px">Analysis Report of Infomation Technology Literacy</span>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7" id="cover_ExamInfoArea">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="cover_ExamInfo_Calendar_Icon">
+                                    <i class="fas fa-calendar-check fa-2x"></i>
+                                </div>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 divExamInfo_Data">
+                                    <span class="examInfo_Data">2020/05/08</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 divExamInfo_DataArea_Top">
+                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="cover_ExamInfo_User_Icon">
+                                    <i class="fas fa-user fa-2x"></i>
+                                </div>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 divExamInfo_Data">
+                                    <span class="examInfo_Data">韓羽伶</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 divExamInfo_DataArea_Bottom">
+                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    <i class="fas fa-school fa-2x"></i>
+                                </div>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 divExamInfo_Data">
+                                    <span class="examInfo_Data">XX大學</span>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 divExamInfo_DataArea_Bottom">
+                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    <i class="fas fa-id-card fa-2x"></i>
+                                </div>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 divExamInfo_Data">
+                                    <span class="examInfo_Data">A123456789</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="earthImageArea" class="col-sm-4 col-md-4 col-lg-4 hidden-xs">
+                        <img id="earthImage" src="~/Images/earth.png" width="250" height="250" />
+                        <hr id="earthBackLine_blackLine" class="blackLine" />
+                        <hr id="earthBackLine_grayLine" class="grayLine" />
+                    </div>
+                </div>
+
+                <div class="row" id="coverArea_Mobile">
+                    <table id="coverTable_PC_Mobile">
+                        <thead>
+                            <tr>
+                                <th class="col-xs-2"></th>
+                                <td class="col-xs-10">成績</td>
+                            </tr>
+                            <tr>
+                                <th>總題數</th>
+                                <td>50題</td>
+                            </tr>
+                            <tr>
+                                <th>正確題數</th>
+                                <td>40題</td>
+                            </tr>
+                            <tr>
+                                <th>錯誤題數</th>
+                                <td>10題</td>
+                            </tr>
+                            <tr>
+                                <th>正確率</th>
+                                <td>80%</td>
+                            </tr>
+                            <tr>
+                                <th>得分</th>
+                                <td>96分</td>
+                            </tr>
+                            <tr>
+                                <th>測驗結果</th>
+                                <td>合格</td>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+                <div class="row text-left">
+                    <div id="coverIntroductionArea">
+                        <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
+                            <span style="font-size:30px;padding-left:10px">簡介</span>
+                        </div>
+                        <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                            <p style="font-size:20px;padding-left:30px">
+                                108課綱中，科技領域是一個跨學科知識的整合性學科。其中，資訊科技主要以「運算思維」為主軸・並以電腦科學的原理與應用、資訊系統設計與寶作、資訊科技與社會為主要內涵。培養學生邏輯思考，設計思考以及理解與思辯科技議題的能力，建立資訊社會中公民應有的態度與責任。
+                            </p>
+                            <br />
+                            <p style="font-size:20px;padding-left:30px">
+                                財團法人電腦技能基金會規劃了TQC資訊科技素養能力測驗，測驗內容經由產官學研之專家由淺入深的編排，以知識體系為導向·分為六大類:「資料結構與演算法」、「程式設計」、「系統平台」、「資料表示、處理及分析」、「資訊科技應用」、「資訊科技與社會人類」·經由循序漸進的學習·瞭解資訊科技的基礎知識。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Moblie Cover End -->
         </div>
 
+        <hr class="notPrint" />
 
-        <!-- Moblie -->
-        <div class="container notShowPC" style="width:100%">
-            <div class="row text-center">
-                <span style="font-size:30px">TQC 資訊科技素養能力測驗 ( Python ) 分析報告</span>
-            </div>
+        <div id="page1">
+            <!-- PC Page1 Start -->
+            <div class="container notShowMoblie" style="width:100%">
+                <div class="row">
+                    <div class="col-lg-12" id="printHeaderArea">
+                        <div id="printHeader">
 
-            <div class="row text-center">
-                <span style="font-size:20px">Analysis Report of Infomation Technology Literacy</span>
-            </div>
-
-            <div class="row">
-                <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7" id="cover_ExamInfoArea">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="cover_ExamInfo_Calendar_Icon">
-                                <i class="fas fa-calendar-check fa-2x"></i>
-                            </div>
-                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 divExamInfo_Data">
-                                <span id="spanExamInfo_Date">2020/05/08</span>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 divExamInfo_DataArea_Top">
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="cover_ExamInfo_User_Icon">
-                                <i class="fas fa-user fa-2x"></i>
-                            </div>
-                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 divExamInfo_Data">
-                                <span id="spanExamInfo_Date">韓羽伶</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 divExamInfo_DataArea_Bottom">
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                <i class="fas fa-school fa-2x"></i>
-                            </div>
-                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 divExamInfo_Data">
-                                <span id="spanExamInfo_Date">XX大學</span>
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 divExamInfo_DataArea_Bottom">
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                                <i class="fas fa-id-card fa-2x"></i>
-                            </div>
-                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 divExamInfo_Data">
-                                <span id="spanExamInfo_Date">A123456789</span>
-                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="row ">
+                    <span class="printPaddingleft50" style="font-size:30px;">資訊科技素養能力測驗 ( Python ) 分析</span>
+                </div>
+                <div class="row" style="margin-top:30px">
+                    <span class="printPaddingleft50" style="font-size:20px;">&nbsp;▶&nbsp;答題狀況</span>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                    <div id="page1TableArea_PC">
 
-                <div id="earthImageArea" class="col-sm-4 col-md-4 col-lg-4 hidden-xs">
-                    <img id="earthImage" src="~/Images/earth.png" width="250" height="250" />
-                    <hr id="earthBackLine_blackLine" class="blackLine" />
-                    <hr id="earthBackLine_grayLine" class="grayLine" />
+                        <!-- Table Question 1 ~ 17 -->
+                        <table class="text-center page1Table break-table" id="page1Table_1">
+                            <thead>
+                                <tr class="headBlack">
+                                    <th>
+                                        題號
+                                    </th>
+                                    @foreach (var item in Model.Take(17))
+                                    {
+                                        <th>
+                                            @item.QuestionNum.ToString("0#")
+                                        </th>
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="middleGray">
+                                    <th>
+                                        標準答案
+                                    </th>
+                                    @foreach (var item in Model.Take(17))
+                                    {
+                                        <td>
+                                            @item.StandardAnswer
+                                        </td>
+                                    }
+                                </tr>
+                                <tr>
+                                    <th>
+                                        考生答案
+                                    </th>
+                                    @foreach (var item in Model.Take(17))
+                                    {
+                                        <td>
+                                            @item.ExamineeAnswer
+                                        </td>
+                                    }
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Table Question 18 ~ 34 -->
+                        <table class="text-center page1Table" id="page1Table_2">
+                            <thead>
+                                <tr class="headBlack">
+                                    <th>
+                                        題號
+                                    </th>
+                                    @foreach (var item in Model.Skip(17).Take(17))
+                                    {
+                                        <th>
+                                            @item.QuestionNum.ToString("0#")
+                                        </th>
+                                    }
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="middleGray">
+                                    <th>
+                                        標準答案
+                                    </th>
+                                    @foreach (var item in Model.Skip(17).Take(17))
+                                    {
+                                        <td>
+                                            @item.StandardAnswer
+                                        </td>
+                                    }
+                                </tr>
+                                <tr>
+                                    <th>
+                                        考生答案
+                                    </th>
+                                    @foreach (var item in Model.Skip(17).Take(17))
+                                    {
+                                        <td>
+                                            @item.ExamineeAnswer
+                                        </td>
+                                    }
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Table Question 35 ~ 50 -->
+                        <table class="text-center page1Table" id="page1Table_3">
+                            <thead>
+                                <tr class="headBlack">
+                                    <th>
+                                        題號
+                                    </th>
+                                    @foreach (var item in Model.Skip(34))
+                                    {
+                                        <th>
+                                            @item.QuestionNum.ToString("0#")
+                                        </th>
+                                    }
+                                    <th>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="middleGray">
+                                    <th>
+                                        標準答案
+                                    </th>
+                                    @foreach (var item in Model.Skip(34))
+                                    {
+                                        <td>
+                                            @item.StandardAnswer
+                                        </td>
+                                    }
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr class="bottomBlack">
+                                    <th>
+                                        考生答案
+                                    </th>
+                                    @foreach (var item in Model.Skip(34))
+                                    {
+                                        <td>
+                                            @item.ExamineeAnswer
+                                        </td>
+                                    }
+                                    <td>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- PC Page1 End -->
+                    <!-- Moblie Page1 Start -->
+                    <!-- Moblie Page1 End -->
                 </div>
             </div>
+            <!-- PC Page1 End -->
+            <!-- Moblie Page1 Start -->
+            <div class="container" style="width:100%">
+                <div class="row" >
+                    <table class="page1Table_Moblie" style="width:100%" id="test">
+                        <thead>
+                            <tr>
+                                <th>題號</th>
+                                <td>標準答案</td>
+                                <td>考生答案</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <th>
+                                        @item.QuestionNum.ToString("0#")
+                                    </th>
+                                    <td >
+                                        @item.StandardAnswer
+                                    </td>
+                                    <td>
+                                        @item.ExamineeAnswer
+                                    </td>
+                                </tr>
+                            }
 
-            <div class="row" id="coverArea_Mobile">
-                <table id="coverTable_Mobile">
-                    <thead>
-                        <tr>
-                            <th class="col-xs-2"></th>
-                            <td class="col-xs-10">成績</td>
-                        </tr>
-                        <tr>
-                            <th class="">總題數</th>
-                            <td class="">50題</td>
-                        </tr>
-                        <tr>
-                            <th class="">正確題數</th>
-                            <td>40題</td>
-                        </tr>
-                        <tr>
-                            <th class="">錯誤題數</th>
-                            <td>10題</td>
-                        </tr>
-                        <tr>
-                            <th class="">正確率</th>
-                            <td>80%</td>
-                        </tr>
-                        <tr>
-                            <th class="">得分</th>
-                            <td>96分</td>
-                        </tr>
-                        <tr>
-                            <th class="">測驗結果</th>
-                            <td>合格</td>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-
-            <div class="row text-left">
-                <div id="coverIntroductionArea">
-                    <div class="col-xs-12 col-sm-12 col-md-11 col-lg-11">
-                        <span style="font-size:30px;padding-left:10px">簡介</span>
-                    </div>
-                    <div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                        <p style="font-size:20px;padding-left:30px">
-                            108課綱中，科技領域是一個跨學科知識的整合性學科。其中，資訊科技主要以「運算思維」為主軸・並以電腦科學的原理與應用、資訊系統設計與寶作、資訊科技與社會為主要內涵。培養學生邏輯思考，設計思考以及理解與思辯科技議題的能力，建立資訊社會中公民應有的態度與責任。
-                        </p>
-                        <br />
-                        <p style="font-size:20px;padding-left:30px">
-                            財團法人電腦技能基金會規劃了TQC資訊科技素養能力測驗，測驗內容經由產官學研之專家由淺入深的編排，以知識體系為導向·分為六大類:「資料結構與演算法」、「程式設計」、「系統平台」、「資料表示、處理及分析」、「資訊科技應用」、「資訊科技與社會人類」·經由循序漸進的學習·瞭解資訊科技的基礎知識。
-                        </p>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
 
+            </div>
+            <!-- Moblie Page1 End -->
         </div>
+
     </div>
-
-
-
-
 </body>
 
 <style>
+    /* table 的 標題一律不准換行、並將底色顏色設為粉紅色、字體設為白色 */
+   .page1Table_Moblie th {
+        white-space: nowrap;
+        color: rgb(255, 255, 255);
+        background-color: rgb(249, 159, 159);
+    }
+
 </style>
 <script>
     function PrintArea() {
         $('#print').printArea();
     }
+
+    $(document).ready(function () {
+        SetDatatables('test');
+    })
 </script>

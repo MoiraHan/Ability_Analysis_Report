@@ -29,7 +29,7 @@ namespace Ability_Analysis_Report.Controllers
 
         public ActionResult ReportVer2_HTML()
         {
-            return View();
+            return View(GetExamineeAnswerStatuses());
         }
 
         public ActionResult ReportVer1_RDLC()

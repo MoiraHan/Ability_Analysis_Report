@@ -12,19 +12,21 @@ function SetDatatables(elementId) {
         // 隱藏搜尋元件
         searching: false,
         // url 設定中文語系，emptyTable 沒資料的時候顯示的字樣
-        language: { "url": "/Plugins/Datatables/dataTables.Chinese-traditional.json", "emptyTable": "沒有資料" },
+        language: { "url": "../MoiraTool/Plugins/Datatables/dataTables.Chinese-traditional.json", "emptyTable": "沒有資料" },
         // 決定顯示幾筆資料的選單內容
-        lengthMenu: [30, 50, 100, 200, 500],
+        lengthMenu: [10],
         // 隱藏決定顯示幾筆資料的選單
         lengthChange: false,
+        ordering: false,
+        
     });
 
-    // 追加 click 事件 到 table 中所有 包含 data class 的 td
-    // ※ function on 的用法:
-    // attach an evend handler function for one or more events to the selected elements.
-    // 將一個或多個事件的事件處理程序函數附加到所選元素
-    $("#" + elementId + " tbody" + "").on('click', 'td.data', function () {
-        var data = table.row(this).data();
-        alert('You clicked on ' + data[1] + '\'s row');
-    });
+    //// 追加 click 事件 到 table 中所有 包含 data class 的 td
+    //// ※ function on 的用法:
+    //// attach an evend handler function for one or more events to the selected elements.
+    //// 將一個或多個事件的事件處理程序函數附加到所選元素
+    //$("#" + elementId + " tbody" + "").on('click', 'td.data', function () {
+    //    var data = table.row(this).data();
+    //    alert('You clicked on ' + data[1] + '\'s row');
+    //});
 }

@@ -1,0 +1,96 @@
+﻿#page1TableArea_PC {
+    /*padding-left: 30px;
+    padding-right: 50px;*/
+}
+
+.page1Table {
+    font-size: 16px;}
+
+    .page1Table > thead > tr > th {
+        padding: 20px;
+        text-align: center;
+        background-color: #30d6f1d6;
+        white-space: nowrap;
+    }
+
+    .page1Table > tbody > tr > td {
+        padding: 20px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .page1Table > thead > tr.headBlack {
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
+    }
+
+        .page1Table > tbody > tr.middleGray {
+            border-bottom: 3px solid gray;
+        }
+
+        .page1Table > tbody > tr.bottomBlack {
+            border-bottom: 3px solid black;
+        }
+
+@media (max-width: 660px) {
+    .page1Table > thead > tr > th {
+        padding: 1.5px;
+    }
+
+    .page1Table > tbody > tr > td {
+        padding: 1.5px;
+    }
+}
+
+@media (min-width: 660px) and (max-width: 720px) {
+    .page1Table > thead > tr > th {
+        padding: 6.2px;
+    }
+
+    .page1Table > tbody > tr > td {
+        padding: 6.2px;
+    }
+}
+
+@media (min-width: 720px) and (max-width: 740px) {
+    .page1Table > thead > tr > th {
+        padding: 8px;
+    }
+
+    .page1Table > tbody > tr > td {
+        padding: 8px;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 767px) {
+    .page1Table > thead > tr > th {
+        padding: 8.5px;
+    }
+
+    .page1Table > tbody > tr > td {
+        padding: 8.5px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .page1Table > thead > tr > th {
+        padding: 8.5px;
+    }
+
+    .page1Table > tbody > tr > td {
+        padding: 8.5px;
+    }  
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .page1Table > thead > tr > th {
+        padding: 14.9px;    
+    }
+
+    .page1Table > tbody > tr > td {
+        padding: 14.9px;
+    }
+}
+
+@media (min-width: 1200px) {
+}
