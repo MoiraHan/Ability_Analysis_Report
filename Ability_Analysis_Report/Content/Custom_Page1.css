@@ -4,16 +4,17 @@
 }
 
 .page1Table {
-    font-size: 16px;}
+    font-size: 16px;
+}
 
-    .page1Table > thead > tr > th {
+    .page1Table th {
         padding: 20px;
         text-align: center;
         background-color: #30d6f1d6;
         white-space: nowrap;
     }
 
-    .page1Table > tbody > tr > td {
+    .page1Table td {
         padding: 20px;
         text-align: center;
         white-space: nowrap;
@@ -32,64 +33,72 @@
             border-bottom: 3px solid black;
         }
 
-@media (max-width: 660px) {
-    .page1Table > thead > tr > th {
-        padding: 1.5px;
+.page1Table_Moblie {
+    margin-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* page1Table_Moblie 的 標題一律不准換行、並將底色顏色設為粉紅色、字體設為白色 */
+.page1Table_Moblie th {
+    white-space: nowrap;
+    background-color: #30d6f1d6;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.page1Table_Moblie > thead > tr > th, .page1Table_Moblie > thead > tr > td,
+.page1Table_Moblie > tbody > tr > th, .page1Table_Moblie > tbody > tr > td {
+    padding: 5px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+    .page1Table_Moblie td.right {    
+        border-right: 3px solid black;
     }
 
-    .page1Table > tbody > tr > td {
+@media (max-width: 330px) {
+    /* 調整手機板 Datatables 的換頁清單字體大小 */
+    ul.pagination {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 330px) and (max-width: 660px) {
+    .page1Table > thead > tr > th, .page1Table > tbody > tr > td {
         padding: 1.5px;
     }
 }
 
 @media (min-width: 660px) and (max-width: 720px) {
-    .page1Table > thead > tr > th {
-        padding: 6.2px;
-    }
-
-    .page1Table > tbody > tr > td {
+    .page1Table > thead > tr > th, .page1Table > tbody > tr > td {
         padding: 6.2px;
     }
 }
 
 @media (min-width: 720px) and (max-width: 740px) {
-    .page1Table > thead > tr > th {
+    .page1Table > thead > tr > th, .page1Table > tbody > tr > td {
         padding: 8px;
-    }
-
-    .page1Table > tbody > tr > td {
-        padding: 8px;
-    }
+    }    
 }
 
 @media (min-width: 740px) and (max-width: 767px) {
-    .page1Table > thead > tr > th {
+    .page1Table > thead > tr > th, .page1Table > tbody > tr > td {
         padding: 8.5px;
-    }
-
-    .page1Table > tbody > tr > td {
-        padding: 8.5px;
-    }
+    }    
 }
 
 @media (min-width: 768px) and (max-width: 992px) {
-    .page1Table > thead > tr > th {
-        padding: 8.5px;
-    }
-
-    .page1Table > tbody > tr > td {
+    .page1Table > thead > tr > th, .page1Table > tbody > tr > td {
         padding: 8.5px;
     }  
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
-    .page1Table > thead > tr > th {
-        padding: 14.9px;    
-    }
-
-    .page1Table > tbody > tr > td {
+    .page1Table > thead > tr > th, .page1Table > tbody > tr > td {
         padding: 14.9px;
-    }
+    } 
 }
 
 @media (min-width: 1200px) {

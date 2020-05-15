@@ -4,26 +4,32 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <head>
-        @section styles{
-            <link href="~/MoiraTool/Plugins/Datatables/Styles/dataTables.bootstrap.min.css" rel="stylesheet" />
-            <link href="~/Content/Custom_Global.css" rel="stylesheet" />
-            <link href="~/Content/Custom_Cover.css" rel="stylesheet" />
-            <link href="~/Content/Custom_Cover_EarthArea.css" rel="stylesheet" />
-            <link href="~/Content/Custom_Page1.css" rel="stylesheet" />
-        }
-        @section scripts{
-            <script src="~/MoiraTool/Plugins/Font_awesome_5.13.0/all.min.js"></script>
-            <script src="~/MoiraTool/Plugins/PrintArea/jquery.PrintArea.js"></script>
-            <script src="~/MoiraTool/Plugins/Datatables/Scripts/jquery.dataTables.min.js"></script>
-            <script src="~/MoiraTool/Plugins/Datatables/UseDatatables.js"></script>
-        }
-    </head>
+<head>
+    @section styles{
+        <link href="~/MoiraTool/Plugins/Datatables/Styles/dataTables.bootstrap.min.css" rel="stylesheet" />
+        <link href="~/MoiraTool/Plugins/Chart.js/Styles/Chart.min.css" rel="stylesheet" />
+        <link href="~/MoiraTool/Plugins/Chart.js/Custom.css" rel="stylesheet" />
+        <link href="~/Content/Custom_Global.css" rel="stylesheet" />
+        <link href="~/Content/Custom_Cover.css" rel="stylesheet" />
+        <link href="~/Content/Custom_Cover_EarthArea.css" rel="stylesheet" />
+        <link href="~/Content/Custom_Page1.css" rel="stylesheet" />
+    }
+    @section scripts{
+        <script src="~/MoiraTool/Plugins/Font_awesome_5.13.0/all.min.js"></script>
+        <script src="~/MoiraTool/Plugins/PrintArea/jquery.PrintArea.js"></script>
+        <script src="~/MoiraTool/Plugins/Datatables/Scripts/jquery.dataTables.min.js"></script>
+        <script src="~/MoiraTool/Plugins/Datatables/Scripts/dataTables.bootstrap.min.js"></script>
+        <script src="~/MoiraTool/Plugins/Datatables/UseDatatables.js"></script>
+        <script src="~/MoiraTool/Plugins/Chart.js/Scripts/Chart.min.js"></script>
+        <script src="~/MoiraTool/Plugins/Chart.js/Custom_Draw.js"></script>
+        <script src="~/MoiraTool/Plugins/LoadingModal/UseLoadingModal.js"></script>
+    }
+</head>
 
 <br />
 @*<h2>ReportVer2_HTML</h2>*@
 
-<button class="btn btn-info notPrint" onclick="PrintArea()" @*style="display:none;"*@>Print Area</button>
+<button class="btn btn-info notShowPrint" id="btnPrint" onclick="PrintArea()" @*style="display:none;"*@>Print Area</button>
 <body>
     <div id="print">
 
@@ -207,7 +213,7 @@
                     </div>
                 </div>
 
-                <div class="row" id="coverArea_Mobile">
+                <div class="row" id="coverTableArea_Mobile">
                     <table id="coverTable_PC_Mobile">
                         <thead>
                             <tr>
@@ -263,7 +269,7 @@
             <!-- Moblie Cover End -->
         </div>
 
-        <hr class="notPrint" />
+        <hr class="notShowPrint" />
 
         <div id="page1">
             <!-- PC Page1 Start -->
@@ -275,7 +281,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row ">
+                <div class="row">
                     <span class="printPaddingleft50" style="font-size:30px;">資訊科技素養能力測驗 ( Python ) 分析</span>
                 </div>
                 <div class="row" style="margin-top:30px">
@@ -285,7 +291,7 @@
                     <div id="page1TableArea_PC">
 
                         <!-- Table Question 1 ~ 17 -->
-                        <table class="text-center page1Table break-table" id="page1Table_1">
+                        <table class="text-center page1Table" id="page1Table_1">
                             <thead>
                                 <tr class="headBlack">
                                     <th>
@@ -301,9 +307,9 @@
                             </thead>
                             <tbody>
                                 <tr class="middleGray">
-                                    <th>
+                                    <td>
                                         標準答案
-                                    </th>
+                                    </td>
                                     @foreach (var item in Model.Take(17))
                                     {
                                         <td>
@@ -312,9 +318,9 @@
                                     }
                                 </tr>
                                 <tr>
-                                    <th>
+                                    <td>
                                         考生答案
-                                    </th>
+                                    </td>
                                     @foreach (var item in Model.Take(17))
                                     {
                                         <td>
@@ -342,9 +348,9 @@
                             </thead>
                             <tbody>
                                 <tr class="middleGray">
-                                    <th>
+                                    <td>
                                         標準答案
-                                    </th>
+                                    </td>
                                     @foreach (var item in Model.Skip(17).Take(17))
                                     {
                                         <td>
@@ -353,9 +359,9 @@
                                     }
                                 </tr>
                                 <tr>
-                                    <th>
+                                    <td>
                                         考生答案
-                                    </th>
+                                    </td>
                                     @foreach (var item in Model.Skip(17).Take(17))
                                     {
                                         <td>
@@ -386,9 +392,9 @@
                             </thead>
                             <tbody>
                                 <tr class="middleGray">
-                                    <th>
+                                    <td>
                                         標準答案
-                                    </th>
+                                    </td>
                                     @foreach (var item in Model.Skip(34))
                                     {
                                         <td>
@@ -399,9 +405,9 @@
                                     </td>
                                 </tr>
                                 <tr class="bottomBlack">
-                                    <th>
+                                    <td>
                                         考生答案
-                                    </th>
+                                    </td>
                                     @foreach (var item in Model.Skip(34))
                                     {
                                         <td>
@@ -414,22 +420,43 @@
                             </tbody>
                         </table>
                     </div>
+                </div>
+                <div class="row" style="margin-top:30px">
+                    <span class="printPaddingleft50" style="font-size:20px;">&nbsp;▶&nbsp;素養雷達圖</span><br />
+                    <span class="printPaddingleft50" style="font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由此看來，您表現出來的各領域能力如下圖：</span>
+                </div>
+                <div class="row" style="margin-top:30px">
+                    <div id="divChartContainer_PC" class="chart-container">
+                        <!-- 因為 PrintArea 每次都會重新產生 iframe，
+                        只好在列印的時候隱藏 canvas，顯示 canvas 轉的 img；
+                        在顯示的時候 顯示 canvas，隱藏 canvas 轉的 img -->
+                        <canvas class="notShowPrint" id="myChart_PC"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12" id="printFooter_page1Area">
+                        <div id="printFooter_page1">
 
-                    <!-- PC Page1 End -->
-                    <!-- Moblie Page1 Start -->
-                    <!-- Moblie Page1 End -->
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- PC Page1 End -->
             <!-- Moblie Page1 Start -->
-            <div class="container" style="width:100%">
-                <div class="row" >
-                    <table class="page1Table_Moblie" style="width:100%" id="test">
+            <div class="container notShowPC" style="width:100%">
+                <div class="row">
+                    <span class="printPaddingleft50" style="font-size:30px;">資訊科技素養能力測驗 ( Python ) 分析</span>
+                </div>
+                <div class="row" style="margin-top:30px">
+                    <span class="printPaddingleft50" style="font-size:20px;">&nbsp;▶&nbsp;答題狀況</span>
+                </div>
+                <div class="row">
+                    <table class="page1Table_Moblie text-center" id="tblPage1Table_Moblie">
                         <thead>
                             <tr>
                                 <th>題號</th>
                                 <td>標準答案</td>
-                                <td>考生答案</td>
+                                <td class="right">考生答案</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -439,10 +466,10 @@
                                     <th>
                                         @item.QuestionNum.ToString("0#")
                                     </th>
-                                    <td >
+                                    <td>
                                         @item.StandardAnswer
                                     </td>
-                                    <td>
+                                    <td class="right">
                                         @item.ExamineeAnswer
                                     </td>
                                 </tr>
@@ -451,29 +478,345 @@
                         </tbody>
                     </table>
                 </div>
-
+                <div class="row" style="margin-top:30px">
+                    <span class="printPaddingleft50" style="font-size:20px;">&nbsp;▶&nbsp;素養雷達圖</span><br />
+                    <span class="printPaddingleft50" style="font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由此看來，您表現出來的各領域能力如下圖：</span>
+                </div>
+                <div class="row" style="margin-top:30px">
+                    <div class="chart-container">
+                        <canvas id="myChart_Moblie"></canvas>
+                    </div>
+                </div>
             </div>
             <!-- Moblie Page1 End -->
         </div>
 
+
+    </div>
+
+    <div class="modal" id="loadingModal">
+        <div style="z-index: 20000; position: absolute; left: 50%; top: 50%;margin-left:-100px;margin-top:-10px">
+            <img src="~/MoiraTool/Plugins/LoadingModal/Bean_Eater-1s-200px_darkbg.gif" style="border-radius:100px;z-index: 20000;" />
+        </div>
+    </div>
+
+    <div id="divOnlyCreateRadarImage" class="chart-container" style="height:300px !important;width:500px !important">
+        <canvas id="myChart_Print"></canvas>
     </div>
 </body>
 
-<style>
-    /* table 的 標題一律不准換行、並將底色顏色設為粉紅色、字體設為白色 */
-   .page1Table_Moblie th {
-        white-space: nowrap;
-        color: rgb(255, 255, 255);
-        background-color: rgb(249, 159, 159);
-    }
-
-</style>
 <script>
     function PrintArea() {
-        $('#print').printArea();
+        if ($('#btnPrint').hasClass('canPrint'))
+            $('#print').printArea();
+        else
+            alert('頁面加載中，請稍後');
     }
 
     $(document).ready(function () {
-        SetDatatables('test');
+        showLoading();// 此頁面加載完雷達圖才會關閉 Loading
+
+        // datatables
+        SetDatatables('tblPage1Table_Moblie');
+
+        DrawRadar_PC();
+
+        DrawRadar_Moblie();
+
+        DrawRadar_Print();
     })
+
+    function DrawRadar_PC() {
+        let chartData_PC = {
+            labels: ['資料結構與演算法', '程式設計', '系統平台', '資料表示、處理及分析', '資訊科技應用', '資訊科技與社會人類'],
+            datasets: [{
+                label: null,
+                data: [82, 64, 89, 71, 100, 88],
+                backgroundColor: 'rgba(13, 170, 195, 0.1)',
+                borderColor: 'rgba(13, 170, 195, 0.6)',
+                pointBorderWidth: 3, // 點寬
+                borderWidth: 3, // 線寬
+            }]
+        };
+
+        let chartOptions_PC = {
+            // 隱藏最上方的 label ( Data 的標籤 ( 其他頁面的角色 ) )
+            legend: {
+                display: false,
+            },
+            //responsive: false, // 依照畫布(canvas)調整大小
+            maintainAspectRatio: false, // 調整大小時，保持原始畫布的寬高比，若要更改 Size，必須調整成 false。
+            scale: {
+                // 外圈 Label 的字體尺寸
+                pointLabels: {
+                    fontSize: 15,
+                    fontStyle: 'bold', // 粗體
+                    fontColor: 'black', // 黑色
+                },
+                gridLines: {
+                    // 雷達圖底線的顏色，支援多種顏色 ( Ex. color: ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo'] )
+                    color: 'DarkGray'
+                },
+                // 刻度
+                ticks: {
+                    // 圖的數值 Range
+                    min: 0,
+                    max: 100,
+                    display: false,
+                    //backdropColor: 'black', // 更改背景顏色
+                    //showLabelBackdrop: false, // 畫背景色，預設為 true
+                }
+            },
+
+            // 防止滑鼠移上去時，數字閃爍
+            hover: {
+                animationDuration: 0
+            },
+
+            animation: {
+                // 畫完後的事件 ( 每次放大縮小都會重畫 )
+                onComplete: function () {
+                    // 數值顯示在點的旁邊
+                    var chartInstance = this.chart,
+
+                        ctx = chartInstance.ctx;
+                    // 以下屬於canvas的屬性（fontSize、fillStyle、textAlign...）
+                    ctx.font = Chart.helpers.fontString(16, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.fillStyle = "black";
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+
+                    this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            var data = dataset.data[index] + '%'; // 數值顯示的字
+                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                        });
+                    });
+
+                    //// 建立一個隱藏的 image 放在 Chart 畫布後方
+                    //// 因為 PrintArea 每次都會重新產生 iframe，
+                    //// 只好在列印的時候 隱藏 canvas，顯示 canvas 轉的 img
+                    //// 在網頁顯示的時候 顯示 canvas，隱藏 canvas 轉的 img
+                    //// ( 記得調整 print css )
+                    //CreateHiddenImgFromCanvas();
+
+                    //// 畫好該畫的東西才可以按列印
+                    //$('#btnPrint').addClass('canPrint');
+                    //hideLoading();
+                }
+            }
+        };
+
+        let ctxPC = document.getElementById('myChart_PC');
+
+        var myRadarChart_PC = new Chart(ctxPC, {
+            type: 'radar',
+            data: chartData_PC,
+            options: chartOptions_PC
+        });
+    }
+
+    function DrawRadar_Print() {
+        let chartData_Print = {
+            labels: ['資料結構與演算法', '程式設計', '系統平台', '資料表示、處理及分析', '資訊科技應用', '資訊科技與社會人類'],
+            datasets: [{
+                label: null,
+                data: [82, 64, 89, 71, 100, 88],
+                backgroundColor: 'rgba(13, 170, 195, 0.1)',
+                borderColor: 'rgba(13, 170, 195, 0.6)',
+                pointBorderWidth: 3, // 點寬
+                borderWidth: 3, // 線寬
+            }]
+        };
+
+        let chartOptions_Print = {
+            // 隱藏最上方的 label ( Data 的標籤 ( 其他頁面的角色 ) )
+            legend: {
+                display: false,
+            },
+            //responsive: false, // 依照畫布(canvas)調整大小
+            maintainAspectRatio: false, // 調整大小時，保持原始畫布的寬高比，若要更改 Size，必須調整成 false。
+            scale: {
+                // 外圈 Label 的字體尺寸
+                pointLabels: {
+                    fontSize: 15,
+                    fontStyle: 'bold', // 粗體
+                    fontColor: 'black', // 黑色
+                },
+                gridLines: {
+                    // 雷達圖底線的顏色，支援多種顏色 ( Ex. color: ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo'] )
+                    color: 'DarkGray'
+                },
+                // 刻度
+                ticks: {
+                    // 圖的數值 Range
+                    min: 0,
+                    max: 100,
+                    display: false,
+                    //backdropColor: 'black', // 更改背景顏色
+                    //showLabelBackdrop: false, // 畫背景色，預設為 true
+                }
+            },
+
+            // 防止滑鼠移上去時，數字閃爍
+            hover: {
+                animationDuration: 0
+            },
+
+            animation: {
+                // 畫完後的事件 ( 每次放大縮小都會重畫 )
+                onComplete: function () {
+                    // 數值顯示在點的旁邊
+                    var chartInstance = this.chart,
+
+                        ctx = chartInstance.ctx;
+                    // 以下屬於canvas的屬性（fontSize、fillStyle、textAlign...）
+                    ctx.font = Chart.helpers.fontString(16, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.fillStyle = "black";
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+
+                    this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            var data = dataset.data[index] + '%'; // 數值顯示的字
+                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                        });
+                    });
+
+                    // 建立一個隱藏的 image 放在 Chart 畫布後方
+                    // 因為 PrintArea 每次都會重新產生 iframe，
+                    // 只好在列印的時候 隱藏 canvas，顯示 canvas 轉的 img
+                    // 在網頁顯示的時候 顯示 canvas，隱藏 canvas 轉的 img
+                    // ( 記得調整 print css )
+                    CreateHiddenImgFromCanvas();
+
+                    // 畫好該畫的東西才可以按列印
+                    $('#btnPrint').addClass('canPrint');
+                    // 畫完之後在將區塊隱藏 ( 直接隱藏，ChartJs 就不會畫了 )
+                    $('#divOnlyCreateRadarImage').hide();
+
+                    hideLoading();
+                }
+            }
+        };
+
+        let ctxPrint = document.getElementById('myChart_Print');
+
+        var myRadarChart_Print = new Chart(ctxPrint, {
+            type: 'radar',
+            data: chartData_Print,
+            options: chartOptions_Print
+        });
+    }
+
+
+    function DrawRadar_Moblie() {
+        let chartData_Moblie = {
+            labels: ['資料結構與\n演算法', '程式\n設計', '系統\n平台', '資料表示、處理\n及分析', '資訊科技\n應用', '資訊科技與\n社會人類'],
+            datasets: [{
+                label: null,
+                data: [82, 64, 89, 71, 100, 88],
+                backgroundColor: 'rgba(13, 170, 195, 0.1)',
+                borderColor: 'rgba(13, 170, 195, 0.6)',
+                pointBorderWidth: 3, // 點寬
+                borderWidth: 3, // 線寬
+            }]
+        };
+
+        let chartOptions_Moblie = {
+            // 隱藏最上方的 label ( Data 的標籤 ( 其他頁面的角色 ) )
+            legend: {
+                display: false,
+            },
+            //responsive: false, // 依照畫布(canvas)調整大小
+            maintainAspectRatio: false, // 調整大小時，保持原始畫布的寬高比，若要更改 Size，必須調整成 false。
+            scale: {
+                // 外圈 Label 的字體尺寸
+                pointLabels: {
+                    fontSize: 11,
+                    fontStyle: 'bold', // 粗體
+                    fontColor: 'black', // 黑色
+                },
+                gridLines: {
+                    // 雷達圖底線的顏色，支援多種顏色 ( Ex. color: ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo'] )
+                    color: 'DarkGray'
+                },
+                // 刻度
+                ticks: {
+                    // 圖的數值 Range
+                    min: 0,
+                    max: 100,
+                    display: false,
+                    //backdropColor: 'black', // 更改背景顏色
+                    //showLabelBackdrop: false, // 畫背景色，預設為 true
+                }
+            },
+
+            // 防止滑鼠移上去時，數字閃爍
+            hover: {
+                animationDuration: 0
+            },
+
+            // 數值顯示
+            animation: {
+                onComplete: function () {
+                    var chartInstance = this.chart,
+
+                        ctx = chartInstance.ctx;
+                    // 以下屬於canvas的屬性（fontSize、fillStyle、textAlign...）
+                    ctx.font = Chart.helpers.fontString(12, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                    ctx.fillStyle = "black";
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+
+                    this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        meta.data.forEach(function (bar, index) {
+                            var data = dataset.data[index] + '%'; // 數值顯示的字
+                            ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                        });
+                    });
+                }
+            }
+        };
+
+        let ctxMoblie = document.getElementById('myChart_Moblie');
+
+        var myRadarChart_Moblie = new Chart(ctxMoblie, {
+            type: 'radar',
+            data: chartData_Moblie,
+            options: chartOptions_Moblie,
+            plugins: [{
+                beforeInit: function (chart) {
+                    chart.data.labels.forEach(function (e, i, a) {
+                        if (/\n/.test(e)) {
+                            a[i] = e.split(/\n/);
+                        }
+                    });
+                }
+            }]
+        });
+    }
+
+    function CreateHiddenImgFromCanvas() {
+        // 清掉原本的圖
+        $('#imageFromMyChart_Print').remove();
+
+        var canvas = document.getElementById('myChart_Print'),
+            dataUrl = canvas.toDataURL('image/png', 1), // quality = 1 ( 最佳 )
+            imageFoo = document.createElement('img');
+        imageFoo.src = dataUrl;
+
+        imageFoo.id = 'imageFromMyChart_Print'
+        // Style your image here
+        imageFoo.style.display = 'none';
+        //imageFoo.style.margin = '0px,0px,200px,0px'
+        //imageFoo.style.width = '500px';
+        //imageFoo.style.height = '300px';
+
+        // After you are done styling it, append it to the BODY element
+        $('#divChartContainer_PC').append(imageFoo);// 放在列印會顯示的位置
+    }
 </script>

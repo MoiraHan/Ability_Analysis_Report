@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Radar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Radar - 隨機產生角色 ( From Back )</h2>
+
+<head>
+    @section styles{
+        <link href="~/Content/Custom.css" rel="stylesheet" />
+    }
+    @section scripts{
+        <script src="~/Scripts/Chart.js/Chart.min.js"></script>
+        <script src="~/Scripts/Custom_Draw.js"></script>
+    }
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-2">
+                <button class="btn btn-info" onclick="GetPlayerDataAndDraw()">Go !</button>
+            </div>
+            <div class="col-xs-12 col-lg-2">
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function GetPlayerDataAndDraw() {
+       $.ajax({
+            url: '@Url.Action("GetDrawPlayerDataJson", "Practice")',
+            contentType: "application/json",
+            type: 'post',
+           success: function (result) {
+               DrawRader(result);               
+            },
+            Error: function (xhr) {
+
+            }
+        })
+    }
+
+    function DrawRader(dataJsonArray) {
+        ResetCanvas();
+
+        let ctx = document.getElementById('myChart');
+
+        let myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: GetLabelArray(),
+                datasets: dataJsonArray
+            },
+            options: {
+                //responsive: false, // 依照畫布(canvas)調整大小
+                maintainAspectRatio: false, // 調整大小時，保持原始畫布的寬高比，若要更改 Size，必須調整成 false。
+                scale: {
+                    // Label 的字體尺寸
+                    pointLabels: {
+                        fontSize: 15
+                    },
+                    // 刻度
+                    ticks: {
+                        // 圖的數值 Range
+                        min: 1,
+                        max: 99,
+                        fontSize: 14,
+                    }
+                },
+            }
+        });
+    }
+</script>

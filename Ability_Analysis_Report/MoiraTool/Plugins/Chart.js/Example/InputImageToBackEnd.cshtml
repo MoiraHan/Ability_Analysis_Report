@@ -1,0 +1,181 @@
+﻿
+@{
+    ViewBag.Title = "Radar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Radar - 數值呈現在畫面上 & 存 Chart Js 產生的圖片到後端</h2>
+
+<head>
+    @section styles{
+        @*<link href="~/Content/Custom.css" rel="stylesheet" />*@
+    }
+    @section scripts{
+        <script src="~/Scripts/Chart.js/Chart.min.js"></script>
+        <script src="~/Scripts/Custom_Draw.js"></script>
+    }
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-2">
+                <button class="btn btn-info" onclick="SendImageToBackEnd()">SendImageToBackEnd !</button>
+            </div>
+            <div class="col-xs-12 col-lg-2">
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        var ctx = document.getElementById('myChart');
+
+        var myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['資料結構與演算法', '程式設計', '系統平台', '資料表示、處理及分析', '資訊科技應用', '資訊科技與社會人類'],
+                datasets: [{
+                    label: null,
+                    data: [82, 64, 89, 71, 100, 88],
+                    backgroundColor: 'rgba(13, 170, 195, 0.1)',
+                    borderColor: 'rgba(13, 170, 195, 0.6)',
+                    pointBorderWidth: 3, // 點寬                 
+                    borderWidth: 3, // 線寬
+                }]
+            },
+            options: {
+                // 隱藏最上方的 label ( Data 的標籤 ( 其他頁面的角色 ) )
+                legend: {
+                    display: false,
+                },
+                //responsive: false, // 依照畫布(canvas)調整大小
+                maintainAspectRatio: false, // 調整大小時，保持原始畫布的寬高比，若要更改 Size，必須調整成 false。
+                scale: {
+                    // 外圈 Label 的字體尺寸
+                    pointLabels: {
+                        fontSize: 15,
+                        fontStyle: 'bold', // 粗體
+                        fontColor: 'black', // 黑色
+                    },
+                    gridLines: {
+                        // 雷達圖底線的顏色，支援多種顏色 ( Ex. color: ['black', 'red', 'orange', 'yellow', 'green', 'blue', 'indigo'] )
+                        color: 'DarkGray'
+                    },
+                    // 刻度
+                    ticks: {
+                        // 圖的數值 Range
+                        min: 0,
+                        max: 100,
+                        display: false,
+                        //backdropColor: 'black', // 更改背景顏色
+                        //showLabelBackdrop: false, // 畫背景色，預設為 true
+                    }
+                },
+
+                // 防止滑鼠移上去時，數字閃爍
+                hover: {
+                    animationDuration: 0
+                },
+
+                 // 數值顯示
+                 animation: {
+                    onComplete: function () {
+                        var chartInstance = this.chart,
+
+                        ctx = chartInstance.ctx;
+                        // 以下屬於canvas的屬性（fontSize、fillStyle、textAlign...）
+                        ctx.font = Chart.helpers.fontString(16, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                        ctx.fillStyle = "black";
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'bottom';
+
+                        this.data.datasets.forEach(function (dataset, i) {
+                            var meta = chartInstance.controller.getDatasetMeta(i);
+                            meta.data.forEach(function (bar, index) {
+                                var data = dataset.data[index]+'%'; // 數值顯示的字
+                                ctx.fillText(data, bar._model.x, bar._model.y - 5);
+                            });
+                        });
+                    }
+                }
+            }
+        });
+    })
+
+
+    function SendImageToBackEnd() {
+        var image = document.getElementById("myChart").toDataURL("image/png");
+        image = image.replace('data:image/png;base64,', '');
+
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("InputImageToBackEnd")',
+            data: '{ "image_Base64" : "' + image + '" }',
+            contentType: 'application/json',
+            success: function (msg) {
+                alert(msg);
+            }
+        });
+    }
+
+    @*function GetPlayerDataAndDraw() {
+       $.ajax({
+            url: '@Url.Action("GetDrawPlayerDataJson", "Practice")',
+            contentType: "application/json",
+            type: 'post',
+           success: function (result) {
+               DrawRader(result);
+            },
+            Error: function (xhr) {
+
+            }
+        })
+    }
+
+    function DrawRader(dataJsonArray) {
+        ResetCanvas();
+
+        let ctx = document.getElementById('myChart');
+
+        let myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: GetLabelArray(),
+                datasets: dataJsonArray
+            },
+            options: {
+                //responsive: false, // 依照畫布(canvas)調整大小
+                maintainAspectRatio: false, // 調整大小時，保持原始畫布的寬高比，若要更改 Size，必須調整成 false。
+                scale: {
+                    // Label 的字體尺寸
+                    pointLabels: {
+                        fontSize: 15
+                    },
+                    // 刻度
+                    ticks: {
+                        // 圖的數值 Range
+                        min: 1,
+                        max: 99,
+                        fontSize: 14,
+                        backdropColor: 'black', // 更改背景顏色
+                        showLabelBackdrop: false, // 畫背景色，預設為 true
+                    }
+                },
+            }
+        });
+    }*@
+</script>
+<style>
+    .chart-container {
+        position: relative;
+        margin: auto;
+        height: 300px;
+        width: 500px;
+        background-color: white;
+    }
+</style>

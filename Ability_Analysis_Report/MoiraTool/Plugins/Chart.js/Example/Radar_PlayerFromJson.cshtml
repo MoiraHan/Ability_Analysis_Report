@@ -1,0 +1,118 @@
+﻿
+@{
+    ViewBag.Title = "Radar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Radar - 隨機產生角色 ( From Json )</h2>
+
+<head>
+    @section styles{
+        <link href="~/Content/Custom.css" rel="stylesheet" />
+    }
+    @section scripts{
+        <script src="~/Scripts/Chart.js/Chart.min.js"></script>
+        <script src="~/Scripts/Custom_Draw.js"></script>
+    }
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-2">
+                <button class="btn btn-info" onclick="RandomPlayer()">Go !</button>
+            </div>
+            <div class="col-xs-12 col-lg-2">
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    function RandomPlayerAndDraw() {
+        ResetCanvas();
+
+        let dataJsonArray = RandomPlayerData_Ver2();
+
+        let ctx = document.getElementById('myChart');
+
+        let myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: GetLabelArray(),
+                datasets: dataJsonArray
+            },
+            options: {
+                //responsive: false, // 依照畫布(canvas)調整大小
+                maintainAspectRatio: false, // 調整大小時，保持原始畫布的寬高比，若要更改 Size，必須調整成 false。
+                scale: {
+                    // Label 的字體尺寸
+                    pointLabels: {
+                        fontSize: 15
+                    },
+                    // 刻度
+                    ticks: {
+                        // 圖的數值 Range
+                        min: 1,
+                        max: 99,
+                        fontSize: 14,
+                    }
+                },
+            }
+        });
+
+    }
+
+    function RandomPlayerData_Ver2() {
+        let result = [];
+
+        for (let i = 0; i < 4; i++) {
+            let data = {
+                'pointBorderWidth': 2, // 點寬
+                'borderWidth': 3, // 線寬
+                'backgroundColor': RandomColor_Rgba_transparent_0(),
+                'borderColor': RandomColor_Rgba_transparent_0_6(),
+                'data': [
+                    Math.floor(Math.random() * 99) + 1, // 力量
+                    Math.floor(Math.random() * 99) + 1, // 敏捷
+                    Math.floor(Math.random() * 99) + 1, // 體力
+                    Math.floor(Math.random() * 99) + 1, // 智慧
+                    Math.floor(Math.random() * 99) + 1, // 靈巧
+                    Math.floor(Math.random() * 99) + 1, // 幸運
+                ],
+                'label': RandomJob() + '-' + RandomNickname()
+            };
+
+            result.push(data);
+        }
+
+        return result;
+    }
+
+    //function RandomPlayerData() {
+    //    let result = [];
+
+    //    for (let i = 0; i < 2; i++) {
+    //        let data = {
+    //            'BackgroundColor': RandomColor_Rgba_transparent_0_4(),
+    //            'BorderColor': RandomColor_Rgba_transparent_0_6(),
+    //            'Attributes': {
+    //                "STR": Math.floor(Math.random() * 99) + 1,
+    //                "AGI": Math.floor(Math.random() * 99) + 1,
+    //                "VIT": Math.floor(Math.random() * 99) + 1,
+    //                "INT": Math.floor(Math.random() * 99) + 1,
+    //                "DEX": Math.floor(Math.random() * 99) + 1,
+    //                "LUK": Math.floor(Math.random() * 99) + 1,
+    //            },
+    //            'Job': RandomJob()
+    //        };
+
+    //        result.push(data);
+    //    }
+
+    //    return result;
+    //}
+</script>

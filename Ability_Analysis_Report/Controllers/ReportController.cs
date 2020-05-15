@@ -24,7 +24,7 @@ namespace Ability_Analysis_Report.Controllers
 
         public ActionResult ReportVer2_RDLC()
         {
-            return View();
+            return View(GetExamineeAnswerStatuses());
         }
 
         public ActionResult ReportVer2_HTML()

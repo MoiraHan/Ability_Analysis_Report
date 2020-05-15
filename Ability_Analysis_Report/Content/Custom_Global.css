@@ -5,23 +5,25 @@
 .navbar-brand {
     color: white !important;
 }
-.navbar-brand:hover {
-    color: black !important;
-}
 
-.navbar-nav > li > a{
+    .navbar-brand:hover {
+        color: black !important;
+    }
+
+.navbar-nav > li > a {
     color: white !important;
 }
 
-.navbar-nav > li > a:hover {
-    color: black !important;
-}
+    .navbar-nav > li > a:hover {
+        color: black !important;
+    }
 
 table {
     /* table 超過螢幕畫面會有 scroll bar */
-    display: block;
+    /*display: block;
     overflow-x: auto;
-    white-space: nowrap;
+    white-space: nowrap;*/
+    width: 100%;
 }
 
 html, body {
@@ -40,7 +42,7 @@ html, body {
 #main_header {
     /* 設定header的高度 */
     height: 5px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 #main_content {
@@ -84,7 +86,7 @@ hr.grayLine {
 .customHeaderBg {
     background-image: url(/Images/header.png) !important;
     background-size: 100% 100% !important;
-    padding: 5px;/*加高 Header 底圖高度 ( main_content、main_header 也要配合調整 )*/
+    padding: 5px; /*加高 Header 底圖高度 ( main_content、main_header 也要配合調整 )*/
 }
 
 .customFooterBg {
@@ -92,51 +94,74 @@ hr.grayLine {
     background-size: 100% 100% !important;
 }
 
-#printHeaderArea {
-    display: none;
-    padding-left: 100px;
-    padding-right: 20px;
-    margin-bottom: 20px;
-}
-
-#printHeader {
-    height: 100px;
-    width: 100%;
-    background-image: url(/Images/header.png) !important;
-    background-size: 100% 100% !important;
-}
-
 @media print {
     @page {
-        size: A4;
-        margin: 0;
-    }
-    .notPrint {
-        display: none !important;
+        size: A4 !important;
+        margin: 0 !important;
     }
 
-    body {    
+    body {
         padding-top: 0px !important;
-        padding-bottom: 0px !important;        
+        padding-bottom: 0px !important;
     }
 
-    #printHeader, #printFooter_cover {
-        -webkit-print-color-adjust: exact !important;
+    #printHeaderArea {
+        display: none;
+        padding-left: 100px;
+        padding-right: 0px;
+        margin-bottom: 0px;
     }
 
-    #printHeaderArea, #printFooter_coverArea {
-        display: block !important;
+    #printHeader {
+        height: 100px;
+        width: 100%;
+        background-image: url(/Images/header.png) !important;
+        background-size: 100% 100% !important;
     }
 
     #printFooter_coverArea {
-        margin-top: 72px;
-    }   
+        display: none;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 130px;
+        page-break-after: always; /* 換頁符號的概念 ( after 在標籤後換頁 ) */
+    }
 
-    .notShowMoblie {
+    #printFooter_cover {
+        height: 100px;
+        width: 100%;
+        background-image: url(/Images/footer.png) !important;
+        background-size: 100% 100% !important;
+    }
+
+    #printFooter_page1Area {
+        display: none;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 112px;
+        page-break-after: always; /* 換頁符號的概念 ( after 在標籤後換頁 ) */
+    }
+
+    #printFooter_page1 {
+        height: 100px;
+        width: 100%;
+        background-image: url(/Images/footer.png) !important;
+        background-size: 100% 100% !important;
+    }
+
+    #printHeader, #printFooter_cover, #printFooter_page1Area, .chart-container {
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    #printHeaderArea, #printFooter_coverArea, #printFooter_page1Area {
         display: block !important;
     }
 
-    .notShowPC {
+    .notShowMoblie, #imageFromMyChart_PC {
+        display: block !important;
+    }
+
+    .notShowPC, #myChart_PC, .notShowPrint {
         display: none !important;
     }
 
@@ -149,14 +174,14 @@ hr.grayLine {
         padding-right: 50px !important;
     }
 
-    #coverTable_PC > thead > tr > th {
+    #coverTable_PC th {
         /* 如果只有設 background-color，瀏覽器列印設置必須打勾「背景圖形」才會顯示顏色 */
         background-color: #30d6f1d6 !important;
         /* 加上 -webkit-print-color-adjust: exact 後，應用此規則的元素的背景色和圖像始終​​會被打印，而用戶的打印設置將被覆蓋。 */
         -webkit-print-color-adjust: exact !important;
     }
 
-    .page1Table > thead > tr > th {
+    .page1Table th {
         /* 如果只有設 background-color，瀏覽器列印設置必須打勾「背景圖形」才會顯示顏色 */
         background-color: #30d6f1d6 !important;
         /* 加上 -webkit-print-color-adjust: exact 後，應用此規則的元素的背景色和圖像始終​​會被打印，而用戶的打印設置將被覆蓋。 */
@@ -167,14 +192,21 @@ hr.grayLine {
         padding-left: 50px !important;
         padding-right: 50px !important;
     }
- 
-    .page1Table > thead > tr > th {
-        padding: 8px !important;
-    
+
+    .page1Table {
+        font-size: 14px !important;
     }
 
-    .page1Table > tbody > tr > td {
-        padding: 8px !important;    
+        .page1Table th, td {
+            padding: 5px !important;
+            text-align: center;
+        }
+
+    #imageFromMyChart_Print {
+        margin-left: 70px !important;
+        width : 650px;
+        height :380px;
+        display:block !important;
     }
 
     .printPaddingleft50 {
@@ -203,7 +235,7 @@ hr.grayLine {
     #printHeaderArea {
         padding-left: 20px;
         padding-right: 20px;
-    }  
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {

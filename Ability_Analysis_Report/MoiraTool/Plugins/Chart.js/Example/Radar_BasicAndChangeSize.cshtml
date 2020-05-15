@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = "Radar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Radar - 更改Size</h2>
+
+<head>
+    @section styles{
+        <link href="~/Content/Custom.css" rel="stylesheet" />
+    }
+    @section scripts{
+        <script src="~/Scripts/Chart.js/Chart.min.js"></script>
+    }
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-lg-2">
+
+                <button class="btn btn-info" onclick="ChangeSize('200px','200px')">更改Size為200px</button>
+                <br />
+                <button class="btn btn-info" onclick="ChangeSize('400px','400px')">更改Size為400px</button>
+                <br />
+                <button class="btn btn-info" onclick="ChangeSize('800px','800px')">更改Size為800px</button>
+            </div>
+            <div class="col-xs-12 col-lg-2">
+                <!-- 官方文件: 若需要調整 Size，需將畫布包在父容器中，更改父容器 Size -->
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        var ctx = document.getElementById('myChart');
+
+        var myRadarChart = new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['力量', '敏捷', '體力', '智慧', '靈巧', '幸運'],
+                datasets: [{
+                    label: '法師',
+                    data: [25, 5, 40, 80, 50, 9],
+                    backgroundColor: [
+                        'rgba(114, 46, 222, 0.4)',// 第一個顏色決定了範圍底色 ( 也可以只設一個顏色 )
+                        //'rgba(54, 162, 235, 0.4)',
+                        //'rgba(255, 206, 86, 0.4)',
+                        //'rgba(75, 192, 192, 0.4)',
+                        //'rgba(153, 102, 255, 0.4)',
+                        //'rgba(255, 159, 64, 0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(114, 46, 222, 0.6)',
+                        //'rgba(54, 162, 235, 0.6)',
+                        //'rgba(255, 206, 86, 0.6)',
+                        //'rgba(75, 192, 192, 0.6)',
+                        //'rgba(153, 102, 255, 0.6)',
+                        //'rgba(255, 159, 64, 0.6)'
+                    ],
+                    pointBorderWidth: 15, // 點寬
+                    pointStyle: 'crossRot', // 更換點的圖形
+                    borderWidth: 3, // 線寬
+                },
+                {
+                    label: '弓箭手',
+                    data: [50, 88, 35, 5, 55, 40],
+                    backgroundColor: [
+                        'rgba(8, 150, 173, 0.4)',// 第一個顏色決定了範圍底色 ( 也可以只設一個顏色 )
+                        'rgba(54, 162, 235, 0.4)',
+                        'rgba(255, 206, 86, 0.4)',
+                        'rgba(75, 192, 192, 0.4)',
+                        'rgba(153, 102, 255, 0.4)',
+                        'rgba(255, 159, 64, 0.4)'
+                    ],
+                    borderColor: [
+                        'rgba(8, 150, 173, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(153, 102, 255, 0.6)',
+                        'rgba(255, 159, 64, 0.6)'
+                    ],
+                    pointBorderWidth: 15, // 點寬
+                    pointStyle: 'crossRot', // 更換點的圖形
+                    borderWidth: 3, // 線寬
+                }]
+            },
+            options: {
+                //responsive: false, // 依照畫布(canvas)調整大小
+                maintainAspectRatio: false,// 調整大小時，保持原始畫布的寬高比，若要更改 Size，必須調整成 false。
+                scale: {
+                    ticks: {
+                        // 圖的數值 Range
+                        min: 1,
+                        max: 99,
+                    }
+                }
+            }
+        });
+    })
+
+    function ChangeSize(height, width) {
+        $('.chart-container').css("height", height);
+        $('.chart-container').css("width", width);
+    }
+</script>

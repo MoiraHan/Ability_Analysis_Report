@@ -156,6 +156,14 @@
     <Content Include="MoiraTool\Plugins\Bs_DatePicker\Styles\bootstrap-datepicker.css" />
     <Content Include="MoiraTool\Plugins\Bs_DatePicker\Styles\bootstrap-datepicker.min.css" />
     <Content Include="MoiraTool\Plugins\Bs_DatePicker\UseBsDatePicker.js" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Custom.css" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Custom_Draw.js" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Scripts\Chart.bundle.js" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Scripts\Chart.bundle.min.js" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Scripts\Chart.js" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Scripts\Chart.min.js" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Styles\Chart.css" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Styles\Chart.min.css" />
     <Content Include="MoiraTool\Plugins\Datatables\Scripts\dataTables.bootstrap.js" />
     <Content Include="MoiraTool\Plugins\Datatables\Scripts\dataTables.bootstrap.min.js" />
     <Content Include="MoiraTool\Plugins\Datatables\Scripts\jquery.dataTables.js" />
@@ -166,6 +174,9 @@
     <Content Include="MoiraTool\Plugins\Font_awesome_5.13.0\all.js" />
     <Content Include="MoiraTool\Plugins\Font_awesome_5.13.0\all.min.js" />
     <Content Include="MoiraTool\Plugins\Font_awesome_5.13.0\Example.html" />
+    <Content Include="MoiraTool\Plugins\LoadingModal\Bean_Eater-1s-200px_darkbg.gif" />
+    <Content Include="MoiraTool\Plugins\LoadingModal\Example.html" />
+    <Content Include="MoiraTool\Plugins\LoadingModal\UseLoadingModal.js" />
     <Content Include="MoiraTool\Plugins\PrintArea\jquery.PrintArea.js" />
     <Content Include="MoiraTool\Scripts\Custom.js" />
     <Content Include="MoiraTool\Styles\Custom.css" />
@@ -180,6 +191,11 @@
       <DependentUpon>DataSet_Python.xsd</DependentUpon>
     </Content>
     <Content Include="MoiraTool\Plugins\Datatables\dataTables.Chinese-traditional.json" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Example\InputImageToBackEnd.cshtml" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Example\Mixed_BasicAndChangeSize.cshtml" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Example\Radar_BasicAndChangeSize.cshtml" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Example\Radar_PlayerFromBack.cshtml" />
+    <Content Include="MoiraTool\Plugins\Chart.js\Example\Radar_PlayerFromJson.cshtml" />
     <None Include="Reports\DataSet_Python.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>

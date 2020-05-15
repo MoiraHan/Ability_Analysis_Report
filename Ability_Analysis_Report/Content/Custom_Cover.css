@@ -1,17 +1,4 @@
-﻿#printFooter_coverArea {
-    display: none;
-    padding-left: 100px;
-    padding-right: 20px;
-}
-
-#printFooter_cover {
-    height: 100px;
-    width: 100%;
-    background-image: url(/Images/footer.png) !important;
-    background-size: 100% 100% !important;
-}
-
-.reportTitle {
+﻿.reportTitle {
     font-size: 43px; 
 }
 
@@ -48,7 +35,7 @@
     width: 100%;
 }
 
-    #coverTable_PC > thead > tr > th {
+    #coverTable_PC th {
         padding: 18px;
         text-align: center;
         border-bottom: 3px solid black;
@@ -56,7 +43,7 @@
         white-space: nowrap;
     }
 
-    #coverTable_PC > tbody > tr > td {
+    #coverTable_PC td {
         padding: 18px;
         text-align: center;
         border-bottom: 3px solid black;
@@ -64,7 +51,7 @@
     }
 
 
-#coverArea_Mobile {
+#coverTableArea_Mobile {
     margin-top: 60px;
     padding-left: 20px;
     padding-right: 20px;
@@ -74,7 +61,7 @@
     font-size: 18px;
 }
 
-    #coverTable_PC_Mobile > thead > tr > th {
+    #coverTable_PC_Mobile th {
         padding: 18px;
         text-align: center;
         border-left: 3px solid black;
@@ -83,7 +70,7 @@
         white-space: nowrap;
     }
 
-    #coverTable_PC_Mobile > thead > tr > td {
+    #coverTable_PC_Mobile td {
         padding: 18px;
         text-align: center;
         border-right: 3px solid black;
@@ -102,11 +89,6 @@
 }
 
 @media (max-width: 767px) {
-    #printFooter_coverArea {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
     #coverIntroductionArea {
         padding-left: 0px;
     }
@@ -121,12 +103,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
-    #printFooter_coverArea {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
+@media (min-width: 768px) and (max-width: 992px) {   
     #coverIntroductionArea {
         padding-left: 40px;
     }
