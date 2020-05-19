@@ -1,0 +1,85 @@
+﻿.page2Table {
+    font-size: 16px;
+}
+
+    .page2Table th {
+        padding: 18px;
+        text-align: center;
+        background-color: #30d6f1d6;
+        white-space: nowrap;
+    }
+
+    .page2Table td {
+        padding: 5px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .page2Table tr.topBottomBlack {
+        border-top: 3px solid black;
+        border-bottom: 3px solid black;
+    }
+
+        .page2Table tr.middleGray {
+            border-bottom: 3px solid gray;
+        }
+
+
+.break-table tr.bottomGrey {
+    border-bottom: 3px solid grey !important;
+}
+
+.break-table tr.topGrey {
+    border-top: 3px solid grey !important;
+}
+
+.break-table tr {
+    background-color: #ffffff;
+    display: block;
+}
+
+.break-table td {
+    border: none !important;
+    border-right: 3px solid black !important;
+    position: relative;
+    padding-left: 35% !important;
+    white-space: normal;
+    text-align: left;
+    border-right: 3px solid black;
+    display: block;
+}
+
+    .break-table td:before {
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+        content: attr(data-th);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 30%;
+        height: 100%;
+        white-space: nowrap;
+        padding-top: 5px;
+        font-weight: bold;
+        background-color: #30d6f1d6;
+    }
+
+.break-table thead {
+    display: none;
+}
+
+
+@media (min-width: 767px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+ 
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+   
+}
+
+@media (min-width: 1200px) {
+}

@@ -138,7 +138,7 @@ hr.grayLine {
         display: none;
         padding-left: 0px;
         padding-right: 0px;
-        margin-top: 112px;
+        margin-top: 12px;
         page-break-after: always; /* 換頁符號的概念 ( after 在標籤後換頁 ) */
     }
 
@@ -188,7 +188,24 @@ hr.grayLine {
         -webkit-print-color-adjust: exact !important;
     }
 
+    .page2Table th {
+        /* 如果只有設 background-color，瀏覽器列印設置必須打勾「背景圖形」才會顯示顏色 */
+        background-color: #30d6f1d6 !important;
+        /* 加上 -webkit-print-color-adjust: exact 後，應用此規則的元素的背景色和圖像始終​​會被打印，而用戶的打印設置將被覆蓋。 */
+        -webkit-print-color-adjust: exact !important;
+    }
+
     #page1TableArea_PC {
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
+
+    #page2TableEvaluationItemArea_PC {
+        padding-left: 50px !important;
+        padding-right: 50px !important;
+    }
+
+    #page2TableEvaluationItemCommentArea_PC {
         padding-left: 50px !important;
         padding-right: 50px !important;
     }
@@ -202,11 +219,16 @@ hr.grayLine {
             text-align: center;
         }
 
+    #divChartContainer_PC {
+        width: 620px;
+        height: 350px;
+    }
+
     #imageFromMyChart_Print {
-        margin-left: 70px !important;
-        width : 650px;
-        height :380px;
-        display:block !important;
+        margin-left: 0px !important;
+        width: 620px;
+        height: 350px;
+        display: block !important;
     }
 
     .printPaddingleft50 {

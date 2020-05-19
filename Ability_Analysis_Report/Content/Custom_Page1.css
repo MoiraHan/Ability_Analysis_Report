@@ -1,9 +1,4 @@
-﻿#page1TableArea_PC {
-    /*padding-left: 30px;
-    padding-right: 50px;*/
-}
-
-.page1Table {
+﻿.page1Table {
     font-size: 16px;
 }
 
@@ -20,16 +15,16 @@
         white-space: nowrap;
     }
 
-    .page1Table > thead > tr.headBlack {
+    .page1Table tr.headBlack {
         border-top: 3px solid black;
         border-bottom: 3px solid black;
     }
 
-        .page1Table > tbody > tr.middleGray {
+        .page1Table tr.middleGray {
             border-bottom: 3px solid gray;
         }
 
-        .page1Table > tbody > tr.bottomBlack {
+        .page1Table tr.bottomBlack {
             border-bottom: 3px solid black;
         }
 
@@ -39,7 +34,6 @@
     padding-right: 20px;
 }
 
-/* page1Table_Moblie 的 標題一律不准換行、並將底色顏色設為粉紅色、字體設為白色 */
 .page1Table_Moblie th {
     white-space: nowrap;
     background-color: #30d6f1d6;
