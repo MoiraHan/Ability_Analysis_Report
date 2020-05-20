@@ -5,15 +5,19 @@
 }
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     @section styles{
         <link href="~/MoiraTool/Plugins/Datatables/Styles/dataTables.bootstrap.min.css" rel="stylesheet" />
         <link href="~/MoiraTool/Plugins/Chart.js/Styles/Chart.min.css" rel="stylesheet" />
         <link href="~/MoiraTool/Plugins/Chart.js/Custom.css" rel="stylesheet" />
-        <link href="~/Content/Custom_Global.css" rel="stylesheet" />
         <link href="~/Content/Custom_Cover.css" rel="stylesheet" />
         <link href="~/Content/Custom_Cover_EarthArea.css" rel="stylesheet" />
         <link href="~/Content/Custom_Page1.css" rel="stylesheet" />
         <link href="~/Content/Custom_Page2.css" rel="stylesheet" />
+        <link href="~/Content/Custom_Global.css" rel="stylesheet" />
     }
     @section scripts{
         <script src="~/MoiraTool/Plugins/Font_awesome_5.13.0/all.min.js"></script>
@@ -26,11 +30,10 @@
         <script src="~/MoiraTool/Plugins/LoadingModal/UseLoadingModal.js"></script>
     }
 </head>
-
-<br />
 @*<h2>ReportVer2_HTML</h2>*@
 
-<button class="btn btn-info notShowPrint" id="btnPrint" onclick="PrintArea()" @*style="display:none;"*@>Print Area</button>
+<button class="btn btn-info notShowPrint" id="btnPrint" onclick="Print()">Print</button>
+
 <body>
     <div id="print">
 
@@ -99,38 +102,38 @@
 
                 </div>
 
-                <div class="row">
+                <div class="row" style="margin-top:30px">
                     <div class="" id="coverTableArea_PC">
                         <table id="coverTable_PC">
                             <thead>
                                 <tr>
-                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1 border-3-bottomBlack">
 
                                     </th>
-                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1">總題數</th>
-                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1">正確題數</th>
-                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1">錯誤題數</th>
-                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1">正確率</th>
-                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1">得分</th>
-                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1">測驗結果</th>
+                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1 border-3-bottomBlack">總題數</th>
+                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1 border-3-bottomBlack">正確題數</th>
+                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1 border-3-bottomBlack">錯誤題數</th>
+                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1 border-3-bottomBlack">正確率</th>
+                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1 border-3-bottomBlack">得分</th>
+                                    <th class="col-xs-1 col-sm-1 col-md-1 col-lg-1 border-3-bottomBlack">測驗結果</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>成績</td>
-                                    <td>50題</td>
-                                    <td>40題</td>
-                                    <td>10題</td>
-                                    <td>80%</td>
-                                    <td>96分</td>
-                                    <td>合格</td>
+                                    <td class="border-3-bottomBlack">成績</td>
+                                    <td class="border-3-bottomBlack">50題</td>
+                                    <td class="border-3-bottomBlack">40題</td>
+                                    <td class="border-3-bottomBlack">10題</td>
+                                    <td class="border-3-bottomBlack">80%</td>
+                                    <td class="border-3-bottomBlack">96分</td>
+                                    <td class="border-3-bottomBlack">合格</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <div class="row text-left">
+                <div class="row text-left" style="margin-top:30px">
                     <div id="coverIntroductionArea" class="printPaddingleft50">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <span style="font-size:30px">簡介</span>
@@ -155,7 +158,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- PC Cover End -->
             <!-- Moblie Cover Start -->
             <div class="container notShowPC" style="width:100%">
@@ -218,32 +220,32 @@
                     <table id="coverTable_PC_Mobile">
                         <thead>
                             <tr>
-                                <th class="col-xs-2"></th>
-                                <td class="col-xs-10">成績</td>
+                                <th class="col-xs-2 border-3-leftBlack border-3-rightBlack"></th>
+                                <td class="col-xs-10 border-3-rightBlack">成績</td>
                             </tr>
                             <tr>
-                                <th>總題數</th>
-                                <td>50題</td>
+                                <th class="border-3-leftBlack border-3-rightBlack">總題數</th>
+                                <td class="border-3-rightBlack">50題</td>
                             </tr>
                             <tr>
-                                <th>正確題數</th>
-                                <td>40題</td>
+                                <th class="border-3-leftBlack border-3-rightBlack">正確題數</th>
+                                <td class="border-3-rightBlack">40題</td>
                             </tr>
                             <tr>
-                                <th>錯誤題數</th>
-                                <td>10題</td>
+                                <th class="border-3-leftBlack border-3-rightBlack">錯誤題數</th>
+                                <td class="border-3-rightBlack">10題</td>
                             </tr>
                             <tr>
-                                <th>正確率</th>
-                                <td>80%</td>
+                                <th class="border-3-leftBlack border-3-rightBlack">正確率</th>
+                                <td class="border-3-rightBlack">80%</td>
                             </tr>
                             <tr>
-                                <th>得分</th>
-                                <td>96分</td>
+                                <th class="border-3-leftBlack border-3-rightBlack">得分</th>
+                                <td class="border-3-rightBlack">96分</td>
                             </tr>
                             <tr>
-                                <th>測驗結果</th>
-                                <td>合格</td>
+                                <th class="border-3-leftBlack border-3-rightBlack">測驗結果</th>
+                                <td class="border-3-rightBlack">合格</td>
                             </tr>
                         </thead>
                     </table>
@@ -283,7 +285,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <span class="printPaddingleft50" style="font-size:30px;">資訊科技素養能力測驗 ( Python ) 分析</span>
+                    <span class="printPaddingleft50" style="font-size:30px;font-weight: bold;">資訊科技素養能力測驗 ( Python ) 分析</span>
                 </div>
                 <div class="row" style="margin-top:30px">
                     <span class="printPaddingleft50" style="font-size:20px;">&nbsp;▶&nbsp;答題狀況</span>
@@ -293,7 +295,7 @@
                         <!-- Table Question 1 ~ 17 -->
                         <table class="text-center page1Table" id="page1Table_1">
                             <thead>
-                                <tr class="headBlack">
+                                <tr class="border-3-topBlack border-3-bottomBlack">
                                     <th>
                                         題號
                                     </th>
@@ -306,7 +308,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="middleGray">
+                                <tr class="border-3-bottomGray">
                                     <td>
                                         標準答案
                                     </td>
@@ -334,7 +336,7 @@
                         <!-- Table Question 18 ~ 34 -->
                         <table class="text-center page1Table" id="page1Table_2">
                             <thead>
-                                <tr class="headBlack">
+                                <tr class="border-3-topBlack border-3-bottomBlack">
                                     <th>
                                         題號
                                     </th>
@@ -347,7 +349,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="middleGray">
+                                <tr class="border-3-bottomGray">
                                     <td>
                                         標準答案
                                     </td>
@@ -375,7 +377,7 @@
                         <!-- Table Question 35 ~ 50 -->
                         <table class="text-center page1Table" id="page1Table_3">
                             <thead>
-                                <tr class="headBlack">
+                                <tr class="border-3-topBlack border-3-bottomBlack">
                                     <th>
                                         題號
                                     </th>
@@ -391,7 +393,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="middleGray">
+                                <tr class="border-3-bottomGray">
                                     <td>
                                         標準答案
                                     </td>
@@ -404,7 +406,7 @@
                                     <td>
                                     </td>
                                 </tr>
-                                <tr class="bottomBlack">
+                                <tr class="border-3-bottomBlack">
                                     <td>
                                         考生答案
                                     </td>
@@ -454,22 +456,22 @@
                     <table class="page1Table_Moblie text-center" id="tblPage1Table_Moblie">
                         <thead>
                             <tr>
-                                <th>題號</th>
-                                <td>標準答案</td>
-                                <td class="right">考生答案</td>
+                                <th class="border-3-leftBlack border-3-rightBlack">題號</th>
+                                <td class="border-3-rightGray">標準答案</td>
+                                <td class="border-3-rightBlack">考生答案</td>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <th>
+                                    <th class="border-3-leftBlack border-3-rightBlack">
                                         @item.QuestionNum.ToString("0#")
                                     </th>
-                                    <td>
+                                    <td class="border-3-rightGray">
                                         @item.StandardAnswer
                                     </td>
-                                    <td class="right">
+                                    <td class="border-3-rightBlack">
                                         @item.ExamineeAnswer
                                     </td>
                                 </tr>
@@ -503,15 +505,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="row" style="margin-top:30px">
+                <div class="row" style="margin-top:50px">
                     <p class="printPaddingleft50" style="font-size:20px;">&nbsp;▶&nbsp;評定項目</p>
                     <p class="printPaddingleft50" style="font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在這次測驗中，您在各領域回答的情況如下表：</p>
                 </div>
-                <div class="row" style="margin-top:10px;">
+                <div class="row" style="margin-top:5px;">
                     <div id="page2TableEvaluationItemArea_PC">
-                        <table class="page2Table">
+                        <table class="page2TableEvaluationItem_PC">
                             <thead>
-                                <tr class="topBottomBlack">
+                                <tr class="border-3-topBlack border-3-bottomBlack">
                                     <th>評定項目</th>
                                     <th>答對題數</th>
                                     <th>總題數</th>
@@ -519,31 +521,31 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="middleGray">
+                                <tr class="border-3-bottomGray">
                                     <td>資料結構與演算法</td>
                                     <td>9題</td>
                                     <td>11題</td>
                                     <td>82%</td>
                                 </tr>
-                                <tr class="middleGray">
+                                <tr class="border-3-bottomGray">
                                     <td>程式設計</td>
                                     <td>7題</td>
                                     <td>11題</td>
                                     <td>64%</td>
                                 </tr>
-                                <tr class="middleGray">
+                                <tr class="border-3-bottomGray">
                                     <td>系統平台</td>
                                     <td>8題</td>
                                     <td>9題</td>
                                     <td>89%</td>
                                 </tr>
-                                <tr class="middleGray">
+                                <tr class="border-3-bottomGray">
                                     <td>資料表示、處理及分析</td>
                                     <td>5題</td>
                                     <td>7題</td>
                                     <td>71%</td>
                                 </tr>
-                                <tr class="middleGray">
+                                <tr class="border-3-bottomGray">
                                     <td>資訊科技應用</td>
                                     <td>4題</td>
                                     <td>4題</td>
@@ -555,7 +557,7 @@
                                     <td>8題</td>
                                     <td>88%</td>
                                 </tr>
-                                <tr class="topBottomBlack">
+                                <tr class="border-3-topBlack border-3-bottomBlack">
                                     <td>合計</td>
                                     <td>40題</td>
                                     <td>50題</td>
@@ -565,23 +567,73 @@
                         </table>
                     </div>
                 </div>
-                <div class="row" style="margin-top:30px;">
+                <div class="row" style="margin-top:50px">
+                    <p class="printPaddingleft50" style="font-size:20px;">&nbsp;▶&nbsp;各能力面向表現</p>
+                </div>
+                <div class="row" style="margin-top:5px">
                     <div id="page2TableEvaluationItemCommentArea_PC">
-                        <table class="page2Table">
+                        <table class="page2TableEvaluationItemComment_PC">
                             <tbody>
-                                <tr>
-                                    <th rowspan="2">1</th>
-                                    <th>資料結構與演算法</th>
-                                    <td rowspan="2">ASDSADASDSAD</td>
+                                <tr class="border-3-topBlack">
+                                    <th rowspan="2" class="border-3-bottomBlack border-3-rightGray SeqNo">1</th>
+                                    <th class="border-3-rightGray border-3-bottomGray Item">資料結構與演算法</th>
+                                    <td rowspan="2" class="border-3-bottomBlack Comment">表現卓越，顯示您已具備該向度的堅強實力＠！＃＠（！＃（＆ＱＷＹＥ＊＆＠！＃︿＊＆（＠！︿＃＊＠！（＃＄Ｙ（Ｑ＊ＹＲＷＱＩＵ</td>
                                 </tr>
-                                <tr class="middleGray">
-                                    <td>您的表現</td>
+                                <tr class="border-3-bottomBlack">
+                                    <td class="YourPerformance">您的表現</td>
+                                </tr>
+                                <tr class="border-3-topBlack">
+                                    <th rowspan="2" class="border-3-bottomBlack border-3-rightGray SeqNo">2</th>
+                                    <th class="border-3-rightGray border-3-bottomGray Item">程式設計</th>
+                                    <td rowspan="2" class="border-3-bottomBlack Comment">表現不錯，有挑戰高分的實力</td>
+                                </tr>
+                                <tr class="border-3-bottomBlack">
+                                    <td class="YourPerformance">您的表現</td>
+                                </tr>
+                                <tr class="border-3-topBlack">
+                                    <th rowspan="2" class="border-3-bottomBlack border-3-rightGray SeqNo">3</th>
+                                    <th class="border-3-rightGray border-3-bottomGray Item">系統平台</th>
+                                    <td rowspan="2" class="border-3-bottomBlack Comment">表現不錯，有挑戰高分的實力</td>
+                                </tr>
+                                <tr class="border-3-bottomBlack">
+                                    <td class="YourPerformance">您的表現</td>
+                                </tr>
+                                <tr class="border-3-topBlack">
+                                    <th rowspan="2" class="border-3-bottomBlack border-3-rightGray SeqNo">4</th>
+                                    <th class="border-3-rightGray border-3-bottomGray Item">資料表示、處理及分析</th>
+                                    <td rowspan="2" class="border-3-bottomBlack Comment">表現不錯，有挑戰高分的實力</td>
+                                </tr>
+                                <tr class="border-3-bottomBlack">
+                                    <td class="YourPerformance">您的表現</td>
+                                </tr>
+                                <tr class="border-3-topBlack">
+                                    <th rowspan="2" class="border-3-bottomBlack border-3-rightGray SeqNo">5</th>
+                                    <th class="border-3-rightGray border-3-bottomGray Item">資訊科技應用</th>
+                                    <td rowspan="2" class="border-3-bottomBlack Comment">表現不錯，有挑戰高分的實力</td>
+                                </tr>
+                                <tr class="border-3-bottomBlack">
+                                    <td class="YourPerformance">您的表現</td>
+                                </tr>
+                                <tr class="border-3-topBlack">
+                                    <th rowspan="2" class="border-3-bottomBlack border-3-rightGray SeqNo">6</th>
+                                    <th class="border-3-rightGray border-3-bottomGray Item">資訊科技與人類社會</th>
+                                    <td rowspan="2" class="border-3-bottomBlack Comment">表現不錯，有挑戰高分的實力</td>
+                                </tr>
+                                <tr class="border-3-bottomBlack">
+                                    <td class="YourPerformance">您的表現</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-lg-12" id="printFooter_page2Area">
+                        <div id="printFooter_page2">
+
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- PC Page2 End -->
             <!-- Moblie Page2 Start -->
@@ -593,7 +645,7 @@
                 <div class="row">
                     <table class="break-table">
                         <thead>
-                            <tr class="topBottomBlack">
+                            <tr class="border-3-topBlack border-3-bottomBlack">
                                 <th>評定項目</th>
                                 <th>答對題數</th>
                                 <th>總題數</th>
@@ -601,43 +653,43 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="middleGray topGrey bottomGrey">
+                            <tr class="border-3-bottomGray border-3-topGray">
                                 <td data-th="評定項目">資料結構與演算法</td>
                                 <td data-th="答對題數">9題</td>
                                 <td data-th="總題數">11題</td>
                                 <td data-th="正確率">82%</td>
                             </tr>
-                            <tr class="middleGray bottomGrey">
+                            <tr class="border-3-bottomGray">
                                 <td data-th="評定項目">程式設計</td>
                                 <td data-th="答對題數">7題</td>
                                 <td data-th="總題數">11題</td>
                                 <td data-th="正確率">64%</td>
                             </tr>
-                            <tr class="middleGray bottomGrey">
+                            <tr class="border-3-bottomGray">
                                 <td data-th="評定項目">系統平台</td>
                                 <td data-th="答對題數">8題</td>
                                 <td data-th="總題數">9題</td>
                                 <td data-th="正確率">89%</td>
                             </tr>
-                            <tr class="middleGray bottomGrey">
+                            <tr class="border-3-bottomGray">
                                 <td data-th="評定項目">資料表示、處理及分析</td>
                                 <td data-th="答對題數">5題</td>
                                 <td data-th="總題數">7題</td>
                                 <td data-th="正確率">71%</td>
                             </tr>
-                            <tr class="middleGray bottomGrey">
+                            <tr class="border-3-bottomGray">
                                 <td data-th="評定項目">資訊科技應用</td>
                                 <td data-th="答對題數">4題</td>
                                 <td data-th="總題數">4題</td>
                                 <td data-th="正確率">100%</td>
                             </tr>
-                            <tr class="bottomGrey">
+                            <tr class="border-3-bottomGray">
                                 <td data-th="評定項目">資訊科技與人類社會</td>
                                 <td data-th="答對題數">7題</td>
                                 <td data-th="總題數">8題</td>
                                 <td data-th="正確率">88%</td>
                             </tr>
-                            <tr class="topBottomBlack bottomGrey">
+                            <tr class="border-3-bottomBlack border-3-bottomGray">
                                 <td data-th="評定項目">合計</td>
                                 <td data-th="答對題數">40題</td>
                                 <td data-th="總題數">50題</td>
@@ -665,14 +717,19 @@
 <style>
 </style>
 <script>
-    function PrintArea() {
-        if ($('#btnPrint').hasClass('canPrint'))
-            $('#print').printArea();
-        else
+    function Print() {
+        if ($('#btnPrint').hasClass('canPrint')) {
+            alert("Tip: 若需要 PDF 檔，將目的地 PDF 再按列印 !");
+            window.print();
+        }
+        else {
             alert('頁面加載中，請稍後');
+        }
     }
 
     $(document).ready(function () {
+        alert("若不是使用 Chrome 開啟，請使用 Chrome 開啟本網頁，以得到完整的網頁 !");
+
         showLoading();// 此頁面加載完雷達圖才會關閉 Loading
 
         // datatables

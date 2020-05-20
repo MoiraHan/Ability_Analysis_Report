@@ -132,6 +132,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Python.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Utility\UnicodeFontFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -149,6 +150,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\earth.png" />
     <Content Include="Images\footer.png" />
+    <Content Include="Images\footerwithinfo.png" />
     <Content Include="Images\header.png" />
     <Content Include="Images\tech_earth.png" />
     <Content Include="MoiraTool\Plugins\Bs_DatePicker\Scripts\bootstrap-datepicker.js" />

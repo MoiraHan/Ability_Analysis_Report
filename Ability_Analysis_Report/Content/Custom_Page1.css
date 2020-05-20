@@ -7,6 +7,7 @@
         text-align: center;
         background-color: #30d6f1d6;
         white-space: nowrap;
+        color: white;
     }
 
     .page1Table td {
@@ -15,18 +16,10 @@
         white-space: nowrap;
     }
 
-    .page1Table tr.headBlack {
-        border-top: 3px solid black;
-        border-bottom: 3px solid black;
+    .page1Table > thead > tr > th {
+        color: white !important;
     }
-
-        .page1Table tr.middleGray {
-            border-bottom: 3px solid gray;
-        }
-
-        .page1Table tr.bottomBlack {
-            border-bottom: 3px solid black;
-        }
+  
 
 .page1Table_Moblie {
     margin-top: 60px;
@@ -37,8 +30,6 @@
 .page1Table_Moblie th {
     white-space: nowrap;
     background-color: #30d6f1d6;
-    border-left: 3px solid black;
-    border-right: 3px solid black;
 }
 
 .page1Table_Moblie > thead > tr > th, .page1Table_Moblie > thead > tr > td,
@@ -47,10 +38,6 @@
     text-align: center;
     white-space: nowrap;
 }
-
-    .page1Table_Moblie td.right {    
-        border-right: 3px solid black;
-    }
 
 @media (max-width: 330px) {
     /* 調整手機板 Datatables 的換頁清單字體大小 */

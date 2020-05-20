@@ -94,11 +94,88 @@ hr.grayLine {
     background-size: 100% 100% !important;
 }
 
+.border-3-topGray {
+    border-top: 3px solid gray !important;
+}
+
+.border-3-bottomGray {
+    border-bottom: 3px solid gray !important;
+}
+
+.border-3-rightGray {
+    border-right: 3px solid gray !important;
+}
+
+.border-3-topBlack {
+    border-top: 3px solid black !important;
+}
+
+.border-3-bottomBlack {
+    border-bottom: 3px solid black !important;
+}
+
+.border-3-leftBlack {
+    border-left: 3px solid black !important;
+}
+
+.border-3-rightBlack {
+    border-right: 3px solid black !important;
+}
+
+
+.break-table tr {
+    background-color: #ffffff;
+    display: block;
+}
+
+.break-table td {
+    border: none !important;
+    border-right: 3px solid black !important;
+    position: relative;
+    padding-left: 35% !important;
+    white-space: normal;
+    text-align: left;
+    display: block;
+}
+
+    .break-table td:before {
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+        content: attr(data-th);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 30%;
+        height: 100%;
+        white-space: nowrap;
+        font-weight: bold;
+        background-color: #30d6f1d6;
+    }
+
+.break-table thead {
+    display: none;
+}
+
 @media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+    }
+
     @page {
+        size
         size: A4 !important;
         margin: 0 !important;
+        padding: 0 !important;
     }
+
+    #main_header {
+        height: 0px !important;
+    }
+
+    .container, #main_content {
+        padding: 0 !important;
+    }
+
 
     body {
         padding-top: 0px !important;
@@ -106,55 +183,69 @@ hr.grayLine {
     }
 
     #printHeaderArea {
-        display: none;
-        padding-left: 100px;
-        padding-right: 0px;
-        margin-bottom: 0px;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        margin-bottom: 0px !important;
     }
 
     #printHeader {
-        height: 100px;
-        width: 100%;
+        height: 100px !important;
+        width: 100% !important;
         background-image: url(/Images/header.png) !important;
         background-size: 100% 100% !important;
     }
 
     #printFooter_coverArea {
-        display: none;
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-top: 130px;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        margin-top: 85px !important;
         page-break-after: always; /* 換頁符號的概念 ( after 在標籤後換頁 ) */
     }
 
     #printFooter_cover {
-        height: 100px;
-        width: 100%;
+        height: 100px !important;
+        width: 100% !important;
         background-image: url(/Images/footer.png) !important;
         background-size: 100% 100% !important;
     }
 
     #printFooter_page1Area {
-        display: none;
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-top: 12px;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        margin-top: 38px !important;
         page-break-after: always; /* 換頁符號的概念 ( after 在標籤後換頁 ) */
     }
 
     #printFooter_page1 {
-        height: 100px;
-        width: 100%;
+        height: 100px !important;
+        width: 100% !important;
         background-image: url(/Images/footer.png) !important;
         background-size: 100% 100% !important;
     }
 
-    #printHeader, #printFooter_cover, #printFooter_page1Area, .chart-container {
-        -webkit-print-color-adjust: exact !important;
+    #printFooter_page2Area {
+        display: block !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        margin-top: 45px !important;
+        page-break-after: always; /* 換頁符號的概念 ( after 在標籤後換頁 ) */
     }
 
-    #printHeaderArea, #printFooter_coverArea, #printFooter_page1Area {
+    #printFooter_page2 {
         display: block !important;
+        height: 100px !important;
+        width: 100% !important;
+        background-image: url(/Images/footer.png) !important;
+        background-size: 100% 100% !important;
+        background-repeat: no-repeat !important;
+    }
+
+    #printHeader, #printFooter_cover, #printFooter_page1Area, #printFooter_page2Area {
+        /*-webkit-print-color-adjust: exact !important;*/
+    }
+
+    .chart-container {
+        /*-webkit-print-color-adjust: exact !important;*/
     }
 
     .notShowMoblie, #imageFromMyChart_PC {
@@ -174,25 +265,11 @@ hr.grayLine {
         padding-right: 50px !important;
     }
 
-    #coverTable_PC th {
+    #coverTable_PC th, .page1Table th, .page2TableEvaluationItem_PC th, .page2TableEvaluationItemComment_PC th {
         /* 如果只有設 background-color，瀏覽器列印設置必須打勾「背景圖形」才會顯示顏色 */
         background-color: #30d6f1d6 !important;
         /* 加上 -webkit-print-color-adjust: exact 後，應用此規則的元素的背景色和圖像始終​​會被打印，而用戶的打印設置將被覆蓋。 */
-        -webkit-print-color-adjust: exact !important;
-    }
-
-    .page1Table th {
-        /* 如果只有設 background-color，瀏覽器列印設置必須打勾「背景圖形」才會顯示顏色 */
-        background-color: #30d6f1d6 !important;
-        /* 加上 -webkit-print-color-adjust: exact 後，應用此規則的元素的背景色和圖像始終​​會被打印，而用戶的打印設置將被覆蓋。 */
-        -webkit-print-color-adjust: exact !important;
-    }
-
-    .page2Table th {
-        /* 如果只有設 background-color，瀏覽器列印設置必須打勾「背景圖形」才會顯示顏色 */
-        background-color: #30d6f1d6 !important;
-        /* 加上 -webkit-print-color-adjust: exact 後，應用此規則的元素的背景色和圖像始終​​會被打印，而用戶的打印設置將被覆蓋。 */
-        -webkit-print-color-adjust: exact !important;
+        /*-webkit-print-color-adjust: exact !important;*/
     }
 
     #page1TableArea_PC {
@@ -210,24 +287,28 @@ hr.grayLine {
         padding-right: 50px !important;
     }
 
-    .page1Table {
+    .page1Table, .page2TableEvaluationItem_PC, .page2TableEvaluationItemComment_PC {
         font-size: 14px !important;
     }
 
-        .page1Table th, td {
+        .page2TableEvaluationItemComment_PC > tbody > tr > th {
+            color: white !important;
+        }
+
+        .page1Table > thead > tr > th, .page1Table > tbody > tr > td {
             padding: 5px !important;
             text-align: center;
         }
 
     #divChartContainer_PC {
         width: 620px;
-        height: 350px;
+        height: 365px;
     }
 
     #imageFromMyChart_Print {
         margin-left: 0px !important;
         width: 620px;
-        height: 350px;
+        height: 365px;
         display: block !important;
     }
 
