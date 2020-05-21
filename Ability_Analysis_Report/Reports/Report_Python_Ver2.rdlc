@@ -217,8 +217,8 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox317</rd:DefaultName>
-                <Top>2.19674cm</Top>
-                <Left>0.87097cm</Left>
+                <Top>2.26683cm</Top>
+                <Left>1.37881cm</Left>
                 <Height>1.02334cm</Height>
                 <Width>17.03336cm</Width>
                 <Style>
@@ -1285,8 +1285,8 @@
                   </Tablix>
                 </ReportItems>
                 <KeepTogether>true</KeepTogether>
-                <Top>3.85193cm</Top>
-                <Left>0.87097cm</Left>
+                <Top>3.92202cm</Top>
+                <Left>1.37881cm</Left>
                 <Height>8.18854cm</Height>
                 <Width>18.32298cm</Width>
                 <ZIndex>1</ZIndex>
@@ -1300,9 +1300,9 @@
                 <Source>Embedded</Source>
                 <Value>header</Value>
                 <Sizing>Fit</Sizing>
-                <Left>0.03552cm</Left>
+                <Top>0.06009cm</Top>
                 <Height>2.16146cm</Height>
-                <Width>20cm</Width>
+                <Width>21cm</Width>
                 <ZIndex>2</ZIndex>
                 <Visibility>
                   <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
@@ -1317,10 +1317,9 @@
                 <Source>Embedded</Source>
                 <Value>footer</Value>
                 <Sizing>Fit</Sizing>
-                <Top>26.47354cm</Top>
-                <Left>0.03552cm</Left>
+                <Top>27.52558cm</Top>
                 <Height>2.16146cm</Height>
-                <Width>20cm</Width>
+                <Width>21cm</Width>
                 <ZIndex>3</ZIndex>
                 <Visibility>
                   <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
@@ -1434,11 +1433,1259 @@
                   </Image>
                 </ReportItems>
                 <KeepTogether>true</KeepTogether>
-                <Top>12.47157cm</Top>
-                <Left>0.87097cm</Left>
+                <Top>12.54166cm</Top>
+                <Left>1.37881cm</Left>
                 <Height>11.94577cm</Height>
                 <Width>18.32399cm</Width>
                 <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Rectangle>
+              <Rectangle Name="Rectangle16">
+                <ReportItems>
+                  <Rectangle Name="Rectangle22">
+                    <ReportItems>
+                      <Textbox Name="Textbox319">
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>各能力面向表現</Value>
+                                <Style>
+                                  <FontFamily>微軟正黑體</FontFamily>
+                                  <FontSize>13pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox310</rd:DefaultName>
+                        <Top>0.34395cm</Top>
+                        <Left>0.71992cm</Left>
+                        <Height>0.72cm</Height>
+                        <Width>3.82292cm</Width>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                      <Image Name="arrow8">
+                        <Source>Embedded</Source>
+                        <Value>arrow</Value>
+                        <Sizing>FitProportional</Sizing>
+                        <Top>0.42867cm</Top>
+                        <Height>0.63528cm</Height>
+                        <Width>0.73776cm</Width>
+                        <ZIndex>1</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                        </Style>
+                      </Image>
+                      <Tablix Name="Tablix41">
+                        <TablixBody>
+                          <TablixColumns>
+                            <TablixColumn>
+                              <Width>1.76746cm</Width>
+                            </TablixColumn>
+                            <TablixColumn>
+                              <Width>5.20441cm</Width>
+                            </TablixColumn>
+                            <TablixColumn>
+                              <Width>11.35111cm</Width>
+                            </TablixColumn>
+                          </TablixColumns>
+                          <TablixRows>
+                            <TablixRow>
+                              <Height>1.6cm</Height>
+                              <TablixCells>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="SeqNo2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!SeqNo.Value</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>12pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                                <Color>White</Color>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>SeqNo</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                        <TopBorder>
+                                          <Width>3pt</Width>
+                                        </TopBorder>
+                                        <BottomBorder>
+                                          <Width>3pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <BackgroundColor>#2acbb8</BackgroundColor>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Rectangle Name="Rectangle23">
+                                      <ReportItems>
+                                        <Textbox Name="Textbox553">
+                                          <CanGrow>true</CanGrow>
+                                          <KeepTogether>true</KeepTogether>
+                                          <Paragraphs>
+                                            <Paragraph>
+                                              <TextRuns>
+                                                <TextRun>
+                                                  <Value>您的表現</Value>
+                                                  <Style>
+                                                    <FontFamily>微軟正黑體</FontFamily>
+                                                    <FontSize>11pt</FontSize>
+                                                  </Style>
+                                                </TextRun>
+                                              </TextRuns>
+                                              <Style>
+                                                <TextAlign>Right</TextAlign>
+                                              </Style>
+                                            </Paragraph>
+                                          </Paragraphs>
+                                          <rd:DefaultName>Textbox552</rd:DefaultName>
+                                          <Top>0.8cm</Top>
+                                          <Height>0.8cm</Height>
+                                          <Width>5.20441cm</Width>
+                                          <Style>
+                                            <Border>
+                                              <Style>None</Style>
+                                            </Border>
+                                            <VerticalAlign>Middle</VerticalAlign>
+                                            <PaddingLeft>2pt</PaddingLeft>
+                                            <PaddingRight>2pt</PaddingRight>
+                                            <PaddingTop>2pt</PaddingTop>
+                                            <PaddingBottom>2pt</PaddingBottom>
+                                          </Style>
+                                        </Textbox>
+                                        <Textbox Name="Display2">
+                                          <CanGrow>true</CanGrow>
+                                          <KeepTogether>true</KeepTogether>
+                                          <Paragraphs>
+                                            <Paragraph>
+                                              <TextRuns>
+                                                <TextRun>
+                                                  <Value>=" " + First(Fields!Display.Value)</Value>
+                                                  <Style>
+                                                    <FontFamily>微軟正黑體</FontFamily>
+                                                    <FontSize>11pt</FontSize>
+                                                    <FontWeight>Bold</FontWeight>
+                                                    <Color>White</Color>
+                                                  </Style>
+                                                </TextRun>
+                                              </TextRuns>
+                                              <Style />
+                                            </Paragraph>
+                                          </Paragraphs>
+                                          <rd:DefaultName>Display</rd:DefaultName>
+                                          <Left>0.00001cm</Left>
+                                          <Height>0.87056cm</Height>
+                                          <Width>5.2044cm</Width>
+                                          <ZIndex>1</ZIndex>
+                                          <Style>
+                                            <Border>
+                                              <Style>None</Style>
+                                            </Border>
+                                            <BackgroundColor>#2acbb8</BackgroundColor>
+                                            <VerticalAlign>Middle</VerticalAlign>
+                                            <PaddingLeft>2pt</PaddingLeft>
+                                            <PaddingRight>2pt</PaddingRight>
+                                            <PaddingTop>2pt</PaddingTop>
+                                            <PaddingBottom>2pt</PaddingBottom>
+                                          </Style>
+                                        </Textbox>
+                                      </ReportItems>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Style>
+                                        <Border>
+                                          <Style>None</Style>
+                                        </Border>
+                                        <TopBorder>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </TopBorder>
+                                        <BottomBorder>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </BottomBorder>
+                                        <RightBorder>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </RightBorder>
+                                      </Style>
+                                    </Rectangle>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Comment2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!Comment.Value</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style />
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Comment1</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                        <TopBorder>
+                                          <Width>3pt</Width>
+                                        </TopBorder>
+                                        <BottomBorder>
+                                          <Width>3pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                              </TablixCells>
+                            </TablixRow>
+                          </TablixRows>
+                        </TablixBody>
+                        <TablixColumnHierarchy>
+                          <TablixMembers>
+                            <TablixMember />
+                            <TablixMember />
+                            <TablixMember />
+                          </TablixMembers>
+                        </TablixColumnHierarchy>
+                        <TablixRowHierarchy>
+                          <TablixMembers>
+                            <TablixMember>
+                              <Group Name="SeqNo2">
+                                <GroupExpressions>
+                                  <GroupExpression>=Fields!SeqNo.Value</GroupExpression>
+                                </GroupExpressions>
+                              </Group>
+                              <SortExpressions>
+                                <SortExpression>
+                                  <Value>=Fields!SeqNo.Value</Value>
+                                </SortExpression>
+                              </SortExpressions>
+                            </TablixMember>
+                          </TablixMembers>
+                        </TablixRowHierarchy>
+                        <KeepTogether>true</KeepTogether>
+                        <DataSetName>Data_EvaluationItemComment</DataSetName>
+                        <Top>1.5402cm</Top>
+                        <Height>1.6cm</Height>
+                        <Width>18.32298cm</Width>
+                        <ZIndex>2</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                        </Style>
+                      </Tablix>
+                    </ReportItems>
+                    <KeepTogether>true</KeepTogether>
+                    <Top>14.07681cm</Top>
+                    <Left>0.92133cm</Left>
+                    <Height>10.59624cm</Height>
+                    <Width>18.32399cm</Width>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Rectangle>
+                  <Image Name="Image15">
+                    <Source>Embedded</Source>
+                    <Value>header</Value>
+                    <Sizing>Fit</Sizing>
+                    <Height>2.16146cm</Height>
+                    <Width>21cm</Width>
+                    <ZIndex>1</ZIndex>
+                    <Visibility>
+                      <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
+                    </Visibility>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Image>
+                  <Image Name="Image16">
+                    <Source>Embedded</Source>
+                    <Value>footer</Value>
+                    <Sizing>Fit</Sizing>
+                    <Top>26.97458cm</Top>
+                    <Height>2.16146cm</Height>
+                    <Width>21cm</Width>
+                    <ZIndex>2</ZIndex>
+                    <Visibility>
+                      <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
+                    </Visibility>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Image>
+                  <Textbox Name="Textbox106">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>聯絡地址：10059台北市松山區八德路三段32號8樓</Value>
+                            <Style>
+                              <FontStyle>Normal</FontStyle>
+                              <FontFamily>微軟正黑體</FontFamily>
+                              <FontWeight>Normal</FontWeight>
+                              <TextDecoration>None</TextDecoration>
+                              <Color>#000000</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox106</rd:DefaultName>
+                    <Top>28.18185cm</Top>
+                    <Left>6.2282cm</Left>
+                    <Height>0.54708cm</Height>
+                    <Width>8.52782cm</Width>
+                    <ZIndex>3</ZIndex>
+                    <Visibility>
+                      <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
+                    </Visibility>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Image Name="Image28">
+                    <Source>Embedded</Source>
+                    <Value>Copyright1200px</Value>
+                    <Sizing>FitProportional</Sizing>
+                    <Top>27.19311cm</Top>
+                    <Left>4.66532cm</Left>
+                    <Height>0.33583cm</Height>
+                    <Width>0.37486cm</Width>
+                    <ZIndex>4</ZIndex>
+                    <Visibility>
+                      <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
+                    </Visibility>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Image>
+                  <Textbox Name="Textbox108">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>2020財團法人中華民國電腦技能基金會版權所有All Rights Reserved.</Value>
+                            <Style>
+                              <FontStyle>Normal</FontStyle>
+                              <FontFamily>微軟正黑體</FontFamily>
+                              <FontWeight>Normal</FontWeight>
+                              <TextDecoration>None</TextDecoration>
+                              <Color>#000000</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox106</rd:DefaultName>
+                    <Top>27.08769cm</Top>
+                    <Left>5.07546cm</Left>
+                    <Height>0.54708cm</Height>
+                    <Width>12.2249cm</Width>
+                    <ZIndex>5</ZIndex>
+                    <Visibility>
+                      <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
+                    </Visibility>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Textbox Name="Textbox107">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>聯絡電話：(02)2577-8806</Value>
+                            <Style>
+                              <FontStyle>Normal</FontStyle>
+                              <FontFamily>微軟正黑體</FontFamily>
+                              <FontWeight>Normal</FontWeight>
+                              <TextDecoration>None</TextDecoration>
+                              <Color>#000000</Color>
+                            </Style>
+                          </TextRun>
+                        </TextRuns>
+                        <Style>
+                          <TextAlign>Left</TextAlign>
+                        </Style>
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Textbox106</rd:DefaultName>
+                    <Top>27.63477cm</Top>
+                    <Left>7.8932cm</Left>
+                    <Height>0.54708cm</Height>
+                    <Width>4.84302cm</Width>
+                    <ZIndex>6</ZIndex>
+                    <Visibility>
+                      <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
+                    </Visibility>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                  <Rectangle Name="Rectangle17">
+                    <ReportItems>
+                      <Image Name="arrow3">
+                        <Source>Embedded</Source>
+                        <Value>arrow</Value>
+                        <Sizing>FitProportional</Sizing>
+                        <Top>0.1cm</Top>
+                        <Height>0.63528cm</Height>
+                        <Width>0.73776cm</Width>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                        </Style>
+                      </Image>
+                      <Textbox Name="Textbox312">
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>評定項目</Value>
+                                <Style>
+                                  <FontFamily>微軟正黑體</FontFamily>
+                                  <FontSize>13pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Center</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox310</rd:DefaultName>
+                        <Top>0.01528cm</Top>
+                        <Left>0.73776cm</Left>
+                        <Height>0.72cm</Height>
+                        <Width>2.5cm</Width>
+                        <ZIndex>1</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                      <Textbox Name="Textbox322">
+                        <CanGrow>true</CanGrow>
+                        <KeepTogether>true</KeepTogether>
+                        <Paragraphs>
+                          <Paragraph>
+                            <TextRuns>
+                              <TextRun>
+                                <Value>在這次測驗中，您在各領域回答的情況如下表：</Value>
+                                <Style>
+                                  <FontFamily>微軟正黑體</FontFamily>
+                                  <FontSize>11pt</FontSize>
+                                </Style>
+                              </TextRun>
+                            </TextRuns>
+                            <Style>
+                              <TextAlign>Left</TextAlign>
+                            </Style>
+                          </Paragraph>
+                        </Paragraphs>
+                        <rd:DefaultName>Textbox320</rd:DefaultName>
+                        <Top>0.77056cm</Top>
+                        <Left>0.73776cm</Left>
+                        <Height>0.59118cm</Height>
+                        <Width>9.02717cm</Width>
+                        <ZIndex>2</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <PaddingBottom>2pt</PaddingBottom>
+                        </Style>
+                      </Textbox>
+                      <Tablix Name="Tablix5">
+                        <TablixBody>
+                          <TablixColumns>
+                            <TablixColumn>
+                              <Width>6.34249cm</Width>
+                            </TablixColumn>
+                            <TablixColumn>
+                              <Width>3.97632cm</Width>
+                            </TablixColumn>
+                            <TablixColumn>
+                              <Width>3.97632cm</Width>
+                            </TablixColumn>
+                            <TablixColumn>
+                              <Width>3.97632cm</Width>
+                            </TablixColumn>
+                          </TablixColumns>
+                          <TablixRows>
+                            <TablixRow>
+                              <Height>0.98806cm</Height>
+                              <TablixCells>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Textbox16">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>評定項目</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </Border>
+                                        <TopBorder>
+                                          <Width>5pt</Width>
+                                        </TopBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <BackgroundColor>#2acbb8</BackgroundColor>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Textbox18">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>答對題數</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </Border>
+                                        <TopBorder>
+                                          <Width>5pt</Width>
+                                        </TopBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <BackgroundColor>#2acbb8</BackgroundColor>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Textbox40">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>總題數</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox37</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </Border>
+                                        <TopBorder>
+                                          <Width>5pt</Width>
+                                        </TopBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <BackgroundColor>#2acbb8</BackgroundColor>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Textbox46">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>正確率</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                                <FontWeight>Bold</FontWeight>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox43</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </Border>
+                                        <TopBorder>
+                                          <Width>5pt</Width>
+                                        </TopBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <BackgroundColor>#2acbb8</BackgroundColor>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                              </TablixCells>
+                            </TablixRow>
+                            <TablixRow>
+                              <Height>0.98806cm</Height>
+                              <TablixCells>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="ItemDisplay2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!ItemDisplay.Value</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>ItemDisplay</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                        <TopBorder>
+                                          <Style>None</Style>
+                                        </TopBorder>
+                                        <BottomBorder>
+                                          <Color>LightGrey</Color>
+                                          <Width>3pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="CorrectQuestionCount2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!CorrectQuestionCount.Value</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>CorrectQuestionCount</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                        <TopBorder>
+                                          <Style>None</Style>
+                                        </TopBorder>
+                                        <BottomBorder>
+                                          <Color>LightGrey</Color>
+                                          <Width>3pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="TotalQuestionCount2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Fields!TotalQuestionCount.Value</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>TotalQuestionCount</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                        <TopBorder>
+                                          <Style>None</Style>
+                                        </TopBorder>
+                                        <BottomBorder>
+                                          <Color>LightGrey</Color>
+                                          <Width>3pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="CorrentPercentage2">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Format(Fields!CorrectQuestionCount.Value / Fields!TotalQuestionCount.Value * 100, "0.#\%")</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>CorrentPercentage</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                        </Border>
+                                        <TopBorder>
+                                          <Style>None</Style>
+                                        </TopBorder>
+                                        <BottomBorder>
+                                          <Color>LightGrey</Color>
+                                          <Width>3pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                              </TablixCells>
+                            </TablixRow>
+                            <TablixRow>
+                              <Height>0.98806cm</Height>
+                              <TablixCells>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Textbox42">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>合計</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox35</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </Border>
+                                        <BottomBorder>
+                                          <Width>5pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Textbox48">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Sum(Fields!CorrectQuestionCount.Value)</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox36</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </Border>
+                                        <BottomBorder>
+                                          <Width>5pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Textbox50">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Sum(Fields!TotalQuestionCount.Value)</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox39</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </Border>
+                                        <BottomBorder>
+                                          <Width>5pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                                <TablixCell>
+                                  <CellContents>
+                                    <Textbox Name="Textbox51">
+                                      <CanGrow>true</CanGrow>
+                                      <KeepTogether>true</KeepTogether>
+                                      <Paragraphs>
+                                        <Paragraph>
+                                          <TextRuns>
+                                            <TextRun>
+                                              <Value>=Format(Sum(Fields!CorrectQuestionCount.Value) / Sum(Fields!TotalQuestionCount.Value) * 100, "0.#\%")</Value>
+                                              <Style>
+                                                <FontFamily>微軟正黑體</FontFamily>
+                                                <FontSize>11pt</FontSize>
+                                              </Style>
+                                            </TextRun>
+                                          </TextRuns>
+                                          <Style>
+                                            <TextAlign>Center</TextAlign>
+                                          </Style>
+                                        </Paragraph>
+                                      </Paragraphs>
+                                      <rd:DefaultName>Textbox45</rd:DefaultName>
+                                      <Style>
+                                        <Border>
+                                          <Color>DimGray</Color>
+                                          <Style>Solid</Style>
+                                          <Width>3pt</Width>
+                                        </Border>
+                                        <BottomBorder>
+                                          <Width>5pt</Width>
+                                        </BottomBorder>
+                                        <LeftBorder>
+                                          <Style>None</Style>
+                                        </LeftBorder>
+                                        <RightBorder>
+                                          <Style>None</Style>
+                                        </RightBorder>
+                                        <VerticalAlign>Middle</VerticalAlign>
+                                        <PaddingLeft>2pt</PaddingLeft>
+                                        <PaddingRight>2pt</PaddingRight>
+                                        <PaddingTop>2pt</PaddingTop>
+                                        <PaddingBottom>2pt</PaddingBottom>
+                                      </Style>
+                                    </Textbox>
+                                  </CellContents>
+                                </TablixCell>
+                              </TablixCells>
+                            </TablixRow>
+                          </TablixRows>
+                        </TablixBody>
+                        <TablixColumnHierarchy>
+                          <TablixMembers>
+                            <TablixMember />
+                            <TablixMember />
+                            <TablixMember />
+                            <TablixMember />
+                          </TablixMembers>
+                        </TablixColumnHierarchy>
+                        <TablixRowHierarchy>
+                          <TablixMembers>
+                            <TablixMember>
+                              <KeepWithGroup>After</KeepWithGroup>
+                            </TablixMember>
+                            <TablixMember>
+                              <Group Name="詳細資料2" />
+                              <TablixMembers>
+                                <TablixMember />
+                              </TablixMembers>
+                            </TablixMember>
+                            <TablixMember>
+                              <KeepWithGroup>Before</KeepWithGroup>
+                            </TablixMember>
+                          </TablixMembers>
+                        </TablixRowHierarchy>
+                        <DataSetName>Data_ExamineeEvaluationItemStatus</DataSetName>
+                        <Top>1.88209cm</Top>
+                        <Left>0.05153cm</Left>
+                        <Height>2.96418cm</Height>
+                        <Width>18.27145cm</Width>
+                        <ZIndex>3</ZIndex>
+                        <Style>
+                          <Border>
+                            <Style>None</Style>
+                          </Border>
+                          <FontFamily>微軟正黑體</FontFamily>
+                          <FontSize>12pt</FontSize>
+                        </Style>
+                      </Tablix>
+                    </ReportItems>
+                    <KeepTogether>true</KeepTogether>
+                    <Top>2.65699cm</Top>
+                    <Left>0.92133cm</Left>
+                    <Height>11.11688cm</Height>
+                    <Width>18.32399cm</Width>
+                    <ZIndex>7</ZIndex>
+                    <Style>
+                      <Border>
+                        <Style>None</Style>
+                      </Border>
+                    </Style>
+                  </Rectangle>
+                </ReportItems>
+                <PageBreak>
+                  <BreakLocation>End</BreakLocation>
+                </PageBreak>
+                <KeepTogether>true</KeepTogether>
+                <Top>29.39885cm</Top>
+                <Height>29.13604cm</Height>
+                <Width>21cm</Width>
+                <ZIndex>5</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -1450,10 +2697,9 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <KeepTogether>true</KeepTogether>
-            <Top>29.54363cm</Top>
-            <Left>0.42281cm</Left>
-            <Height>28.635cm</Height>
-            <Width>20.03552cm</Width>
+            <Top>29.42062cm</Top>
+            <Height>58.53489cm</Height>
+            <Width>21cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1463,8 +2709,8 @@
           <Rectangle Name="Rectangle15">
             <ReportItems>
               <Line Name="Line2">
-                <Top>8.71944cm</Top>
-                <Left>1.83811cm</Left>
+                <Top>8.74592cm</Top>
+                <Left>2.36554cm</Left>
                 <Height>0cm</Height>
                 <Width>17.32133cm</Width>
                 <Style>
@@ -1476,8 +2722,8 @@
                 </Style>
               </Line>
               <Line Name="Line1">
-                <Top>8.33118cm</Top>
-                <Left>0.88698cm</Left>
+                <Top>8.35766cm</Top>
+                <Left>1.41441cm</Left>
                 <Height>0cm</Height>
                 <Width>17.43301cm</Width>
                 <ZIndex>1</ZIndex>
@@ -2248,8 +3494,8 @@
                   </TablixMembers>
                 </TablixRowHierarchy>
                 <DataSetName>Data_CoverScoreInfo</DataSetName>
-                <Top>10.96444cm</Top>
-                <Left>0.83545cm</Left>
+                <Top>10.99092cm</Top>
+                <Left>1.36288cm</Left>
                 <Height>2.91979cm</Height>
                 <Width>18.32298cm</Width>
                 <ZIndex>2</ZIndex>
@@ -2278,8 +3524,8 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox52</rd:DefaultName>
-                <Top>15.31618cm</Top>
-                <Left>1.41526cm</Left>
+                <Top>15.34266cm</Top>
+                <Left>1.94269cm</Left>
                 <Height>0.9175cm</Height>
                 <Width>1.665cm</Width>
                 <ZIndex>3</ZIndex>
@@ -2354,8 +3600,8 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox54</rd:DefaultName>
-                <Top>16.41007cm</Top>
-                <Left>2.76276cm</Left>
+                <Top>16.43654cm</Top>
+                <Left>3.29019cm</Left>
                 <Height>8.37876cm</Height>
                 <Width>15.10605cm</Width>
                 <ZIndex>4</ZIndex>
@@ -2373,8 +3619,8 @@
                 <Source>Embedded</Source>
                 <Value>usersolid</Value>
                 <Sizing>FitProportional</Sizing>
-                <Top>5.62326cm</Top>
-                <Left>6.91451cm</Left>
+                <Top>5.64974cm</Top>
+                <Left>7.44194cm</Left>
                 <Height>0.73201cm</Height>
                 <Width>0.65333cm</Width>
                 <ZIndex>5</ZIndex>
@@ -2722,8 +3968,8 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox21</rd:DefaultName>
-                <Top>2.19674cm</Top>
-                <Left>0.83545cm</Left>
+                <Top>2.22321cm</Top>
+                <Left>1.36288cm</Left>
                 <Height>2.20014cm</Height>
                 <Width>18.32298cm</Width>
                 <ZIndex>6</ZIndex>
@@ -2756,8 +4002,8 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox22</rd:DefaultName>
-                <Top>5.70237cm</Top>
-                <Left>2.58983cm</Left>
+                <Top>5.72884cm</Top>
+                <Left>3.11725cm</Left>
                 <Height>0.65292cm</Height>
                 <Width>2.90142cm</Width>
                 <ZIndex>7</ZIndex>
@@ -2790,8 +4036,8 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox22</rd:DefaultName>
-                <Top>7.14048cm</Top>
-                <Left>2.58983cm</Left>
+                <Top>7.16696cm</Top>
+                <Left>3.11725cm</Left>
                 <Height>0.65292cm</Height>
                 <Width>2.90142cm</Width>
                 <ZIndex>8</ZIndex>
@@ -2824,8 +4070,8 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox22</rd:DefaultName>
-                <Top>5.70236cm</Top>
-                <Left>7.74951cm</Left>
+                <Top>5.72884cm</Top>
+                <Left>8.27694cm</Left>
                 <Height>0.65292cm</Height>
                 <Width>2.90142cm</Width>
                 <ZIndex>9</ZIndex>
@@ -2858,8 +4104,8 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox22</rd:DefaultName>
-                <Top>7.14048cm</Top>
-                <Left>7.79423cm</Left>
+                <Top>7.16696cm</Top>
+                <Left>8.32166cm</Left>
                 <Height>0.65292cm</Height>
                 <Width>2.90142cm</Width>
                 <ZIndex>10</ZIndex>
@@ -2878,8 +4124,8 @@
                 <Source>Embedded</Source>
                 <Value>calendarchecksolid</Value>
                 <Sizing>FitProportional</Sizing>
-                <Top>5.62327cm</Top>
-                <Left>1.76011cm</Left>
+                <Top>5.64975cm</Top>
+                <Left>2.28754cm</Left>
                 <Height>0.73201cm</Height>
                 <Width>0.65333cm</Width>
                 <ZIndex>11</ZIndex>
@@ -2893,8 +4139,8 @@
                 <Source>Embedded</Source>
                 <Value>schoolsolid</Value>
                 <Sizing>FitProportional</Sizing>
-                <Top>7.14048cm</Top>
-                <Left>1.68073cm</Left>
+                <Top>7.16696cm</Top>
+                <Left>2.20816cm</Left>
                 <Height>0.73201cm</Height>
                 <Width>0.73271cm</Width>
                 <ZIndex>12</ZIndex>
@@ -2908,28 +4154,11 @@
                 <Source>Embedded</Source>
                 <Value>addresscardregular</Value>
                 <Sizing>FitProportional</Sizing>
-                <Top>7.14048cm</Top>
-                <Left>6.91451cm</Left>
+                <Top>7.16696cm</Top>
+                <Left>7.44194cm</Left>
                 <Height>0.73201cm</Height>
                 <Width>0.70333cm</Width>
                 <ZIndex>13</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Image>
-              <Image Name="Image10">
-                <Source>Embedded</Source>
-                <Value>header</Value>
-                <Sizing>Fit</Sizing>
-                <Left>0cm</Left>
-                <Height>2.16146cm</Height>
-                <Width>20cm</Width>
-                <ZIndex>14</ZIndex>
-                <Visibility>
-                  <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
-                </Visibility>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -2940,11 +4169,11 @@
                 <Source>Embedded</Source>
                 <Value>earth</Value>
                 <Sizing>FitProportional</Sizing>
-                <Top>4.96153cm</Top>
-                <Left>13.49191cm</Left>
+                <Top>4.98801cm</Top>
+                <Left>14.01933cm</Left>
                 <Height>5.02791cm</Height>
                 <Width>5.44229cm</Width>
-                <ZIndex>15</ZIndex>
+                <ZIndex>14</ZIndex>
                 <Style>
                   <Border>
                     <Style>None</Style>
@@ -2955,10 +4184,25 @@
                 <Source>Embedded</Source>
                 <Value>footer</Value>
                 <Sizing>Fit</Sizing>
-                <Top>26.15604cm</Top>
-                <Left>0cm</Left>
+                <Top>27.36807cm</Top>
                 <Height>2.16146cm</Height>
-                <Width>20cm</Width>
+                <Width>21cm</Width>
+                <ZIndex>15</ZIndex>
+                <Visibility>
+                  <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
+                </Visibility>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Image>
+              <Image Name="Image10">
+                <Source>Embedded</Source>
+                <Value>header</Value>
+                <Sizing>Fit</Sizing>
+                <Height>2.16146cm</Height>
+                <Width>21cm</Width>
                 <ZIndex>16</ZIndex>
                 <Visibility>
                   <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
@@ -2974,10 +4218,8 @@
               <BreakLocation>End</BreakLocation>
             </PageBreak>
             <KeepTogether>true</KeepTogether>
-            <Top>0.63502cm</Top>
-            <Left>0.45833cm</Left>
-            <Height>28.3175cm</Height>
-            <Width>20cm</Width>
+            <Height>29.52953cm</Height>
+            <Width>21cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -2985,1258 +4227,8 @@
               </Border>
             </Style>
           </Rectangle>
-          <Rectangle Name="Rectangle16">
-            <ReportItems>
-              <Rectangle Name="Rectangle22">
-                <ReportItems>
-                  <Textbox Name="Textbox319">
-                    <KeepTogether>true</KeepTogether>
-                    <Paragraphs>
-                      <Paragraph>
-                        <TextRuns>
-                          <TextRun>
-                            <Value>各能力面向表現</Value>
-                            <Style>
-                              <FontFamily>微軟正黑體</FontFamily>
-                              <FontSize>13pt</FontSize>
-                            </Style>
-                          </TextRun>
-                        </TextRuns>
-                        <Style>
-                          <TextAlign>Center</TextAlign>
-                        </Style>
-                      </Paragraph>
-                    </Paragraphs>
-                    <rd:DefaultName>Textbox310</rd:DefaultName>
-                    <Top>0.34395cm</Top>
-                    <Left>0.71992cm</Left>
-                    <Height>0.72cm</Height>
-                    <Width>3.82292cm</Width>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                      <VerticalAlign>Middle</VerticalAlign>
-                      <PaddingLeft>2pt</PaddingLeft>
-                      <PaddingRight>2pt</PaddingRight>
-                      <PaddingTop>2pt</PaddingTop>
-                      <PaddingBottom>2pt</PaddingBottom>
-                    </Style>
-                  </Textbox>
-                  <Image Name="arrow8">
-                    <Source>Embedded</Source>
-                    <Value>arrow</Value>
-                    <Sizing>FitProportional</Sizing>
-                    <Top>0.42867cm</Top>
-                    <Height>0.63528cm</Height>
-                    <Width>0.73776cm</Width>
-                    <ZIndex>1</ZIndex>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                    </Style>
-                  </Image>
-                  <Tablix Name="Tablix41">
-                    <TablixBody>
-                      <TablixColumns>
-                        <TablixColumn>
-                          <Width>1.76746cm</Width>
-                        </TablixColumn>
-                        <TablixColumn>
-                          <Width>5.20441cm</Width>
-                        </TablixColumn>
-                        <TablixColumn>
-                          <Width>11.35111cm</Width>
-                        </TablixColumn>
-                      </TablixColumns>
-                      <TablixRows>
-                        <TablixRow>
-                          <Height>1.6cm</Height>
-                          <TablixCells>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="SeqNo2">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!SeqNo.Value</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>12pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                            <Color>White</Color>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>SeqNo</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                    </Border>
-                                    <TopBorder>
-                                      <Width>3pt</Width>
-                                    </TopBorder>
-                                    <BottomBorder>
-                                      <Width>3pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <BackgroundColor>#2acbb8</BackgroundColor>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Rectangle Name="Rectangle23">
-                                  <ReportItems>
-                                    <Textbox Name="Textbox553">
-                                      <CanGrow>true</CanGrow>
-                                      <KeepTogether>true</KeepTogether>
-                                      <Paragraphs>
-                                        <Paragraph>
-                                          <TextRuns>
-                                            <TextRun>
-                                              <Value>您的表現</Value>
-                                              <Style>
-                                                <FontFamily>微軟正黑體</FontFamily>
-                                                <FontSize>11pt</FontSize>
-                                              </Style>
-                                            </TextRun>
-                                          </TextRuns>
-                                          <Style>
-                                            <TextAlign>Right</TextAlign>
-                                          </Style>
-                                        </Paragraph>
-                                      </Paragraphs>
-                                      <rd:DefaultName>Textbox552</rd:DefaultName>
-                                      <Top>0.8cm</Top>
-                                      <Height>0.8cm</Height>
-                                      <Width>5.20441cm</Width>
-                                      <Style>
-                                        <Border>
-                                          <Style>None</Style>
-                                        </Border>
-                                        <VerticalAlign>Middle</VerticalAlign>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
-                                        <PaddingTop>2pt</PaddingTop>
-                                        <PaddingBottom>2pt</PaddingBottom>
-                                      </Style>
-                                    </Textbox>
-                                    <Textbox Name="Display2">
-                                      <CanGrow>true</CanGrow>
-                                      <KeepTogether>true</KeepTogether>
-                                      <Paragraphs>
-                                        <Paragraph>
-                                          <TextRuns>
-                                            <TextRun>
-                                              <Value>=" " + First(Fields!Display.Value)</Value>
-                                              <Style>
-                                                <FontFamily>微軟正黑體</FontFamily>
-                                                <FontSize>11pt</FontSize>
-                                                <FontWeight>Bold</FontWeight>
-                                                <Color>White</Color>
-                                              </Style>
-                                            </TextRun>
-                                          </TextRuns>
-                                          <Style />
-                                        </Paragraph>
-                                      </Paragraphs>
-                                      <rd:DefaultName>Display</rd:DefaultName>
-                                      <Left>0.00001cm</Left>
-                                      <Height>0.87056cm</Height>
-                                      <Width>5.2044cm</Width>
-                                      <ZIndex>1</ZIndex>
-                                      <Style>
-                                        <Border>
-                                          <Style>None</Style>
-                                        </Border>
-                                        <BackgroundColor>#2acbb8</BackgroundColor>
-                                        <VerticalAlign>Middle</VerticalAlign>
-                                        <PaddingLeft>2pt</PaddingLeft>
-                                        <PaddingRight>2pt</PaddingRight>
-                                        <PaddingTop>2pt</PaddingTop>
-                                        <PaddingBottom>2pt</PaddingBottom>
-                                      </Style>
-                                    </Textbox>
-                                  </ReportItems>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Style>
-                                    <Border>
-                                      <Style>None</Style>
-                                    </Border>
-                                    <TopBorder>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </TopBorder>
-                                    <BottomBorder>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </BottomBorder>
-                                    <RightBorder>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </RightBorder>
-                                  </Style>
-                                </Rectangle>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="Comment2">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!Comment.Value</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style />
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Comment1</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                    </Border>
-                                    <TopBorder>
-                                      <Width>3pt</Width>
-                                    </TopBorder>
-                                    <BottomBorder>
-                                      <Width>3pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                          </TablixCells>
-                        </TablixRow>
-                      </TablixRows>
-                    </TablixBody>
-                    <TablixColumnHierarchy>
-                      <TablixMembers>
-                        <TablixMember />
-                        <TablixMember />
-                        <TablixMember />
-                      </TablixMembers>
-                    </TablixColumnHierarchy>
-                    <TablixRowHierarchy>
-                      <TablixMembers>
-                        <TablixMember>
-                          <Group Name="SeqNo2">
-                            <GroupExpressions>
-                              <GroupExpression>=Fields!SeqNo.Value</GroupExpression>
-                            </GroupExpressions>
-                          </Group>
-                          <SortExpressions>
-                            <SortExpression>
-                              <Value>=Fields!SeqNo.Value</Value>
-                            </SortExpression>
-                          </SortExpressions>
-                        </TablixMember>
-                      </TablixMembers>
-                    </TablixRowHierarchy>
-                    <KeepTogether>true</KeepTogether>
-                    <DataSetName>Data_EvaluationItemComment</DataSetName>
-                    <Top>1.5402cm</Top>
-                    <Height>1.6cm</Height>
-                    <Width>18.32298cm</Width>
-                    <ZIndex>2</ZIndex>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                    </Style>
-                  </Tablix>
-                </ReportItems>
-                <KeepTogether>true</KeepTogether>
-                <Top>14.07681cm</Top>
-                <Left>0.88775cm</Left>
-                <Height>10.59624cm</Height>
-                <Width>18.32399cm</Width>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Rectangle>
-              <Image Name="Image15">
-                <Source>Embedded</Source>
-                <Value>header</Value>
-                <Sizing>Fit</Sizing>
-                <Left>0.03454cm</Left>
-                <Height>2.16146cm</Height>
-                <Width>20cm</Width>
-                <ZIndex>1</ZIndex>
-                <Visibility>
-                  <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
-                </Visibility>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Image>
-              <Image Name="Image16">
-                <Source>Embedded</Source>
-                <Value>footer</Value>
-                <Sizing>Fit</Sizing>
-                <Top>26.16229cm</Top>
-                <Height>2.16146cm</Height>
-                <Width>20cm</Width>
-                <ZIndex>2</ZIndex>
-                <Visibility>
-                  <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
-                </Visibility>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Image>
-              <Textbox Name="Textbox106">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>聯絡地址：10059台北市松山區八德路三段32號8樓</Value>
-                        <Style>
-                          <FontStyle>Normal</FontStyle>
-                          <FontFamily>微軟正黑體</FontFamily>
-                          <FontWeight>Normal</FontWeight>
-                          <TextDecoration>None</TextDecoration>
-                          <Color>#000000</Color>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Left</TextAlign>
-                    </Style>
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox106</rd:DefaultName>
-                <Top>27.40978cm</Top>
-                <Left>5.96683cm</Left>
-                <Height>0.54708cm</Height>
-                <Width>8.52782cm</Width>
-                <ZIndex>3</ZIndex>
-                <Visibility>
-                  <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
-                </Visibility>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Image Name="Image28">
-                <Source>Embedded</Source>
-                <Value>Copyright1200px</Value>
-                <Sizing>FitProportional</Sizing>
-                <Top>26.42104cm</Top>
-                <Left>4.40395cm</Left>
-                <Height>0.33583cm</Height>
-                <Width>0.37486cm</Width>
-                <ZIndex>4</ZIndex>
-                <Visibility>
-                  <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
-                </Visibility>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Image>
-              <Textbox Name="Textbox108">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>2020財團法人中華民國電腦技能基金會版權所有All Rights Reserved.</Value>
-                        <Style>
-                          <FontStyle>Normal</FontStyle>
-                          <FontFamily>微軟正黑體</FontFamily>
-                          <FontWeight>Normal</FontWeight>
-                          <TextDecoration>None</TextDecoration>
-                          <Color>#000000</Color>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Left</TextAlign>
-                    </Style>
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox106</rd:DefaultName>
-                <Top>26.31562cm</Top>
-                <Left>4.81409cm</Left>
-                <Height>0.54708cm</Height>
-                <Width>12.2249cm</Width>
-                <ZIndex>5</ZIndex>
-                <Visibility>
-                  <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
-                </Visibility>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Textbox Name="Textbox107">
-                <CanGrow>true</CanGrow>
-                <KeepTogether>true</KeepTogether>
-                <Paragraphs>
-                  <Paragraph>
-                    <TextRuns>
-                      <TextRun>
-                        <Value>聯絡電話：(02)2577-8806</Value>
-                        <Style>
-                          <FontStyle>Normal</FontStyle>
-                          <FontFamily>微軟正黑體</FontFamily>
-                          <FontWeight>Normal</FontWeight>
-                          <TextDecoration>None</TextDecoration>
-                          <Color>#000000</Color>
-                        </Style>
-                      </TextRun>
-                    </TextRuns>
-                    <Style>
-                      <TextAlign>Left</TextAlign>
-                    </Style>
-                  </Paragraph>
-                </Paragraphs>
-                <rd:DefaultName>Textbox106</rd:DefaultName>
-                <Top>26.8627cm</Top>
-                <Left>7.63183cm</Left>
-                <Height>0.54708cm</Height>
-                <Width>4.84302cm</Width>
-                <ZIndex>6</ZIndex>
-                <Visibility>
-                  <Hidden>=iif(Parameters!IsHideHeaderAndFooter.Value = "True", true, false)</Hidden>
-                </Visibility>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                  <PaddingLeft>2pt</PaddingLeft>
-                  <PaddingRight>2pt</PaddingRight>
-                  <PaddingTop>2pt</PaddingTop>
-                  <PaddingBottom>2pt</PaddingBottom>
-                </Style>
-              </Textbox>
-              <Rectangle Name="Rectangle17">
-                <ReportItems>
-                  <Image Name="arrow3">
-                    <Source>Embedded</Source>
-                    <Value>arrow</Value>
-                    <Sizing>FitProportional</Sizing>
-                    <Top>0.1cm</Top>
-                    <Height>0.63528cm</Height>
-                    <Width>0.73776cm</Width>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                    </Style>
-                  </Image>
-                  <Textbox Name="Textbox312">
-                    <KeepTogether>true</KeepTogether>
-                    <Paragraphs>
-                      <Paragraph>
-                        <TextRuns>
-                          <TextRun>
-                            <Value>評定項目</Value>
-                            <Style>
-                              <FontFamily>微軟正黑體</FontFamily>
-                              <FontSize>13pt</FontSize>
-                            </Style>
-                          </TextRun>
-                        </TextRuns>
-                        <Style>
-                          <TextAlign>Center</TextAlign>
-                        </Style>
-                      </Paragraph>
-                    </Paragraphs>
-                    <rd:DefaultName>Textbox310</rd:DefaultName>
-                    <Top>0.01528cm</Top>
-                    <Left>0.73776cm</Left>
-                    <Height>0.72cm</Height>
-                    <Width>2.5cm</Width>
-                    <ZIndex>1</ZIndex>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                      <VerticalAlign>Middle</VerticalAlign>
-                      <PaddingLeft>2pt</PaddingLeft>
-                      <PaddingRight>2pt</PaddingRight>
-                      <PaddingTop>2pt</PaddingTop>
-                      <PaddingBottom>2pt</PaddingBottom>
-                    </Style>
-                  </Textbox>
-                  <Textbox Name="Textbox322">
-                    <CanGrow>true</CanGrow>
-                    <KeepTogether>true</KeepTogether>
-                    <Paragraphs>
-                      <Paragraph>
-                        <TextRuns>
-                          <TextRun>
-                            <Value>在這次測驗中，您在各領域回答的情況如下表：</Value>
-                            <Style>
-                              <FontFamily>微軟正黑體</FontFamily>
-                              <FontSize>11pt</FontSize>
-                            </Style>
-                          </TextRun>
-                        </TextRuns>
-                        <Style>
-                          <TextAlign>Left</TextAlign>
-                        </Style>
-                      </Paragraph>
-                    </Paragraphs>
-                    <rd:DefaultName>Textbox320</rd:DefaultName>
-                    <Top>0.77056cm</Top>
-                    <Left>0.73776cm</Left>
-                    <Height>0.59118cm</Height>
-                    <Width>9.02717cm</Width>
-                    <ZIndex>2</ZIndex>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                      <VerticalAlign>Middle</VerticalAlign>
-                      <PaddingLeft>2pt</PaddingLeft>
-                      <PaddingRight>2pt</PaddingRight>
-                      <PaddingTop>2pt</PaddingTop>
-                      <PaddingBottom>2pt</PaddingBottom>
-                    </Style>
-                  </Textbox>
-                  <Tablix Name="Tablix5">
-                    <TablixBody>
-                      <TablixColumns>
-                        <TablixColumn>
-                          <Width>6.34249cm</Width>
-                        </TablixColumn>
-                        <TablixColumn>
-                          <Width>3.97632cm</Width>
-                        </TablixColumn>
-                        <TablixColumn>
-                          <Width>3.97632cm</Width>
-                        </TablixColumn>
-                        <TablixColumn>
-                          <Width>3.97632cm</Width>
-                        </TablixColumn>
-                      </TablixColumns>
-                      <TablixRows>
-                        <TablixRow>
-                          <Height>0.98806cm</Height>
-                          <TablixCells>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="Textbox16">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>評定項目</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox15</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </Border>
-                                    <TopBorder>
-                                      <Width>5pt</Width>
-                                    </TopBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <BackgroundColor>#2acbb8</BackgroundColor>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="Textbox18">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>答對題數</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox17</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </Border>
-                                    <TopBorder>
-                                      <Width>5pt</Width>
-                                    </TopBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <BackgroundColor>#2acbb8</BackgroundColor>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="Textbox40">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>總題數</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox37</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </Border>
-                                    <TopBorder>
-                                      <Width>5pt</Width>
-                                    </TopBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <BackgroundColor>#2acbb8</BackgroundColor>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="Textbox46">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>正確率</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                            <FontWeight>Bold</FontWeight>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox43</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </Border>
-                                    <TopBorder>
-                                      <Width>5pt</Width>
-                                    </TopBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <BackgroundColor>#2acbb8</BackgroundColor>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                          </TablixCells>
-                        </TablixRow>
-                        <TablixRow>
-                          <Height>0.98806cm</Height>
-                          <TablixCells>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="ItemDisplay2">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!ItemDisplay.Value</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>ItemDisplay</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                    </Border>
-                                    <TopBorder>
-                                      <Style>None</Style>
-                                    </TopBorder>
-                                    <BottomBorder>
-                                      <Color>LightGrey</Color>
-                                      <Width>3pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="CorrectQuestionCount2">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!CorrectQuestionCount.Value</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>CorrectQuestionCount</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                    </Border>
-                                    <TopBorder>
-                                      <Style>None</Style>
-                                    </TopBorder>
-                                    <BottomBorder>
-                                      <Color>LightGrey</Color>
-                                      <Width>3pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="TotalQuestionCount2">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Fields!TotalQuestionCount.Value</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>TotalQuestionCount</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                    </Border>
-                                    <TopBorder>
-                                      <Style>None</Style>
-                                    </TopBorder>
-                                    <BottomBorder>
-                                      <Color>LightGrey</Color>
-                                      <Width>3pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="CorrentPercentage2">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Format(Fields!CorrectQuestionCount.Value / Fields!TotalQuestionCount.Value * 100, "0.#\%")</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>CorrentPercentage</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                    </Border>
-                                    <TopBorder>
-                                      <Style>None</Style>
-                                    </TopBorder>
-                                    <BottomBorder>
-                                      <Color>LightGrey</Color>
-                                      <Width>3pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                          </TablixCells>
-                        </TablixRow>
-                        <TablixRow>
-                          <Height>0.98806cm</Height>
-                          <TablixCells>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="Textbox42">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>合計</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox35</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </Border>
-                                    <BottomBorder>
-                                      <Width>5pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="Textbox48">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Sum(Fields!CorrectQuestionCount.Value)</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox36</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </Border>
-                                    <BottomBorder>
-                                      <Width>5pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="Textbox50">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Sum(Fields!TotalQuestionCount.Value)</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox39</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </Border>
-                                    <BottomBorder>
-                                      <Width>5pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                            <TablixCell>
-                              <CellContents>
-                                <Textbox Name="Textbox51">
-                                  <CanGrow>true</CanGrow>
-                                  <KeepTogether>true</KeepTogether>
-                                  <Paragraphs>
-                                    <Paragraph>
-                                      <TextRuns>
-                                        <TextRun>
-                                          <Value>=Format(Sum(Fields!CorrectQuestionCount.Value) / Sum(Fields!TotalQuestionCount.Value) * 100, "0.#\%")</Value>
-                                          <Style>
-                                            <FontFamily>微軟正黑體</FontFamily>
-                                            <FontSize>11pt</FontSize>
-                                          </Style>
-                                        </TextRun>
-                                      </TextRuns>
-                                      <Style>
-                                        <TextAlign>Center</TextAlign>
-                                      </Style>
-                                    </Paragraph>
-                                  </Paragraphs>
-                                  <rd:DefaultName>Textbox45</rd:DefaultName>
-                                  <Style>
-                                    <Border>
-                                      <Color>DimGray</Color>
-                                      <Style>Solid</Style>
-                                      <Width>3pt</Width>
-                                    </Border>
-                                    <BottomBorder>
-                                      <Width>5pt</Width>
-                                    </BottomBorder>
-                                    <LeftBorder>
-                                      <Style>None</Style>
-                                    </LeftBorder>
-                                    <RightBorder>
-                                      <Style>None</Style>
-                                    </RightBorder>
-                                    <VerticalAlign>Middle</VerticalAlign>
-                                    <PaddingLeft>2pt</PaddingLeft>
-                                    <PaddingRight>2pt</PaddingRight>
-                                    <PaddingTop>2pt</PaddingTop>
-                                    <PaddingBottom>2pt</PaddingBottom>
-                                  </Style>
-                                </Textbox>
-                              </CellContents>
-                            </TablixCell>
-                          </TablixCells>
-                        </TablixRow>
-                      </TablixRows>
-                    </TablixBody>
-                    <TablixColumnHierarchy>
-                      <TablixMembers>
-                        <TablixMember />
-                        <TablixMember />
-                        <TablixMember />
-                        <TablixMember />
-                      </TablixMembers>
-                    </TablixColumnHierarchy>
-                    <TablixRowHierarchy>
-                      <TablixMembers>
-                        <TablixMember>
-                          <KeepWithGroup>After</KeepWithGroup>
-                        </TablixMember>
-                        <TablixMember>
-                          <Group Name="詳細資料2" />
-                          <TablixMembers>
-                            <TablixMember />
-                          </TablixMembers>
-                        </TablixMember>
-                        <TablixMember>
-                          <KeepWithGroup>Before</KeepWithGroup>
-                        </TablixMember>
-                      </TablixMembers>
-                    </TablixRowHierarchy>
-                    <DataSetName>Data_ExamineeEvaluationItemStatus</DataSetName>
-                    <Top>1.88209cm</Top>
-                    <Left>0.05153cm</Left>
-                    <Height>2.96418cm</Height>
-                    <Width>18.27145cm</Width>
-                    <ZIndex>3</ZIndex>
-                    <Style>
-                      <Border>
-                        <Style>None</Style>
-                      </Border>
-                      <FontFamily>微軟正黑體</FontFamily>
-                      <FontSize>12pt</FontSize>
-                    </Style>
-                  </Tablix>
-                </ReportItems>
-                <KeepTogether>true</KeepTogether>
-                <Top>2.65699cm</Top>
-                <Left>0.88775cm</Left>
-                <Height>11.11688cm</Height>
-                <Width>18.32399cm</Width>
-                <ZIndex>7</ZIndex>
-                <Style>
-                  <Border>
-                    <Style>None</Style>
-                  </Border>
-                </Style>
-              </Rectangle>
-            </ReportItems>
-            <PageBreak>
-              <BreakLocation>End</BreakLocation>
-            </PageBreak>
-            <KeepTogether>true</KeepTogether>
-            <Top>58.61719cm</Top>
-            <Left>0.42281cm</Left>
-            <Height>28.32375cm</Height>
-            <Width>20.03454cm</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-            </Style>
-          </Rectangle>
         </ReportItems>
-        <Height>86.94094cm</Height>
+        <Height>87.95551cm</Height>
         <Style />
       </Body>
       <Width>21cm</Width>
