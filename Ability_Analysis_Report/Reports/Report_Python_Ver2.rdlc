@@ -939,7 +939,6 @@
                     </TablixRowHierarchy>
                     <DataSetName>Data_ExamineeAnswerStatus_18_34</DataSetName>
                     <Top>3.2943cm</Top>
-                    <Left>0cm</Left>
                     <Height>2.30271cm</Height>
                     <Width>3.4cm</Width>
                     <ZIndex>3</ZIndex>
@@ -1655,7 +1654,7 @@
                                           <Width>3pt</Width>
                                         </BottomBorder>
                                         <RightBorder>
-                                          <Color>DimGray</Color>
+                                          <Color>LightGrey</Color>
                                           <Style>Solid</Style>
                                           <Width>3pt</Width>
                                         </RightBorder>
@@ -3497,7 +3496,7 @@
                 <Top>10.99092cm</Top>
                 <Left>1.36288cm</Left>
                 <Height>2.91979cm</Height>
-                <Width>18.32298cm</Width>
+                <Width>18.32299cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
                   <Border>
@@ -3994,7 +3993,7 @@
                         <Value>=Parameters!ExamDate.Value</Value>
                         <Style>
                           <FontFamily>微軟正黑體</FontFamily>
-                          <FontSize>12pt</FontSize>
+                          <FontSize>13pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -4002,10 +4001,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox22</rd:DefaultName>
-                <Top>5.72884cm</Top>
+                <Top>5.64973cm</Top>
                 <Left>3.11725cm</Left>
-                <Height>0.65292cm</Height>
-                <Width>2.90142cm</Width>
+                <Height>0.73202cm</Height>
+                <Width>3.48077cm</Width>
                 <ZIndex>7</ZIndex>
                 <Style>
                   <Border>
@@ -4028,7 +4027,7 @@
                         <Value>=Parameters!ExamineeSchool.Value</Value>
                         <Style>
                           <FontFamily>微軟正黑體</FontFamily>
-                          <FontSize>12pt</FontSize>
+                          <FontSize>13pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -4038,8 +4037,8 @@
                 <rd:DefaultName>Textbox22</rd:DefaultName>
                 <Top>7.16696cm</Top>
                 <Left>3.11725cm</Left>
-                <Height>0.65292cm</Height>
-                <Width>2.90142cm</Width>
+                <Height>0.73202cm</Height>
+                <Width>3.48077cm</Width>
                 <ZIndex>8</ZIndex>
                 <Style>
                   <Border>
@@ -4062,7 +4061,7 @@
                         <Value>=Parameters!ExamineeName.Value</Value>
                         <Style>
                           <FontFamily>微軟正黑體</FontFamily>
-                          <FontSize>12pt</FontSize>
+                          <FontSize>13pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -4070,10 +4069,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox22</rd:DefaultName>
-                <Top>5.72884cm</Top>
+                <Top>5.64975cm</Top>
                 <Left>8.27694cm</Left>
-                <Height>0.65292cm</Height>
-                <Width>2.90142cm</Width>
+                <Height>0.73202cm</Height>
+                <Width>4.03551cm</Width>
                 <ZIndex>9</ZIndex>
                 <Style>
                   <Border>
@@ -4096,7 +4095,7 @@
                         <Value>=Parameters!ExamineeID.Value</Value>
                         <Style>
                           <FontFamily>微軟正黑體</FontFamily>
-                          <FontSize>12pt</FontSize>
+                          <FontSize>13pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -4106,8 +4105,8 @@
                 <rd:DefaultName>Textbox22</rd:DefaultName>
                 <Top>7.16696cm</Top>
                 <Left>8.32166cm</Left>
-                <Height>0.65292cm</Height>
-                <Width>2.90142cm</Width>
+                <Height>0.73202cm</Height>
+                <Width>3.99079cm</Width>
                 <ZIndex>10</ZIndex>
                 <Style>
                   <Border>

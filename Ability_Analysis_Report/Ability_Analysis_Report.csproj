@@ -210,6 +210,8 @@
     <Content Include="Reports\DataSet_Python.xss">
       <DependentUpon>DataSet_Python.xsd</DependentUpon>
     </Content>
+    <Content Include="ReportResult\測試報告Ver2_HTML.pdf" />
+    <Content Include="ReportResult\測試報告Ver2_RDLC.pdf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
