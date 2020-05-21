@@ -1,9 +1,4 @@
-﻿using iTextSharp.text;
-using iTextSharp.text.html.simpleparser;
-using iTextSharp.text.pdf;
-using iTextSharp.tool.xml;
-using Microsoft.Reporting.WebForms;
-using Pechkin;
+﻿using Microsoft.Reporting.WebForms;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -32,7 +27,46 @@ namespace Ability_Analysis_Report.Controllers
 
         public ActionResult ReportVer2_RDLC()
         {
-            return View(GetExamineeAnswerStatuses());
+            var reportViewer = GetReport_Ver2(isHideHeaderAndFooter: true);
+
+            //呼叫 ReportViewer.LoadReport 的 Render function，將資料轉成想要轉換的格式，並產生成Byte資料
+            //轉成 Image ，格式為 image/Tif ( tif 是多張圖，瀏覽器不支援直接預覽，所以會變成下載 )
+            byte[] tBytes = reportViewer.LocalReport.Render("Image");
+
+            #region 拆解 tiff 並將圖片設為 png 格式，轉為 base64 後存起來
+            MemoryStream ms = new MemoryStream(tBytes);
+            System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+            Guid guid = (Guid)img.FrameDimensionsList.GetValue(0);
+            FrameDimension dimension = new FrameDimension(guid);
+            int totalPage = img.GetFrameCount(dimension);
+
+            List<string> result = new List<string>();
+            for (int i = 0; i < totalPage; i++)
+            {
+                // 選擇多張圖底下的圖，在進行匯出
+                img.SelectActiveFrame(dimension, i);
+
+                byte[] data = null;
+                using (MemoryStream oMemoryStream = new MemoryStream())
+                {
+                    img.Save(oMemoryStream, ImageFormat.Png);
+                    //設定資料流位置，在read之前務必設定為0
+                    oMemoryStream.Position = 0;
+                    //設定 buffer 長度
+                    data = new byte[oMemoryStream.Length];
+                    //將資料寫入 buffer
+                    oMemoryStream.Read(data, 0, Convert.ToInt32(oMemoryStream.Length));
+                    //將所有緩衝區的資料寫入資料流
+                    //oMemoryStream.Flush();
+                }
+
+                var base64 = Convert.ToBase64String(data);
+                var imgSrc = String.Format("data:image/png;base64,{0}", base64);
+                result.Add(imgSrc);
+            }
+            #endregion         
+
+            return View(result);
         }
 
         public ActionResult ReportVer2_HTML()
@@ -94,6 +128,16 @@ namespace Ability_Analysis_Report.Controllers
             //return File(tBytes, "application/pdf");
         }
 
+        public FileResult ReportToPDF_Ver2()
+        {
+            var reportViewer = GetReport_Ver2(isHideHeaderAndFooter: false);
+
+            // 用這個不會跳出新 Tab，會直接下載 PDF
+            return File(reportViewer.LocalReport.Render("PDF"), "application/pdf", "測試報告Ver2.pdf");
+            // 用這個會跳出新 Tab
+            //return File(tBytes, "application/pdf");
+        }
+
         public ReportViewer GetReport()
         {
             ReportViewer reportViewer = new ReportViewer();
@@ -125,6 +169,44 @@ namespace Ability_Analysis_Report.Controllers
             parameters.Add(new ReportParameter("ExamineeName", "韓羽伶"));
             parameters.Add(new ReportParameter("ExamineeSchool", "明新科大"));
             parameters.Add(new ReportParameter("ExamineeID", "A123456789"));
+            reportViewer.LocalReport.SetParameters(parameters);
+
+            return reportViewer;
+        }
+
+
+        public ReportViewer GetReport_Ver2(bool isHideHeaderAndFooter)
+        {
+            ReportViewer reportViewer = new ReportViewer();
+            reportViewer.ProcessingMode = ProcessingMode.Local;
+            reportViewer.LocalReport.ReportPath = $"{Request.MapPath(Request.ApplicationPath)}Reports\\Report_Python_Ver2.rdlc";
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_ExamineeEvaluationItemStatus", GetExamineeEvaluationItemStatuss()));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_EvaluationItemComment", GetEvaluationItemComment()));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_CoverScoreInfo", GetCoverScoreInfo()));
+
+            // 如果想調整答題狀況的表格請特別注意，目前做法
+            // 第 1 個資料集只給 1~17 題答案
+            // 第 2 個資料集給 18~34 題答案
+            // 第 3 個資料集給 35~50 題答案
+            // 寬度變動會影響結果！！！
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_ExamineeAnswerStatus_1_17", GetExamineeAnswerStatuses().Take(17)));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_ExamineeAnswerStatus_18_34", GetExamineeAnswerStatuses().Skip(17).Take(17)));
+            reportViewer.LocalReport.DataSources.Add(new ReportDataSource("Data_ExamineeAnswerStatus_35_50", GetExamineeAnswerStatuses().Skip(34).Take(16)));
+
+
+            ReportParameterCollection parameters = new ReportParameterCollection();
+
+            // 允許外部圖片
+            reportViewer.LocalReport.EnableExternalImages = true;
+            // 加入圖片參數
+            // 用路徑給，RDLC 那邊配置的運算式 => ="file:\\\" + Parameters!importImage.Value
+            parameters.Add(new ReportParameter("ImageRadar", HostingEnvironment.MapPath("~\\RadarImages\\test.jpg")));
+            // 報告中個人資訊參數
+            parameters.Add(new ReportParameter("ExamDate", DateTime.Now.ToString("yyyy/MM/dd")));
+            parameters.Add(new ReportParameter("ExamineeName", "韓羽伶"));
+            parameters.Add(new ReportParameter("ExamineeSchool", "明新科大"));
+            parameters.Add(new ReportParameter("ExamineeID", "A123456789"));
+            parameters.Add(new ReportParameter("IsHideHeaderAndFooter", isHideHeaderAndFooter.ToString()));
             reportViewer.LocalReport.SetParameters(parameters);
 
             return reportViewer;

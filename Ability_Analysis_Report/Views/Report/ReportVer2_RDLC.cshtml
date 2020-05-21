@@ -1,67 +1,30 @@
-﻿@model IEnumerable<Ability_Analysis_Report.Controllers.ReportController.ViewData_ExamineeAnswerStatus>
+﻿@model  IEnumerable<string>
 
 @{
-    ViewBag.Title = "ReportVer2_RDLC";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ReportVer2_RDLC</h2>
-測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試測試
 <head>
     @section styles{
-        <link type="text/css" href="~/MoiraTool/Plugins/Datatables/Styles/dataTables.bootstrap.min.css" rel="stylesheet" />
-
         <link href="~/Content/Custom_Global.css" rel="stylesheet" />
-        <link href="~/Content/Custom_Cover.css" rel="stylesheet" />
-        <link href="~/Content/Custom_Cover_EarthArea.css" rel="stylesheet" />
-        <link href="~/Content/Custom_Page1.css" rel="stylesheet" />
-    }
-    @section scripts{
-        <script src="~/MoiraTool/Plugins/Font_awesome_5.13.0/all.min.js"></script>
-        <script src="~/MoiraTool/Plugins/PrintArea/jquery.PrintArea.js"></script>
-        <script src="~/MoiraTool/Plugins/Datatables/Scripts/jquery.dataTables.min.js"></script>
-        <script src="~/MoiraTool/Plugins/Datatables/Scripts/dataTables.bootstrap.min.js"></script>
-        <script src="~/MoiraTool/Plugins/Datatables/UseDatatables.js"></script>
     }
 </head>
-<table class="page1Table_Moblie table table-striped table-bordered text-center" style="width:100%" id="test">
-    <thead>
-        <tr>
-            <th style="width:40%">題號</th>
-            <th style="width:40%">標準答案</th>
-            <th style="width:20%">考生答案</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+
+
+<body>
+    <div class="container">
+        <div class="col-lg-12">
+            <a href="@Url.Action("ReportToPDF_Ver2")" class="btn btn-info">Download To PDF</a>
+        </div>
+        <div class="col-lg-12">
+            <h4>This is Reportviewer to image ver2</h4>
+        </div>
+        @foreach (var image in Model)
         {
-            <tr>
-                <th>
-                    @item.QuestionNum.ToString("0#")
-                </th>
-                <td>
-                    @item.StandardAnswer
-                </td>
-                <td>
-                    @item.ExamineeAnswer
-                </td>
-            </tr>
+            <div class="col-lg-12 text-center">
+                <img src="@image" style="width: 100%;" />
+            </div>
         }
-
-    </tbody>
-</table>
-
-<style>
-    /* table 的 標題一律不准換行、並將底色顏色設為粉紅色、字體設為白色 */
-    .page1Table_Moblie th {
-        white-space: nowrap;
-        color: rgb(255, 255, 255);
-        background-color: rgb(249, 159, 159);
-    }
-</style>
-<script>
-
-    $(document).ready(function () {
-        SetDatatables('test');
-    })
-</script>
+    </div>
+</body>

@@ -162,7 +162,6 @@ hr.grayLine {
     }
 
     @page {
-        size
         size: A4 !important;
         margin: 0 !important;
         padding: 0 !important;

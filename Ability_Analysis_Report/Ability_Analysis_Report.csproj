@@ -132,7 +132,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Python.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Utility\UnicodeFontFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -184,10 +183,14 @@
     <Content Include="MoiraTool\Scripts\Custom.js" />
     <Content Include="MoiraTool\Styles\Custom.css" />
     <Content Include="RadarImages\test.jpg" />
+    <Content Include="Reports\Images\address-card-regular.jpg" />
     <Content Include="Reports\Images\arrow.PNG" />
+    <Content Include="Reports\Images\calendar-check-solid.jpg" />
     <Content Include="Reports\Images\core_value.jpg" />
     <Content Include="Reports\Images\introduction.jpg" />
+    <Content Include="Reports\Images\school-solid.jpg" />
     <Content Include="Reports\Images\taiwan.png" />
+    <Content Include="Reports\Images\user-solid.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Reports\DataSet_Python.xsc">
@@ -255,6 +258,7 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reports\Report_Python_Ver2.rdlc" />
     <EmbeddedResource Include="Reports\Report_Python.rdlc" />
   </ItemGroup>
   <PropertyGroup>
